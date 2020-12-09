@@ -9,9 +9,15 @@
     <ClCompile Include="ZString.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="ZSize.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ZSize.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
