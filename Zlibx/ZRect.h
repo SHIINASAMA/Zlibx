@@ -8,13 +8,18 @@
 #include <Windows.h>
 #include "ZPoint.h"
 #include "ZSize.h"
+#include "main.h"
 
 /**	@brief	ZRect 类定义
 */
-class ZRect
+class DLLAPI ZRect
 {
 public:
+	/** @brief 左上角坐标
+	*/
 	ZPoint A;
+	/** @brief 右下角坐标
+	*/
 	ZPoint B;
 
 	/**@brief 创建空 ZRect 对象
@@ -56,5 +61,4 @@ public:
 	RECT GetRect();
 
 	operator RECT();
-	operator LPCRECT();
 };

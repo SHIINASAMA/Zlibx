@@ -7,10 +7,11 @@
 #pragma once
 #include <Windows.h>
 #include "ZString.h"
+#include "main.h"
 
 /**@brief ZDebug 类定义
 */
-class ZDebug
+class DLLAPI ZDebug
 {
 public:
 	/**@brief			快速显示错误信息

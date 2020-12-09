@@ -7,13 +7,18 @@
 #pragma once
 
 #include <Windows.h>
+#include "main.h"
 
 /**	@brief	ZPoint 类定义
 */
-class ZPoint
+class DLLAPI ZPoint
 {
 public:
+	/** @brief x轴坐标
+	*/
 	int x = 0;
+	/** @brief y轴坐标
+	*/
 	int y = 0;
 
 	/**@brief	实例化一个空ZPoin对象
