@@ -13,7 +13,7 @@
 #define AString char*
 #define AChar char
 
-/**	@brief ZString类定义
+/**	@brief ZString 类定义
 */
 class ZString
 {

@@ -6,7 +6,7 @@
 
 #pragma once
 
-/**	@brief ZSize类定义
+/**	@brief ZSize 类定义
 */
 class ZSize
 {

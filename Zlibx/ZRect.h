@@ -33,10 +33,10 @@ public:
 	ZRect(ZPoint A, ZPoint B);
 
 	/**@brief	初始化 ZRect 对象
-	* @param X1 左上角点X坐标
-	* @param Y1 左上角点Y坐标
-	* @param X2 右下角点Y坐标
-	* @param Y2 右下角点Y坐标
+	* @param x1 左上角点X坐标
+	* @param y1 左上角点Y坐标
+	* @param x2 右下角点Y坐标
+	* @param y2 右下角点Y坐标
 	*/
 	ZRect(int x1, int y1, int x2, int y2);
 

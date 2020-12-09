@@ -8,7 +8,7 @@
 
 #include <Windows.h>
 
-/**	@brief	ZPoint类实现
+/**	@brief	ZPoint 类定义
 */
 class ZPoint
 {
@@ -21,8 +21,8 @@ public:
 	ZPoint();
 
 	/**@brief	实例化一个ZPoin对象
-	* @param X	x坐标
-	* @param Y	y坐标
+	* @param x	x坐标
+	* @param y	y坐标
 	*/
 	ZPoint(int x, int y);
 

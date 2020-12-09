@@ -18,6 +18,12 @@
     <ClCompile Include="ZPoint.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="ZColor.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ZDebug.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -32,5 +38,9 @@
     <ClInclude Include="ZPoint.h">
       <Filter>base</Filter>
     </ClInclude>
+    <ClInclude Include="ZColor.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ZDebug.h" />
   </ItemGroup>
 </Project>
