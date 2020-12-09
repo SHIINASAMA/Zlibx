@@ -11,12 +11,12 @@
 class ZSize
 {
 public:
-	long w = 0;
-	long h = 0;
+	int w = 0;
+	int h = 0;
 
 	/**	@brief		初始化一个ZSize对象
 	*	@param	w	目标宽
 	*	@param	h	目标高
 	*/
-	ZSize(long w, long h);
+	ZSize(int w, int h);
 };

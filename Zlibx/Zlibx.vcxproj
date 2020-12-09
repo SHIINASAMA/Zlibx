@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ZPoint.h" />
+    <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ZPoint.cpp" />
+    <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZString.cpp" />
   </ItemGroup>

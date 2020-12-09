@@ -6,7 +6,7 @@
 
 #include "ZSize.h"
 
-ZSize::ZSize(long w, long h)
+ZSize::ZSize(int w, int h)
 {
 	this->w = w;
 	this->h = h;

@@ -12,12 +12,24 @@
     <ClCompile Include="ZSize.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="ZRect.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ZPoint.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="ZSize.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ZRect.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ZPoint.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
