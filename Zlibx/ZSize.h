@@ -6,12 +6,18 @@
 
 #pragma once
 
+#include "main.h"
+
 /**	@brief ZSize 类定义
 */
-class ZSize
+class DLLAPI ZSize
 {
 public:
+	/** @brief 宽
+	*/
 	int w = 0;
+	/** @brief 高
+	*/
 	int h = 0;
 
 	/**	@brief		初始化一个ZSize对象

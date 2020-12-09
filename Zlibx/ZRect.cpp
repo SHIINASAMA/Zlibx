@@ -1,5 +1,5 @@
 /**	@file	ZRect.cpp
-*	@brief	矩形类定义
+*	@brief	矩形类实现
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -8,6 +8,7 @@
 
 ZRect::ZRect()
 {
+	//DO NOTHING
 }
 
 ZRect::ZRect(RECT Rect)
@@ -58,10 +59,4 @@ RECT ZRect::GetRect()
 ZRect::operator RECT()
 {
 	return GetRect();
-}
-
-ZRect::operator LPCRECT()
-{
-	RECT r = { A.x,A.y,B.x,B.y };
-	return &r;
 }

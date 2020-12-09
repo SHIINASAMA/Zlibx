@@ -7,10 +7,11 @@
 #pragma once
 
 #include <Windows.h>
+#include "main.h"
 
 /**	@brief ZColor ¿‡∂®“Â
 */
-class ZColor
+class DLLAPI ZColor
 {
 private:
 	COLORREF color;

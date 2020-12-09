@@ -7,6 +7,7 @@
 #pragma once
 
 #include <Windows.h>
+#include "main.h"
 
 #define WString LPCWSTR
 #define WChar wchar_t
@@ -15,7 +16,7 @@
 
 /**	@brief ZString ¿‡∂®“Â
 */
-class ZString
+class DLLAPI ZString
 {
 private:
 	WString str;
