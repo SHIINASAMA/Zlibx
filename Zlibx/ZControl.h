@@ -10,6 +10,7 @@
 #include "main.h"
 #include "ZString.h"
 #include "ZRect.h"
+#include "ZFont.h"
 
 /**	@brief ZControl 类定义
 */
@@ -42,7 +43,7 @@ protected:
 
 	/**	@brief 控件字体
 	*/
-	//ZFont font;
+	ZFont font;
 
 	/** @brief			初始化方法\n供父项调用
 	*	@param handle	父窗口句柄

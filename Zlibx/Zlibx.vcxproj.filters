@@ -37,6 +37,9 @@
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZFont.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -73,5 +76,8 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZFont.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

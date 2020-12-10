@@ -152,6 +152,7 @@
     <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZFile.h" />
+    <ClInclude Include="ZFont.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZFile.cpp" />
+    <ClCompile Include="ZFont.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />
