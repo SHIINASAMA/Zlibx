@@ -156,6 +156,7 @@
     <ClInclude Include="ZResource.h" />
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZString.h" />
+    <ClInclude Include="ZThread.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZColor.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZString.cpp" />
+    <ClCompile Include="ZThread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
