@@ -39,9 +39,6 @@
     <ClCompile Include="ZFont.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="ZControl.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
     <ClCompile Include="ZWindow.cpp">
       <Filter>control</Filter>
     </ClCompile>

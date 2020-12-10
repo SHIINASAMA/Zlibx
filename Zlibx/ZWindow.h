@@ -31,20 +31,50 @@ enum DLLAPI WindowType {
 */
 class DLLAPI ZWindow : public ZControl
 {
-public:
-	ZWindow(ZString text);
-
-	ZWindow(ZString text, int x, int y, int w, int h);
-
-	ZWindow(ZString text, int x, int y, int w, int h, WindowType type = Sizable);
-
-	void SetWindowType(WindowType type);
-
+private:
 	/** @brief 不要调用该函数
 	*/
 	void Init(HANDLE handle);
 
+public:
+	/** @brief		实例化 ZWindow 对象
+	*	@param text 窗体标题
+	*/
+	ZWindow(ZString text);
+
+	/**
+	 * 实例化 ZWindow 对象
+	 *
+	 * \param text	窗体标题
+	 * \param x		x坐标
+	 * \param y		y坐标
+	 * \param w		宽
+	 * \param h		高
+	 */
+	ZWindow(ZString text, int x, int y, int w, int h);
+
+	/**
+	 * 实例化 ZWindow 对象
+	 *
+	 * \param text	窗体标题
+	 * \param x		x坐标
+	 * \param y		y坐标
+	 * \param w		宽
+	 * \param h		高
+	 * \param type	窗体风格
+	 */
+	ZWindow(ZString text, int x, int y, int w, int h, WindowType type = Sizable);
+
+	/**	@brief 设置窗体风格
+	*/
+	void SetWindowType(WindowType type);
+
 	/** @brief 注册并创建窗体
 	*/
 	void Create();
+
+	/**
+	 * 展示窗体
+	 */
+	void Run();
 };

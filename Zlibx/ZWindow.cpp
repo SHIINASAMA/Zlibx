@@ -1,8 +1,33 @@
+/*********************************************************************
+ * \file   ZWindow.cpp
+ * \brief  窗体类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-11
+ *********************************************************************/
+
 #include "ZWindow.h"
 
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+ZWindow::ZWindow(ZString text)
+{
+	this->text = text;
+}
+
+ZWindow::ZWindow(ZString text, int x, int y, int w, int h)
+{
+	this->rect = ZRect(x, y, x + w, y + h);
+}
+
+ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowType type)
+{
+	this->text = text;
+	this->rect = ZRect(x, y, x + w, y + h);
+	SetWindowType(type);
 }
 
 void ZWindow::SetWindowType(WindowType type)
@@ -60,10 +85,25 @@ void ZWindow::Create()
 		wcex.lpszClassName,
 		text,
 		style,
-		0, 0, 600, 300,
+		rect.A.x,
+		rect.A.y,
+		rect.B.x,
+		rect.B.y,
 		NULL,
 		NULL,
 		wcex.hInstance,
 		NULL
 	);
+}
+
+void ZWindow::Run()
+{
+	ShowWindow((HWND)handle, SW_SHOWNORMAL);
+	UpdateWindow((HWND)handle);
+	MSG msg;
+	while (GetMessage(&msg, NULL, 0, 0))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
 }
