@@ -9,9 +9,20 @@
 #include <Windows.h>
 #include "main.h"
 
+/**@brief ¿í×Ö·û´®
+*/
 #define WString LPCWSTR
+
+/**@brief ¿í×Ö·û
+*/
 #define WChar wchar_t
+
+/**@brief Õ­×Ö·û´®
+*/
 #define AString char*
+
+/**@brief Õ­×Ö·û
+*/
 #define AChar char
 
 /**	@brief ZString Àà¶¨Òå

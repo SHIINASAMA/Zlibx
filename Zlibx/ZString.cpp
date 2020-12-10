@@ -8,7 +8,6 @@
 
 ZString::ZString()
 {
-	//DO NOTHING
 }
 
 ZString::ZString(WString objStr)

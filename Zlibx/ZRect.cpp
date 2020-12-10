@@ -8,7 +8,6 @@
 
 ZRect::ZRect()
 {
-	//DO NOTHING
 }
 
 ZRect::ZRect(RECT Rect)

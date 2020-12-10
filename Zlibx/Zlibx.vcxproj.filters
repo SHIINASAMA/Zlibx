@@ -30,6 +30,9 @@
     <ClCompile Include="ZThread.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="ZFile.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -60,6 +63,9 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="ZThread.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ZFile.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

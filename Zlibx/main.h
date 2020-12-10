@@ -6,6 +6,12 @@
 
 #pragma once
 
-/**	@brief DLL导出API
+#define DLL
+
+/**@brief 导出API开关
 */
+#ifdef DLL
 #define DLLAPI __declspec(dllexport)
+#else
+#define DLLAPI __declspec(dllimport)
+#endif

@@ -150,6 +150,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZDebug.h" />
+    <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZDebug.cpp" />
+    <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />
