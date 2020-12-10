@@ -4,6 +4,9 @@
     <Filter Include="base">
       <UniqueIdentifier>{077bf437-95b5-4986-bf0b-6135f17fb8d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="control">
+      <UniqueIdentifier>{53c44cbb-0f78-44c0-97c9-1c54b5316837}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -33,6 +36,7 @@
     <ClCompile Include="ZFile.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="ZControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -68,5 +72,6 @@
     <ClInclude Include="ZFile.h">
       <Filter>base</Filter>
     </ClInclude>
+    <ClInclude Include="ZControl.h" />
   </ItemGroup>
 </Project>
