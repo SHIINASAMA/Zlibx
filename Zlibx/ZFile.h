@@ -7,13 +7,14 @@
 #pragma once
 
 #include "ZString.h"
+#include "main.h"
 #include <iostream>
 #include <fstream>
 #include <istream>
 
-/**@brief ZFile 类
+/**@brief ZFile 类定义
 */
-class ZFile
+class DLLAPI ZFile
 {
 public:
 	/**@brief		向特定文件写入一行
