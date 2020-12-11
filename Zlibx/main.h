@@ -14,12 +14,11 @@
 #define DLLAPI __declspec(dllexport)
 #else
 #define DLLAPI __declspec(dllimport)
-#endif
-
 /**
  * 隐藏控制台
  * 当将Zlibx作为DLL使用时，请勿打开此开关
  */
 #ifdef HIDE_CONSOLE
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+#endif
 #endif
