@@ -1,26 +1,31 @@
-/*********************************************************************
- * \file   ZWindow.cpp
- * \brief  窗体类实现
+/**
+ * @file   ZWindow.cpp
+ * @brief  窗体类实现
  *
- * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
- * \date   2020-12-11
- *********************************************************************/
+ * @author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * @date   2020-12-11
+ */
 
 #include "ZWindow.h"
 
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	//TODO:实现ID映射
+	switch (uMsg)
+	{
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		break;
+	}
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
-ZWindow::ZWindow(ZString text)
+ZWindow::ZWindow(ZString text, WindowType type)
 {
 	this->text = text;
-}
-
-ZWindow::ZWindow(ZString text, int x, int y, int w, int h)
-{
-	this->rect = ZRect(x, y, x + w, y + h);
+	SetWindowType(type);
 }
 
 ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowType type)
@@ -60,8 +65,17 @@ void ZWindow::SetWindowType(WindowType type)
 	}
 }
 
-void ZWindow::Init(HANDLE handle)
+HANDLE ZWindow::Init(HANDLE handle)
 {
+	return NULL;
+}
+
+ZWindow::~ZWindow()
+{
+	if (this->handle != NULL && ::IsWindow((HWND)handle))
+	{
+		::DestroyWindow((HWND)handle);
+	}
 }
 
 void ZWindow::Create()
@@ -106,4 +120,15 @@ void ZWindow::Run()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
+}
+
+//TODO:测试添加控件函数
+void ZWindow::AddControl(ZControl* con)
+{
+	HANDLE h = con->Init(handle);
+}
+
+//TODO:实现移除控件函数
+void ZWindow::RemoveControl(DWORDLONG id)
+{
 }

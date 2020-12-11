@@ -344,3 +344,4 @@ out/
 
 #vs config file
 .vs
+*.tasks

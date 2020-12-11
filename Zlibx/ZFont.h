@@ -11,7 +11,7 @@
 
 /** @brief ZFont 类定义
 */
-class ZFont
+class DLLAPI ZFont
 {
 protected:
 	/** @brief 字体句柄

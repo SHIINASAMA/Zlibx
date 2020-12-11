@@ -42,6 +42,9 @@
     <ClCompile Include="ZWindow.cpp">
       <Filter>control</Filter>
     </ClCompile>
+    <ClCompile Include="ZControl.cpp">
+      <Filter>control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -84,6 +87,9 @@
       <Filter>control</Filter>
     </ClInclude>
     <ClInclude Include="ZWindow.h">
+      <Filter>control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZPanel.h">
       <Filter>control</Filter>
     </ClInclude>
   </ItemGroup>

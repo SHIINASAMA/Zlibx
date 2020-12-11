@@ -1,25 +1,13 @@
 #include <stdio.h>
-#include "../Zlibx/ZString.h"
-#include "../Zlibx/ZThread.h"
+#include "../Zlibx/ZWindow.h"
 
-DWORD WINAPI Print(LPVOID)
-{
-	for (int i = 0; i < 100; i++)
-	{
-		printf("[Client Thread] %3d\n", i);
-	}
-	return 0;
-}
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
 int main()
 {
-	ZThread* t = new ZThread(Print, MAKEPARAM(0));
-	t->Run();
-
-	for (int i = 0; i < 100; i++)
-	{
-		printf("[Main\tThread] %3d\n", i);
-	}
-	getchar();
+	ZWindow* win = new ZWindow(L"Hello");
+	win->Create();
+	win->SetSize(ZSize(400, 300));
+	win->Run();
 	return 0;
 }

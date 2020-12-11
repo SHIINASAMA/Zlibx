@@ -157,6 +157,7 @@
     <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZFont.h" />
+    <ClInclude Include="ZPanel.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
@@ -168,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZColor.cpp" />
+    <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZFont.cpp" />
