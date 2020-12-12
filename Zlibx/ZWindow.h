@@ -20,7 +20,7 @@ enum DLLAPI WindowType {
 	Fixed3D,
 	/**@brief 固定的对话框样式的粗边框*/
 	FixedDialog,
-	/**@brief 可调整大小的边*/
+	/**@brief 可调整大小的边框*/
 	Sizable,
 	/**@brief 不可调整大小的工具窗口边框*/
 	FixedToolWindow,
@@ -62,7 +62,7 @@ public:
 	ZWindow(ZString text, int x, int y, int w, int h, WindowType type = Sizable);
 
 	/**	@brief 设置窗体风格
-	*	\deprecated
+	*	\deprecated 该函数最好是让框架自己调用，用户也可以自己在Create函数运行前调用该函数
 	*/
 	void SetWindowType(WindowType type);
 
