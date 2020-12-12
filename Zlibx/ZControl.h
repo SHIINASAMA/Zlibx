@@ -12,6 +12,14 @@
 #include "ZRect.h"
 #include "ZFont.h"
 
+/**
+ * 回调函数定义
+ *
+ * \param wParam 参数1
+ * \param lParam 参数2
+ */
+typedef void(*CALLBACKFUNC)(WPARAM wParam, LPARAM lParam);
+
 /**	@brief ZControl 类定义
 */
 class DLLAPI ZControl
@@ -45,6 +53,10 @@ protected:
 	*/
 	ZFont font;
 
+	/** @brief 控件消息循环
+	*/
+	CALLBACKFUNC func;
+
 public:
 	/**
 	 * 供父控件调用
@@ -52,7 +64,7 @@ public:
 	 * \param handle 父控件句柄
 	 * \return		 子控件句柄
 	 */
-	virtual HANDLE Init(HANDLE handle) = 0;
+	virtual void Init(HANDLE handle) = 0;
 
 	/**
 	 * 获取控件文本
@@ -117,4 +129,11 @@ public:
 	 * \param point 目标位置
 	 */
 	void SetPoint(ZPoint point);
+
+	/**
+	 * 获取控件的响应函数
+	 *
+	 * \return 响应函数
+	 */
+	CALLBACKFUNC GetFunc();
 };

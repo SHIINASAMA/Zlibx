@@ -35,7 +35,7 @@ class DLLAPI ZWindow : public ZControl, public ZPanel
 private:
 	/** @brief 不要调用该函数
 	*/
-	HANDLE Init(HANDLE handle);
+	void Init(HANDLE handle);
 
 	/**
 	 * 释放资源

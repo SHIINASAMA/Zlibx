@@ -48,6 +48,9 @@
     <ClCompile Include="ZLabel.cpp">
       <Filter>control</Filter>
     </ClCompile>
+    <ClCompile Include="ZButton.cpp">
+      <Filter>control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
@@ -96,6 +99,9 @@
       <Filter>control</Filter>
     </ClInclude>
     <ClInclude Include="ZLabel.h">
+      <Filter>control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZButton.h">
       <Filter>control</Filter>
     </ClInclude>
   </ItemGroup>

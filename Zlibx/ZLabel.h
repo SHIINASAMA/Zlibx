@@ -40,5 +40,5 @@ public:
 	 * \param handle ¸¸¿Ø¼þ¾ä±ú
 	 * \return		 ×Ó¿Ø¼þ¾ä±ú
 	 */
-	HANDLE Init(HANDLE handle);
+	void Init(HANDLE handle);
 };

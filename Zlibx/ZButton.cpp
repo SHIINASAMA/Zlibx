@@ -1,27 +1,29 @@
 /**
- * \file   ZLabel.cpp
- * \brief  静态文本控件类实现
+ * \file   ZButton.cpp
+ * \brief  按钮控件类实现
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-12
  */
 
-#include "ZLabel.h"
+#include "ZButton.h"
 
-ZLabel::ZLabel(ZString text)
+ZButton::ZButton(ZString text, CALLBACKFUNC func)
 {
-	type = L"static";
+	this->type = L"button";
 	this->text = text;
+	this->func = func;
 }
 
-ZLabel::ZLabel(ZString text, int x, int y, int w, int h)
+ZButton::ZButton(ZString text, int x, int y, int w, int h, CALLBACKFUNC func)
 {
-	type = L"static";
+	this->type = L"button";
 	this->text = text;
 	this->rect = RECT{ x,y,x + w,y + h };
+	this->func = func;
 }
 
-void ZLabel::Init(HANDLE handle)
+void ZButton::Init(HANDLE handle)
 {
 	this->handle = CreateWindow(
 		type,

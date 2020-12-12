@@ -13,6 +13,10 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	//TODO:实现ID映射
 	switch (uMsg)
 	{
+	case WM_COMMAND:
+	{
+		break;
+	}
 	case WM_CTLCOLORSTATIC:
 	{
 		HDC dc = (HDC)wParam;
@@ -72,9 +76,8 @@ void ZWindow::SetWindowType(WindowType type)
 	}
 }
 
-HANDLE ZWindow::Init(HANDLE handle)
+void ZWindow::Init(HANDLE handle)
 {
-	return NULL;
 }
 
 ZWindow::~ZWindow()
@@ -132,7 +135,7 @@ void ZWindow::Run()
 //TODO:测试添加控件函数
 void ZWindow::AddControl(ZControl* con)
 {
-	HANDLE h = con->Init(handle);
+	con->Init(handle);
 }
 
 //TODO:实现移除控件函数
