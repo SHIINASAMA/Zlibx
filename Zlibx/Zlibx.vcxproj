@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+    <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZFont.h" />
+    <ClInclude Include="ZLabel.h" />
     <ClInclude Include="ZPanel.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
@@ -168,11 +170,13 @@
     <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZFont.cpp" />
+    <ClCompile Include="ZLabel.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />

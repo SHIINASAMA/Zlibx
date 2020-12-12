@@ -8,19 +8,7 @@
 
 #include "ZWindow.h"
 
-static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	//TODO:实现ID映射
-	switch (uMsg)
-	{
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		break;
-	default:
-		break;
-	}
-	return DefWindowProc(hWnd, uMsg, wParam, lParam);
-}
+using namespace std;
 
 ZWindow::ZWindow(ZString text, WindowType type)
 {
@@ -65,9 +53,8 @@ void ZWindow::SetWindowType(WindowType type)
 	}
 }
 
-HANDLE ZWindow::Init(HANDLE handle)
+void ZWindow::Init(HANDLE handle)
 {
-	return NULL;
 }
 
 ZWindow::~ZWindow()
@@ -122,13 +109,52 @@ void ZWindow::Run()
 	}
 }
 
-//TODO:测试添加控件函数
 void ZWindow::AddControl(ZControl* con)
 {
-	HANDLE h = con->Init(handle);
+	con->id = static_cast<DWORDLONG>(++count) + WM_USER;
+	IDMAP.insert(std::pair<UINT, CALLBACKFUNC>(con->id, con->func));
+	con->Init(handle);
+	/*con->id = ++count;
+	IDMAP.insert(std::pair<UINT, CALLBACKFUNC>(con->id, con->func));*/
 }
 
-//TODO:实现移除控件函数
-void ZWindow::RemoveControl(DWORDLONG id)
+/**
+ * \todo:解决可能的内存隐患
+ */
+void ZWindow::RemoveControl(HANDLE handle)
 {
+	DestroyWindow((HWND)handle);
+}
+
+LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch (uMsg)
+	{
+	case WM_COMMAND:
+	{
+		auto itor = IDMAP.find(wParam);
+		if (itor != IDMAP.end())
+		{
+			auto func = itor->second;
+			if (func)
+			{
+				func(wParam, lParam);
+			}
+		}
+		break;
+	}
+	case WM_CTLCOLORSTATIC:
+	{
+		HDC dc = (HDC)wParam;
+		SetBkMode(dc, TRANSPARENT);
+		return (LRESULT)GetStockObject(NULL_BRUSH);
+		break;
+	}
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		break;
+	}
+	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }

@@ -100,3 +100,8 @@ void ZControl::SetPoint(ZPoint point)
 	this->rect.A = point;
 	this->SetSize(ZSize(w, h));
 }
+
+HANDLE ZControl::GetHandle()
+{
+	return this->handle;
+}
