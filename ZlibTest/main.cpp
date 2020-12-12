@@ -21,7 +21,7 @@ int main()
 
 	ZButton* b1 = new ZButton(L"Hello", 5, 5, 60, 25, ClickerBtn1);
 	win->AddControl(b1);
-	win->RemoveControl(b1->GetHandle());
+	win->RemoveControl(b1);
 
 	win->Run();
 	return 0;

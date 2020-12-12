@@ -114,16 +114,12 @@ void ZWindow::AddControl(ZControl* con)
 	con->id = static_cast<DWORDLONG>(++count) + WM_USER;
 	IDMAP.insert(std::pair<UINT, CALLBACKFUNC>(con->id, con->func));
 	con->Init(handle);
-	/*con->id = ++count;
-	IDMAP.insert(std::pair<UINT, CALLBACKFUNC>(con->id, con->func));*/
 }
 
-/**
- * \todo:解决可能的内存隐患
- */
-void ZWindow::RemoveControl(HANDLE handle)
+void ZWindow::RemoveControl(ZControl* con)
 {
-	DestroyWindow((HWND)handle);
+	IDMAP.erase(con->id);
+	DestroyWindow((HWND)con->handle);
 }
 
 LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)

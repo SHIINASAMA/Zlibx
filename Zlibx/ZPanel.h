@@ -21,17 +21,17 @@
 #define IDMAPITEM(x, y) std::pair<UINT,CALLBACKFUNC>(x, y)
 
   /**
-  * @brief ID与句柄的映射集合
-  */
-std::map<UINT, CALLBACKFUNC> IDMAP;
-
-/**
- * @brief ZPanel 类定义
- */
+   * @brief ZPanel 类定义
+   */
 class DLLAPI ZPanel
 {
 	friend class ZWindow;
 protected:
+	/**
+	 * @brief ID与句柄的映射集合
+	 */
+	static std::map<UINT, CALLBACKFUNC> IDMAP;
+
 	/**
 	 * ID计数器
 	 */
@@ -51,5 +51,7 @@ public:
 	 *
 	 * @param id 目标id
 	 */
-	virtual void RemoveControl(HANDLE handle) = 0;
+	virtual void RemoveControl(ZControl* con) = 0;
 };
+
+std::map<UINT, CALLBACKFUNC> ZPanel::IDMAP;

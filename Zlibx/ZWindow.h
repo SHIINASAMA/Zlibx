@@ -80,16 +80,14 @@ public:
 	/**
 	 * 向窗体添加控件
 	 *
-	 * \param con
+	 * \param con 目标控件
 	 */
 	void AddControl(ZControl* con);
 
 	/**
 	 * 从窗体移除控件
 	 *
-	 * \param handle 目标控件句柄
-	 *
-	 * \bug 使用此函数可能会造成内存无法回收
+	 * \param con 目标控件
 	 */
-	void RemoveControl(HANDLE handle);
+	void RemoveControl(ZControl* con);
 };
