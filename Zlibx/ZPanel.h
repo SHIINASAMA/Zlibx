@@ -18,11 +18,10 @@
 class DLLAPI ZPanel
 {
 protected:
-	//TODO:映射关系有误
 	/**
 	 * @brief ID与句柄的映射集合
 	 */
-	std::map<DWORDLONG, HANDLE> IDMAP;
+	std::map<DWORDLONG, CALLBACKFUNC> IDMAP;
 
 public:
 	/**

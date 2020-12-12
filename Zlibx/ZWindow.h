@@ -85,7 +85,7 @@ public:
 	/**
 	 * 从窗体移除控件
 	 *
-	 * \param id
+	 * \param handle 目标控件句柄
 	 */
-	void RemoveControl(DWORDLONG id);
+	void RemoveControl(HANDLE handle);
 };

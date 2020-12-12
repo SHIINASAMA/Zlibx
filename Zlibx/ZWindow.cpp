@@ -139,6 +139,6 @@ void ZWindow::AddControl(ZControl* con)
 }
 
 //TODO:实现移除控件函数
-void ZWindow::RemoveControl(DWORDLONG id)
+void ZWindow::RemoveControl(HANDLE handle)
 {
 }
