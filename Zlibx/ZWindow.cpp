@@ -13,6 +13,13 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	//TODO: µœ÷ID”≥…‰
 	switch (uMsg)
 	{
+	case WM_CTLCOLORSTATIC:
+	{
+		HDC dc = (HDC)wParam;
+		SetBkMode(dc, TRANSPARENT);
+		return (LRESULT)GetStockObject(NULL_BRUSH);
+		break;
+	}
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
