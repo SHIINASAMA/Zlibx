@@ -24,6 +24,7 @@ typedef void(*CALLBACKFUNC)(WPARAM wParam, LPARAM lParam);
 */
 class DLLAPI ZControl
 {
+	friend class ZWindow;
 protected:
 	/**	@brief 控件类型
 	*/
@@ -131,9 +132,9 @@ public:
 	void SetPoint(ZPoint point);
 
 	/**
-	 * 获取控件的响应函数
+	 * 获取控件句柄
 	 *
-	 * \return 响应函数
+	 * \return 控件句柄
 	 */
-	CALLBACKFUNC GetFunc();
+	HANDLE GetHandle();
 };

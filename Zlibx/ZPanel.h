@@ -13,17 +13,32 @@
 #include "main.h"
 
  /**
-  * @brief ZPanel 类定义
+  * 将ID和响应函数转换成IDMAP对应格式
+  *
+  * \param x ID
+  * \param y CALLBACKFUN
   */
+#define IDMAPITEM(x, y) std::pair<UINT,CALLBACKFUNC>(x, y)
+
+  /**
+  * @brief ID与句柄的映射集合
+  */
+std::map<UINT, CALLBACKFUNC> IDMAP;
+
+/**
+ * @brief ZPanel 类定义
+ */
 class DLLAPI ZPanel
 {
+	friend class ZWindow;
 protected:
 	/**
-	 * @brief ID与句柄的映射集合
+	 * ID计数器
 	 */
-	std::map<DWORDLONG, CALLBACKFUNC> IDMAP;
+	UINT count = 0;
 
 public:
+
 	/**
 	 * @brief 向面板添加控件
 	 *
@@ -36,5 +51,5 @@ public:
 	 *
 	 * @param id 目标id
 	 */
-	virtual void RemoveControl(DWORDLONG id) = 0;
+	virtual void RemoveControl(HANDLE handle) = 0;
 };

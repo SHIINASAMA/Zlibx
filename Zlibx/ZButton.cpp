@@ -34,8 +34,13 @@ void ZButton::Init(HANDLE handle)
 		rect.GetSize().w,
 		rect.GetSize().h,
 		(HWND)handle,
-		NULL,
+		(HMENU)this->id,
 		(HINSTANCE)GetWindowLong((HWND)handle, -6),
 		NULL
 	);
+}
+
+void ZButton::SetEnable(BOOL enable)
+{
+	EnableWindow((HWND)this->handle, enable);
 }

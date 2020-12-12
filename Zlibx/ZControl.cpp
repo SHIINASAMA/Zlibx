@@ -101,7 +101,7 @@ void ZControl::SetPoint(ZPoint point)
 	this->SetSize(ZSize(w, h));
 }
 
-CALLBACKFUNC ZControl::GetFunc()
+HANDLE ZControl::GetHandle()
 {
-	return this->func;
+	return this->handle;
 }

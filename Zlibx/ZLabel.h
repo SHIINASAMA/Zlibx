@@ -10,7 +10,7 @@
 #include "ZControl.h"
 
  /**
-  * ZLabel 类定义
+  * @brief ZLabel 类定义
   */
 class DLLAPI ZLabel :
 	public ZControl
@@ -38,7 +38,6 @@ public:
 	 * 重载父控件加载函数
 	 *
 	 * \param handle 父控件句柄
-	 * \return		 子控件句柄
 	 */
 	void Init(HANDLE handle);
 };

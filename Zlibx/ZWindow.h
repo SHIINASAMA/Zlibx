@@ -33,6 +33,8 @@ enum DLLAPI WindowType {
 class DLLAPI ZWindow : public ZControl, public ZPanel
 {
 private:
+	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
 	/** @brief 不要调用该函数
 	*/
 	void Init(HANDLE handle);
@@ -86,6 +88,8 @@ public:
 	 * 从窗体移除控件
 	 *
 	 * \param handle 目标控件句柄
+	 *
+	 * \bug 使用此函数可能会造成内存无法回收
 	 */
 	void RemoveControl(HANDLE handle);
 };
