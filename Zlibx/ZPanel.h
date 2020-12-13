@@ -48,7 +48,7 @@ public:
 	/**
 	 * 从面板移除控件
 	 *
-	 * @param handle 目标句柄
+	 * @param con 目标控件
 	 */
 	virtual void RemoveControl(ZControl* con) = 0;
 };

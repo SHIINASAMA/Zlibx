@@ -15,7 +15,6 @@ int main()
 {
 	ZWindow* win = new ZWindow(L"Hello", 300, 300, 600, 400);
 	win->Create();
-	win->SetSize(400, 300);
 
 	ZButton* b1 = new ZButton(L"Hello", 5, 5, 60, 25, ClickerBtn1);
 	win->AddControl(b1);
