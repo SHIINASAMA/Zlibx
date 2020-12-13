@@ -58,6 +58,12 @@ protected:
 	*/
 	CALLBACKFUNC func;
 
+	/**
+	 * @brief 设置控件默认字体
+	 *
+	 */
+	void SetDefaultFont();
+
 public:
 	/**
 	 * 供父控件调用
@@ -130,11 +136,4 @@ public:
 	 * \param point 目标位置
 	 */
 	void SetPoint(ZPoint point);
-
-	/**
-	 * 获取控件句柄
-	 *
-	 * \return 控件句柄
-	 */
-	HANDLE GetHandle();
 };

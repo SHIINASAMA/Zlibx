@@ -8,6 +8,13 @@
 
 #include "ZControl.h"
 
+void ZControl::SetDefaultFont()
+{
+	ZFont font;
+	font.Create(L"ĞÂËÎÌå");
+	SetFont(font);
+}
+
 ZString ZControl::GetText()
 {
 	UINT len = GetWindowTextLengthW((HWND)handle);
@@ -99,9 +106,4 @@ void ZControl::SetPoint(ZPoint point)
 	);
 	this->rect.A = point;
 	this->SetSize(ZSize(w, h));
-}
-
-HANDLE ZControl::GetHandle()
-{
-	return this->handle;
 }

@@ -28,7 +28,7 @@ void ZButton::Init(HANDLE handle)
 	this->handle = CreateWindow(
 		type,
 		text,
-		WS_CHILD | WS_VISIBLE,
+		WS_CHILD | WS_VISIBLE | BS_FLAT,
 		rect.A.x,
 		rect.A.y,
 		rect.GetSize().w,
@@ -38,6 +38,7 @@ void ZButton::Init(HANDLE handle)
 		(HINSTANCE)GetWindowLong((HWND)handle, -6),
 		NULL
 	);
+	SetDefaultFont();
 }
 
 void ZButton::SetEnable(BOOL enable)

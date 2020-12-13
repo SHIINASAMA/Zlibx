@@ -13,7 +13,6 @@
   * @brief ZButton ¿‡∂®“Â
   */
 class DLLAPI ZButton :
-
 	public ZControl
 {
 public:

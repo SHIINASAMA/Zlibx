@@ -25,7 +25,6 @@
    */
 class DLLAPI ZPanel
 {
-	friend class ZWindow;
 protected:
 	/**
 	 * @brief ID与句柄的映射集合
@@ -49,7 +48,7 @@ public:
 	/**
 	 * 从面板移除控件
 	 *
-	 * @param id 目标id
+	 * @param handle 目标句柄
 	 */
 	virtual void RemoveControl(ZControl* con) = 0;
 };
