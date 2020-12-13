@@ -8,7 +8,7 @@
 int main()
 {
     ZWindow* win = new ZWindow(L"Hello", 300, 300, 600, 400);
-	win->Create();
+    win->Create();
     win->Run();
     return 0;
 }
