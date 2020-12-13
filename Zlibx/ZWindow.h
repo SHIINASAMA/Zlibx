@@ -48,6 +48,7 @@ private:
 public:
 	/** @brief		实例化 ZWindow 对象
 	*	@param text 窗体标题
+	*	@param type 窗体风格
 	*/
 	ZWindow(ZString text, WindowType type = Sizable);
 

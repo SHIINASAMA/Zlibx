@@ -30,7 +30,6 @@ std::map<UINT, CALLBACKFUNC> IDMAP;
  */
 class DLLAPI ZPanel
 {
-	friend class ZWindow;
 protected:
 	/**
 	 * ID计数器
@@ -49,7 +48,7 @@ public:
 	/**
 	 * 从面板移除控件
 	 *
-	 * @param id 目标id
+	 * @param handle 目标句柄
 	 */
 	virtual void RemoveControl(HANDLE handle) = 0;
 };

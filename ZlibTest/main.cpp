@@ -2,6 +2,7 @@
 #include "../Zlibx/ZWindow.h"
 #include "../Zlibx/ZLabel.h"
 #include "../Zlibx/ZButton.h"
+#include "../Zlibx/ZTextBox.h"
 
 //#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
@@ -12,16 +13,15 @@ void ClickerBtn1(WPARAM p1, LPARAM p2)
 
 int main()
 {
-	ZWindow* win = new ZWindow(L"Hello");
+	ZWindow* win = new ZWindow(L"Hello", 300, 300, 600, 400);
 	win->Create();
-	win->SetSize(ZSize(400, 300));
-
-	/*ZLabel* l1 = new ZLabel(L"Hello", 5, 5, 60, 25);
-	win->AddControl(l1);*/
+	win->SetSize(400, 300);
 
 	ZButton* b1 = new ZButton(L"Hello", 5, 5, 60, 25, ClickerBtn1);
 	win->AddControl(b1);
-	win->RemoveControl(b1->GetHandle());
+
+	ZTextBox* t1 = new ZTextBox(5, 35, 600, 56);
+	win->AddControl(t1);
 
 	win->Run();
 	return 0;

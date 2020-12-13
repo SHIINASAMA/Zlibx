@@ -36,4 +36,5 @@ void ZLabel::Init(HANDLE handle)
 		(HINSTANCE)GetWindowLong((HWND)handle, -6),
 		NULL
 	);
+	SetDefaultFont();
 }
