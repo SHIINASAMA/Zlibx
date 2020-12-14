@@ -59,6 +59,8 @@ public:
 
 	/** @brief	ZString对象的字符串长度
 	*	@retval	字符串长度
+	*	\deprecated 存在内存风险，替代使用 ZString::Strlen
+	*	\lnk Strlen
 	*/
 	int Len();
 
@@ -71,6 +73,23 @@ public:
 	*	@param	srcStr	源字符串
 	*/
 	void Pause(AString srcStr);
+
+	/**
+	 * 比较字符串大小
+	 *
+	 * \param str1 字符串1
+	 * \param str2 字符串2
+	 * \return 与标准库返回值相同
+	 */
+	static int Strcmp(ZString str1, ZString str2);
+
+	/**
+	 * 获取字符串长度
+	 *
+	 * \param str 目标字符串
+	 * \return	  字符串长度
+	 */
+	static int Strlen(ZString str);
 
 	void operator=(WString str);
 	void operator=(WChar str[]);

@@ -66,6 +66,16 @@ void ZString::Pause(AString srcStr)
 	this->str = pResult;
 }
 
+int ZString::Strcmp(ZString str1, ZString str2)
+{
+	return lstrcmpiW(str1, str2);
+}
+
+int ZString::Strlen(ZString str)
+{
+	return lstrlen(str);
+}
+
 void ZString::operator=(WString str)
 {
 	this->str = str;
