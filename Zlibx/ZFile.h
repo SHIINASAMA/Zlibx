@@ -1,5 +1,5 @@
 /**@file	ZFile.h
-* @brief	ÎÄ¼şÀà¶¨Òå
+* @brief	æ–‡ä»¶ç±»å®šä¹‰
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-28
 */
@@ -12,40 +12,40 @@
 #include <fstream>
 #include <istream>
 
-/**@brief ZFile Àà¶¨Òå
+/**@brief ZFile ç±»å®šä¹‰
 */
 class DLLAPI ZFile
 {
 public:
-	/**@brief		ÏòÌØ¶¨ÎÄ¼şĞ´ÈëÒ»ĞĞ
-	* @param path	Íâ²¿×ÊÔ´Â·¾¶
-	* @param str	Ğ´ÈëµÄ×Ö·û´®
-	* @param append ÊÇ·ñÌí¼Óµ½Î²²¿
-	* @retval		Ğ´ÈëÊÇ·ñ³É¹¦
+	/**@brief		å‘ç‰¹å®šæ–‡ä»¶å†™å…¥ä¸€è¡Œ
+	* @param path	å¤–éƒ¨èµ„æºè·¯å¾„
+	* @param str	å†™å…¥çš„å­—ç¬¦ä¸²
+	* @param append æ˜¯å¦æ·»åŠ åˆ°å°¾éƒ¨
+	* @retval		å†™å…¥æ˜¯å¦æˆåŠŸ
 	*/
 	static BOOL WriteLine(ZString path, ZString str, BOOL append = TRUE);
 
-	/**@brief		ÏòÌØ¶¨ÎÄ¼şĞ´Èë×Ö·û
-	* @param path	Íâ²¿×ÊÔ´Â·¾¶
-	* @param ch		Ğ´ÈëµÄ×Ö·û
-	* @param append	Ğ´ÈëÊÇ·ñ³É¹¦
+	/**@brief		å‘ç‰¹å®šæ–‡ä»¶å†™å…¥å­—ç¬¦
+	* @param path	å¤–éƒ¨èµ„æºè·¯å¾„
+	* @param ch		å†™å…¥çš„å­—ç¬¦
+	* @param append	å†™å…¥æ˜¯å¦æˆåŠŸ
 	*/
 	static BOOL Write(ZString path, WChar ch, BOOL append = TRUE);
 
-	/**@brief		´ÓÌØ¶¨ÎÄ¼ş¶ÁÈ¡Ò»ĞĞ
-	* @param path	Íâ²¿ÎÄ¼şÂ·¾¶
-	* @retval		¶ÁÈ¡µÄ×Ö·û´®
+	/**@brief		ä»ç‰¹å®šæ–‡ä»¶è¯»å–ä¸€è¡Œ
+	* @param path	å¤–éƒ¨æ–‡ä»¶è·¯å¾„
+	* @retval		è¯»å–çš„å­—ç¬¦ä¸²
 	*/
 	static ZString ReadLine(ZString path);
 
-	/**@brief		´ÓÌØ¶¨ÎÄ¼ş¶ÁÈ¡×Ö·û
-	* @param path	Íâ²¿ÎÄ¼şÂ·¾¶
+	/**@brief		ä»ç‰¹å®šæ–‡ä»¶è¯»å–å­—ç¬¦
+	* @param path	å¤–éƒ¨æ–‡ä»¶è·¯å¾„
 	*/
 	static WChar Read(ZString path);
 
-	/**@brief		ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
-	* @param path	ÎÄ¼şÂ·¾¶
-	* @retval		½á¹û
+	/**@brief		åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
+	* @param path	æ–‡ä»¶è·¯å¾„
+	* @retval		ç»“æœ
 	*/
 	static BOOL Exists(ZString path);
 
@@ -53,38 +53,38 @@ private:
 	FILE* file;
 
 public:
-	/**@brief		ÒÔÎÄ¼şÂ·¾¶³õÊ¼»¯Ò»¸öZFile¶ÔÏó
+	/**@brief		ä»¥æ–‡ä»¶è·¯å¾„åˆå§‹åŒ–ä¸€ä¸ªZFileå¯¹è±¡
 	*/
 	ZFile(ZString path);
 
-	/**@brief		ÅĞ¶ÏÎÄ¼şÊÇ·ñ´ò¿ª³É¹¦£¬³õÊ¼»¯ºóÓ¦¸ÃÊÖ¶¯µ÷ÓÃ
-	* @retval		½á¹û
+	/**@brief		åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ‰“å¼€æˆåŠŸï¼Œåˆå§‹åŒ–ååº”è¯¥æ‰‹åŠ¨è°ƒç”¨
+	* @retval		ç»“æœ
 	*/
 	BOOL IsGood();
 
-	/**@brief		Ğ´ÈëÒ»¸ö×Ö·û
-	* @param ch		ÒªĞ´ÈëµÄ×Ö·û
-	* @retval		Ğ´ÈëÊÇ·ñ³É¹¦
+	/**@brief		å†™å…¥ä¸€ä¸ªå­—ç¬¦
+	* @param ch		è¦å†™å…¥çš„å­—ç¬¦
+	* @retval		å†™å…¥æ˜¯å¦æˆåŠŸ
 	*/
 	BOOL Write(WChar ch);
 
-	/**@brief		Ğ´Èë×Ö·û´®
-	* @param str	ÒªĞ´ÈëµÄ×Ö·û´®
-	* @retval		Ğ´ÈëÊÇ·ñ³É¹¦
+	/**@brief		å†™å…¥å­—ç¬¦ä¸²
+	* @param str	è¦å†™å…¥çš„å­—ç¬¦ä¸²
+	* @retval		å†™å…¥æ˜¯å¦æˆåŠŸ
 	*/
 	BOOL WriteLine(ZString str);
 
-	/**@brief		¶ÁÈ¡Ò»¸ö×Ö·û
-	* @retval		¶ÁÈ¡µ½µÄ×Ö·û£¬ĞèÒªÅĞ¶Ï·Ç¿Õ
+	/**@brief		è¯»å–ä¸€ä¸ªå­—ç¬¦
+	* @retval		è¯»å–åˆ°çš„å­—ç¬¦ï¼Œéœ€è¦åˆ¤æ–­éç©º
 	*/
 	WChar Read();
 
-	/**@brief		¶ÁÈ¡×Ö·û´®
-	* @retval		¶ÁÈ¡µ½µÄ×Ö·û´®£¬ĞèÒªÅĞ¶Ï·Ç¿Õ
+	/**@brief		è¯»å–å­—ç¬¦ä¸²
+	* @retval		è¯»å–åˆ°çš„å­—ç¬¦ä¸²ï¼Œéœ€è¦åˆ¤æ–­éç©º
 	*/
 	ZString ReadLine();
 
-	/**@brief		¹Ø±Õµ±Ç°ÎÄ¼ş
+	/**@brief		å…³é—­å½“å‰æ–‡ä»¶
 	*/
 	void Close();
 };

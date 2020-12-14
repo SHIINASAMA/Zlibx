@@ -1,5 +1,5 @@
 /**@file	ZDebug.cpp
-* @brief	µ÷ÊÔÀàÊµÏÖ
+* @brief	è°ƒè¯•ç±»å®ç°
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */
@@ -11,12 +11,12 @@ void ZDebug::ShowLastError(ZString nodeTag)
 	UINT result = GetLastError();
 	if (result == 0)
 	{
-		MessageBox(NULL, L"GetLastError()·µ»ØÖµÎª0", nodeTag, MB_OK | MB_ICONINFORMATION);
+		MessageBox(NULL, L"GetLastError()è¿”å›å€¼ä¸º0", nodeTag, MB_OK | MB_ICONINFORMATION);
 	}
 	else
 	{
 		LPWSTR str = new WCHAR[1024];
-		wsprintf(str, L"GetLastError·µ»ØÖµÎª%d£¬ÊÇ·ñÌø×ªÍøÒ³²é¿´ÏêÇé£¿", result, sizeof(str));
+		wsprintf(str, L"GetLastErrorè¿”å›å€¼ä¸º%dï¼Œæ˜¯å¦è·³è½¬ç½‘é¡µæŸ¥çœ‹è¯¦æƒ…ï¼Ÿ", result, sizeof(str));
 		LRESULT sel = MessageBox(NULL, str, nodeTag, MB_YESNO | MB_ICONWARNING);
 		if (sel == IDYES)
 		{
