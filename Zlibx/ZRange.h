@@ -1,5 +1,5 @@
 /**	@file	ZRange.h
-*	@brief	åŒºé—´ç±»å®šä¹‰
+*	@brief	Çø¼äÀà¶¨Òå
 *	@author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */
@@ -10,24 +10,24 @@
 #include <CommCtrl.h>
 #include "main.h"
 
-/**	@brief ZRange ç±»å®šä¹‰
+/**	@brief ZRange Àà¶¨Òå
 */
 class DLLAPI ZRange
 {
 public:
-	/** @brief å·¦ç«¯ç‚¹
+	/** @brief ×ó¶Ëµã
 	*/
 	int x1;
-	/** @brief å³ç«¯ç‚¹
+	/** @brief ÓÒ¶Ëµã
 	*/
 	int x2;
 
-	/**@brief	å®ä¾‹åŒ–ä¸€ä¸ªç©ºZRangeå¯¹è±¡
+	/**@brief	ÊµÀı»¯Ò»¸ö¿ÕZRange¶ÔÏó
 	*/
 	ZRange();
-	/**@brief	å®ä¾‹åŒ–ä¸€ä¸ªZRangeå¯¹è±¡
-	* @param x1 å·¦ç«¯ç‚¹
-	* @param x2 å³ç«¯ç‚¹
+	/**@brief	ÊµÀı»¯Ò»¸öZRange¶ÔÏó
+	* @param x1 ×ó¶Ëµã
+	* @param x2 ÓÒ¶Ëµã
 	*/
 	ZRange(int x1, int x2);
 

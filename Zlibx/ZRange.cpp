@@ -1,5 +1,5 @@
 /**	@file	ZRange.cpp
-*	@brief	åŒºé—´ç±»å®ç°
+*	@brief	Çø¼äÀàÊµÏÖ
 *	@author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */

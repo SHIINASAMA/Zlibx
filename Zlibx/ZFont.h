@@ -1,5 +1,5 @@
 /**@file	ZFont.h
-* @brief	å­—ä½“ç±»å®šä¹‰
+* @brief	×ÖÌåÀà¶¨Òå
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-10
 */
@@ -9,36 +9,36 @@
 #include <Windows.h>
 #include "ZString.h"
 
-/** @brief ZFont ç±»å®šä¹‰
+/** @brief ZFont Àà¶¨Òå
 */
 class DLLAPI ZFont
 {
 protected:
-	/** @brief å­—ä½“å¥æŸ„
+	/** @brief ×ÖÌå¾ä±ú
 	*/
 	HFONT font;
 
 public:
-	/**@brief			æ ¹æ®å­—ä½“åç§°åˆ›å»ºå­—ä½“
-	* @param FontName	å­—ä½“åç§°
+	/**@brief			¸ù¾İ×ÖÌåÃû³Æ´´½¨×ÖÌå
+	* @param FontName	×ÖÌåÃû³Æ
 	*/
 	void Create(ZString FontName);
 
-	/**@brief					æ ¹æ®å®Œæ•´çš„Windows APIåˆ›å»ºZFontå­—ä½“
-	* @param cHeight			å­—ä½“é€»è¾‘é«˜åº¦
-	* @param cWidth				å­—ä½“é€»è¾‘å®½åº¦
-	* @param cEscapement		ç§»ä½å‘é‡å’Œè®¾å¤‡Xè½´ä¹‹é—´çš„ä¸€ä¸ªè§’åº¦
-	* @param cOrientation		æ¯ä¸ªå­—ç¬¦çš„åŸºçº¿å’Œè®¾å¤‡Xè½´ä¹‹é—´çš„è§’åº¦
-	* @param cWeight			å­—ä½“èŒƒå›´æƒé‡ï¼ˆ0~1000ï¼‰
-	* @param bItalic			æŒ‡å®šå­—ä½“æ–œä½“
-	* @param bUnderline			æŒ‡å®šå­—ä½“ä¸‹åˆ’çº¿
-	* @param bStrikeOut			æŒ‡å®šå­—ä½“åˆ é™¤çº¿
-	* @param iCharSet			æŒ‡å®šå­—ä½“å­—ç¬¦é›†
-	* @param iOutPrecision		å­—ä½“è¾“å‡ºç²¾åº¦
-	* @param iClipPrecision		å‡ºç•Œå‰ªåˆ‡ç²¾åº¦
-	* @param iQuality			è¾“å‡ºè´¨é‡
-	* @param iPitchAndFamily	å­—ä½“ç­‰å®½å’Œå®¶æ—
-	* @param pszFaceName		å­—ä½“çš„åç§°
+	/**@brief					¸ù¾İÍêÕûµÄWindows API´´½¨ZFont×ÖÌå
+	* @param cHeight			×ÖÌåÂß¼­¸ß¶È
+	* @param cWidth				×ÖÌåÂß¼­¿í¶È
+	* @param cEscapement		ÒÆÎ»ÏòÁ¿ºÍÉè±¸XÖáÖ®¼äµÄÒ»¸ö½Ç¶È
+	* @param cOrientation		Ã¿¸ö×Ö·ûµÄ»ùÏßºÍÉè±¸XÖáÖ®¼äµÄ½Ç¶È
+	* @param cWeight			×ÖÌå·¶Î§È¨ÖØ£¨0~1000£©
+	* @param bItalic			Ö¸¶¨×ÖÌåĞ±Ìå
+	* @param bUnderline			Ö¸¶¨×ÖÌåÏÂ»®Ïß
+	* @param bStrikeOut			Ö¸¶¨×ÖÌåÉ¾³ıÏß
+	* @param iCharSet			Ö¸¶¨×ÖÌå×Ö·û¼¯
+	* @param iOutPrecision		×ÖÌåÊä³ö¾«¶È
+	* @param iClipPrecision		³ö½ç¼ôÇĞ¾«¶È
+	* @param iQuality			Êä³öÖÊÁ¿
+	* @param iPitchAndFamily	×ÖÌåµÈ¿íºÍ¼Ò×å
+	* @param pszFaceName		×ÖÌåµÄÃû³Æ
 	*/
 	void CreateEx(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic,
 		DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision,

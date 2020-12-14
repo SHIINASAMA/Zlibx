@@ -1,5 +1,5 @@
 /**	@file	ZThread.h
-*	@brief	çº¿ç¨‹ç±»å®šä¹‰
+*	@brief	Ïß³ÌÀà¶¨Òå
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */
@@ -9,20 +9,20 @@
 #include <Windows.h>
 #include "main.h"
 
-/**@brief å‡½æ•°åœ°å€
+/**@brief º¯ÊıµØÖ·
 */
 #define FUNC LPTHREAD_START_ROUTINE
 
-/**@brief å‚æ•°
+/**@brief ²ÎÊı
 */
 #define PARAM LPVOID
 
-/**@brief	å‚æ•°è½¬æ¢å®
-* @param X	åŸå‚æ•°
+/**@brief	²ÎÊı×ª»»ºê
+* @param X	Ô­²ÎÊı
 */
 #define MAKEPARAM(X) ((LPVOID)X)
 
-/**@brief ZThread ç±»å®šä¹‰
+/**@brief ZThread Àà¶¨Òå
 */
 class DLLAPI ZThread
 {
@@ -33,17 +33,17 @@ private:
 	PARAM param;
 
 public:
-	/**@brief		åˆå§‹åŒ–ä¸€ä¸ªZThreadå¯¹è±¡
-	* @param func	å‡½æ•°åœ°å€
-	* @param param	å‡½æ•°å‚æ•°
+	/**@brief		³õÊ¼»¯Ò»¸öZThread¶ÔÏó
+	* @param func	º¯ÊıµØÖ·
+	* @param param	º¯Êı²ÎÊı
 	*/
 	ZThread(FUNC func, PARAM param);
 
-	/**@brief å¯åŠ¨çº¿ç¨‹
+	/**@brief Æô¶¯Ïß³Ì
 	*/
 	void Run();
 
-	/**@brief ç»“æŸçº¿ç¨‹ \n æ³¨æ„ï¼š\nçº¿ç¨‹çš„ç»“æŸåº”è¯¥åœ¨æ‰§è¡Œå‡½æ•°å†…éƒ¨å…ˆé€€å‡ºï¼Œè€Œä¸æ˜¯é ä½¿ç”¨è¯¥å‡½æ•°å¼ºåˆ¶é€€å‡º
+	/**@brief ½áÊøÏß³Ì \n ×¢Òâ£º\nÏß³ÌµÄ½áÊøÓ¦¸ÃÔÚÖ´ĞĞº¯ÊıÄÚ²¿ÏÈÍË³ö£¬¶ø²»ÊÇ¿¿Ê¹ÓÃ¸Ãº¯ÊıÇ¿ÖÆÍË³ö
 	*/
 	void Stop();
 };

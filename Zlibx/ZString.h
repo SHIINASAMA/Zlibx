@@ -1,5 +1,5 @@
 /**	@file	ZString.h
-*	@brief	å­—ç¬¦ä¸²ç±»å®šä¹‰
+*	@brief	×Ö·û´®Àà¶¨Òå
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -9,23 +9,23 @@
 #include <Windows.h>
 #include "main.h"
 
-/**@brief å®½å­—ç¬¦ä¸²
+/**@brief ¿í×Ö·û´®
 */
 #define WString LPCWSTR
 
-/**@brief å®½å­—ç¬¦
+/**@brief ¿í×Ö·û
 */
 #define WChar wchar_t
 
-/**@brief çª„å­—ç¬¦ä¸²
+/**@brief Õ­×Ö·û´®
 */
 #define AString char*
 
-/**@brief çª„å­—ç¬¦
+/**@brief Õ­×Ö·û
 */
 #define AChar char
 
-/**	@brief ZString ç±»å®šä¹‰
+/**	@brief ZString Àà¶¨Òå
 */
 class DLLAPI ZString
 {
@@ -33,61 +33,61 @@ private:
 	WString str;
 
 public:
-	/** @brief æ³¨æ„ï¼Œè¿™ä¼šåˆ›å»ºä¸€ä¸ªç©ºçš„ZStringå¯¹è±¡
+	/** @brief ×¢Òâ£¬Õâ»á´´½¨Ò»¸ö¿ÕµÄZString¶ÔÏó
 	*/
 	ZString();
 
-	/** @brief			åˆ©ç”¨WStringåˆå§‹åŒ–ä¸€ä¸ªZStringå¯¹è±¡
-	*	@param	objStr	ç›®æ ‡WStringå¯¹è±¡
+	/** @brief			ÀûÓÃWString³õÊ¼»¯Ò»¸öZString¶ÔÏó
+	*	@param	objStr	Ä¿±êWString¶ÔÏó
 	*/
 	ZString(WString objStr);
 
-	/** @brief			åˆ©ç”¨AStringåˆå§‹åŒ–ä¸€ä¸ªZStringå¯¹è±¡
-	*	@param	objStr	ç›®æ ‡AStringå¯¹è±¡
+	/** @brief			ÀûÓÃAString³õÊ¼»¯Ò»¸öZString¶ÔÏó
+	*	@param	objStr	Ä¿±êAString¶ÔÏó
 	*/
 	ZString(AString objStr);
 
-	/** @brief	å¾—åˆ°ZStringçš„WStringå¯¹è±¡
-	*	@retval ç›®æ ‡å¯¹è±¡
+	/** @brief	µÃµ½ZStringµÄWString¶ÔÏó
+	*	@retval Ä¿±ê¶ÔÏó
 	*/
 	WString ToWString();
 
-	/** @brief	å¾—åˆ°ZStringçš„AStringå¯¹è±¡
-	*	@retval	ç›®æ ‡å¯¹è±¡
+	/** @brief	µÃµ½ZStringµÄAString¶ÔÏó
+	*	@retval	Ä¿±ê¶ÔÏó
 	*/
 	AString ToAString();
 
-	/** @brief	ZStringå¯¹è±¡çš„å­—ç¬¦ä¸²é•¿åº¦
-	*	@retval	å­—ç¬¦ä¸²é•¿åº¦
-	*	\deprecated å­˜åœ¨å†…å­˜é£é™©ï¼Œæ›¿ä»£ä½¿ç”¨ ZString::Strlen
+	/** @brief	ZString¶ÔÏóµÄ×Ö·û´®³¤¶È
+	*	@retval	×Ö·û´®³¤¶È
+	*	\deprecated ´æÔÚÄÚ´æ·çÏÕ£¬Ìæ´úÊ¹ÓÃ ZString::Strlen
 	*	\lnk Strlen
 	*/
 	int Len();
 
-	/**	@brief			è½¬æ¢ä¸€ä¸ªWStringå¯¹è±¡
-	*	@param	srcStr	æºå­—ç¬¦ä¸²
+	/**	@brief			×ª»»Ò»¸öWString¶ÔÏó
+	*	@param	srcStr	Ô´×Ö·û´®
 	*/
 	void Pause(WString srcStr);
 
-	/**	@brief			è½¬æ¢ä¸€ä¸ªAStringå¯¹è±¡
-	*	@param	srcStr	æºå­—ç¬¦ä¸²
+	/**	@brief			×ª»»Ò»¸öAString¶ÔÏó
+	*	@param	srcStr	Ô´×Ö·û´®
 	*/
 	void Pause(AString srcStr);
 
 	/**
-	 * æ¯”è¾ƒå­—ç¬¦ä¸²å¤§å°
+	 * ±È½Ï×Ö·û´®´óĞ¡
 	 *
-	 * \param str1 å­—ç¬¦ä¸²1
-	 * \param str2 å­—ç¬¦ä¸²2
-	 * \return ä¸æ ‡å‡†åº“è¿”å›å€¼ç›¸åŒ
+	 * \param str1 ×Ö·û´®1
+	 * \param str2 ×Ö·û´®2
+	 * \return Óë±ê×¼¿â·µ»ØÖµÏàÍ¬
 	 */
 	static int Strcmp(ZString str1, ZString str2);
 
 	/**
-	 * è·å–å­—ç¬¦ä¸²é•¿åº¦
+	 * »ñÈ¡×Ö·û´®³¤¶È
 	 *
-	 * \param str ç›®æ ‡å­—ç¬¦ä¸²
-	 * \return	  å­—ç¬¦ä¸²é•¿åº¦
+	 * \param str Ä¿±ê×Ö·û´®
+	 * \return	  ×Ö·û´®³¤¶È
 	 */
 	static int Strlen(ZString str);
 

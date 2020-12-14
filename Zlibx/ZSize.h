@@ -1,5 +1,5 @@
 /**	@file	ZSize.h
-*	@brief	å¤§å°ç±»å®šä¹‰
+*	@brief	´óĞ¡Àà¶¨Òå
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -8,21 +8,21 @@
 
 #include "main.h"
 
-/**	@brief ZSize ç±»å®šä¹‰
+/**	@brief ZSize Àà¶¨Òå
 */
 class DLLAPI ZSize
 {
 public:
-	/** @brief å®½
+	/** @brief ¿í
 	*/
 	int w = 0;
-	/** @brief é«˜
+	/** @brief ¸ß
 	*/
 	int h = 0;
 
-	/**	@brief		åˆå§‹åŒ–ä¸€ä¸ªZSizeå¯¹è±¡
-	*	@param	w	ç›®æ ‡å®½
-	*	@param	h	ç›®æ ‡é«˜
+	/**	@brief		³õÊ¼»¯Ò»¸öZSize¶ÔÏó
+	*	@param	w	Ä¿±ê¿í
+	*	@param	h	Ä¿±ê¸ß
 	*/
 	ZSize(int w, int h);
 };

@@ -1,5 +1,5 @@
 /**@file	ZColor.h
-* @brief	é¢œè‰²ç±»å®šä¹‰
+* @brief	ÑÕÉ«Àà¶¨Òå
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */
@@ -9,7 +9,7 @@
 #include <Windows.h>
 #include "main.h"
 
-/**	@brief ZColor ç±»å®šä¹‰
+/**	@brief ZColor Àà¶¨Òå
 */
 class DLLAPI ZColor
 {
@@ -17,28 +17,28 @@ private:
 	COLORREF color;
 
 public:
-	/**@brief æ ¹æ®RGBå€¼åˆå§‹åŒ–ä¸€ä¸ªZColorå¯¹è±¡
-	* @param R çº¢
-	* @param G ç»¿
-	* @param B è“
+	/**@brief ¸ù¾İRGBÖµ³õÊ¼»¯Ò»¸öZColor¶ÔÏó
+	* @param R ºì
+	* @param G ÂÌ
+	* @param B À¶
 	*/
 	ZColor(BYTE R, BYTE G, BYTE B);
 
 	operator COLORREF();
 	void operator=(COLORREF color);
 
-	/**@brief è·å–çº¢å€¼
-	* @retval ç»“æœ
+	/**@brief »ñÈ¡ºìÖµ
+	* @retval ½á¹û
 	*/
 	BYTE GetRVar();
 
-	/**@brief è·å–ç»¿å€¼
-	* @retval ç»“æœ
+	/**@brief »ñÈ¡ÂÌÖµ
+	* @retval ½á¹û
 	*/
 	BYTE GetGVar();
 
-	/**@brief è·å–è“å€¼
-	* @retval ç»“æœ
+	/**@brief »ñÈ¡À¶Öµ
+	* @retval ½á¹û
 	*/
 	BYTE GetBVar();
 };

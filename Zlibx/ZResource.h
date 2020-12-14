@@ -1,5 +1,5 @@
 /**	@file	ZResource.h
-*	@brief	èµ„æºåŸºç±»å®šä¹‰
+*	@brief	×ÊÔ´»ùÀà¶¨Òå
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */
@@ -10,18 +10,18 @@
 #include "ZString.h"
 #include "main.h"
 
-/** @brief ZResource ç±»å®šä¹‰
+/** @brief ZResource Àà¶¨Òå
 */
 class DLLAPI ZResource
 {
 public:
-	/** @brief		ä»èµ„æºæ–‡ä»¶ä¸­åŠ è½½
-	*	@param	ID	èµ„æºID
+	/** @brief		´Ó×ÊÔ´ÎÄ¼şÖĞ¼ÓÔØ
+	*	@param	ID	×ÊÔ´ID
 	*/
 	virtual void Load(WORD ID) = 0;
 
-	/** @brief			ä»æ–‡ä»¶ä¸­åŠ è½½
-	*	@param	Path	æ–‡ä»¶è·¯å¾„
+	/** @brief			´ÓÎÄ¼şÖĞ¼ÓÔØ
+	*	@param	Path	ÎÄ¼şÂ·¾¶
 	*/
 	virtual void LoadFromFile(ZString Path) = 0;
 };

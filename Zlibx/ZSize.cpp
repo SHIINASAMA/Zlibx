@@ -1,5 +1,5 @@
 /**	@file	ZSize.cpp
-*	@brief	ๅคงๅฐ็ฑปๅฎ็ฐ
+*	@brief	ด๓ะกภเสตฯึ
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

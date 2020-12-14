@@ -1,5 +1,5 @@
 /**@file	ZColor.cpp
-* @brief	é¢œè‰²ç±»å®ç°
+* @brief	ÑÕÉ«ÀàÊµÏÖ
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */

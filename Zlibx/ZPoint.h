@@ -1,5 +1,5 @@
 /**	@file	ZPoint.h
-*	@brief	äºŒç»´ç‚¹ç±»å®šä¹‰
+*	@brief	¶şÎ¬µãÀà¶¨Òå
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -9,25 +9,25 @@
 #include <Windows.h>
 #include "main.h"
 
-/**	@brief	ZPoint ç±»å®šä¹‰
+/**	@brief	ZPoint Àà¶¨Òå
 */
 class DLLAPI ZPoint
 {
 public:
-	/** @brief xè½´åæ ‡
+	/** @brief xÖá×ø±ê
 	*/
 	int x = 0;
-	/** @brief yè½´åæ ‡
+	/** @brief yÖá×ø±ê
 	*/
 	int y = 0;
 
-	/**@brief	å®ä¾‹åŒ–ä¸€ä¸ªç©ºZPoinå¯¹è±¡
+	/**@brief	ÊµÀı»¯Ò»¸ö¿ÕZPoin¶ÔÏó
 	*/
 	ZPoint();
 
-	/**@brief	å®ä¾‹åŒ–ä¸€ä¸ªZPoinå¯¹è±¡
-	* @param x	xåæ ‡
-	* @param y	yåæ ‡
+	/**@brief	ÊµÀı»¯Ò»¸öZPoin¶ÔÏó
+	* @param x	x×ø±ê
+	* @param y	y×ø±ê
 	*/
 	ZPoint(int x, int y);
 

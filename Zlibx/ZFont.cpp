@@ -1,5 +1,5 @@
 /**@file	ZFont.cpp
-* @brief	хнЧф╜Уч▒╗хоЪф╣Й
+* @brief	╫╓╠х└р╢и╥х
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-10
 */

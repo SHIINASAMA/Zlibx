@@ -1,5 +1,5 @@
 /**@file	ZFile.cpp
-* @brief	æ–‡ä»¶ç±»å®ç°
+* @brief	ÎÄ¼şÀàÊµÏÖ
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-28
 */
