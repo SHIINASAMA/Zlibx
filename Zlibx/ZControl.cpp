@@ -1,3 +1,11 @@
+/**
+ * \file   ZControl.cpp
+ * \brief  控件基类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-15
+ */
+
 #include "ZControl.h"
 
 void ZControl::Bind(MessageType type, CallbackFunc func)

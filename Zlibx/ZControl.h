@@ -1,3 +1,10 @@
+/**
+ * \file   ZControl.h
+ * \brief  控件基类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-15
+ */
 #pragma once
 
 #include <Windows.h>
@@ -7,38 +14,74 @@
 #include "ZFont.h"
 #include "ZRect.h"
 
-enum class MessageType
+ /** \brief 消息类型 */
+enum class DLLAPI MessageType
 {
+	/** \brief 单击消息 */
 	Clicked,
 };
 
-typedef struct Param
+/** \brief 参数集合 */
+typedef struct DLLAPI Param
 {
+	/** \brief 窗口句柄 */
 	HWND hWnd;
+	/** \brief 消息类型 */
 	UINT uMsg;
+	/** \brief 参数1 */
 	WPARAM wParam;
+	/** \brief 参数2 */
 	LPARAM lParam;
 }Param;
 
-typedef LRESULT(*CallbackFunc)(Param);
+/** \brief 回调函数 */
+typedef DLLAPI LRESULT(*CallbackFunc)(Param);
 
-typedef struct ControlFunc
+/** \brief 控件的消息类型和回调函数 */
+typedef struct DLLAPI ControlFunc
 {
+	/** 消息类类型 */
 	MessageType type;
+	/** 回调函数 */
 	CallbackFunc func;
 }ControlFunc;
 
+/**
+ * \brief ZControl 类定义
+ */
 class DLLAPI ZControl
 {
 protected:
 	HWND hWnd;
+	HWND phWnd;
 
 public:
 	UINT id;
 	std::vector<ControlFunc> funcs;
+
+	/**
+	 * ZWindow::AddControl 将调用该函数
+	 * 在这里应该完成控件的CreateWindow和保存父窗体的句柄
+	 *
+	 * \param hWnd 父窗口句柄
+	 */
 	virtual void Init(HWND hWnd) = 0;
+
+	/**
+	 * 绑定消息
+	 *
+	 * \param type 消息类型
+	 * \param func 回调函数
+	 */
 	void Bind(MessageType type, CallbackFunc func);
 
+	/**
+	 * 设置字体
+	 *
+	 * \param font 目标字体
+	 */
 	void SetFont(ZFont font);
+
+	/** \brief 设置默认字体位新宋体 */
 	void SetDefFont();
 };

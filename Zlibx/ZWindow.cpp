@@ -1,3 +1,11 @@
+/**
+ * \file   ZWindow.cpp
+ * \brief  窗体类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-15
+ */
+
 #include "ZWindow.h"
 
 UINT ZWindow::conut = 0;
@@ -114,6 +122,7 @@ LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	default:
 		break;
 	}
+	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
 void ZWindow::AddControl(ZControl* con)
