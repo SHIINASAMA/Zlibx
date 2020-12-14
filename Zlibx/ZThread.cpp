@@ -1,5 +1,5 @@
 /**	@file	ZThread.cpp
-*	@brief	ฯ฿ณฬภเสตฯึ
+*	@brief	็บฟ็จ็ฑปๅฎ็ฐ
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */

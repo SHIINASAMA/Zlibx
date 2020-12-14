@@ -1,5 +1,5 @@
 /**	@file	main.h
-*	@brief	ÎÄµµÖ÷Ò³ºÍÍ¨ÓÃ¶¨Òå
+*	@brief	æ–‡æ¡£ä¸»é¡µå’Œé€šç”¨å®šä¹‰
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -8,15 +8,15 @@
 
 #define DLL
 
-/**@brief µ¼³öAPI¿ª¹Ø
+/**@brief å¯¼å‡ºAPIå¼€å…³
 */
 #ifdef DLL
 #define DLLAPI __declspec(dllexport)
 #else
 #define DLLAPI __declspec(dllimport)
 /**
- * Òş²Ø¿ØÖÆÌ¨
- * µ±½«Zlibx×÷ÎªDLLÊ¹ÓÃÊ±£¬ÇëÎğ´ò¿ª´Ë¿ª¹Ø
+ * éšè—æ§åˆ¶å°
+ * å½“å°†Zlibxä½œä¸ºDLLä½¿ç”¨æ—¶ï¼Œè¯·å‹¿æ‰“å¼€æ­¤å¼€å…³
  */
 #ifdef HIDE_CONSOLE
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )

@@ -1,7 +1,7 @@
 # Zlibx
-<kbd>Zlibx</kbd>ÊÇÔÚ<kbd>[Zlib](https://github.com/shiinasama/zlib)</kbd>ÉÏµÄÒ»´Î½á¹¹ÉÏµÄ³¢ÊÔ¡£ÓëZlib×îÖ÷ÒªµÄÇø±ğÔÚÓÚÌŞ³ıÁË×Ô¼ºÊÖ¶¯´¦ÀíÏûÏ¢Ñ­»·£¬¸Ä³ÉÏûÏ¢µÄÓ³Éä¡£
+<kbd>Zlibx</kbd>æ˜¯åœ¨<kbd>[Zlib](https://github.com/shiinasama/zlib)</kbd>ä¸Šçš„ä¸€æ¬¡ç»“æ„ä¸Šçš„å°è¯•ã€‚ä¸Zlibæœ€ä¸»è¦çš„åŒºåˆ«åœ¨äºå‰”é™¤äº†è‡ªå·±æ‰‹åŠ¨å¤„ç†æ¶ˆæ¯å¾ªç¯ï¼Œæ”¹æˆæ¶ˆæ¯çš„æ˜ å°„ã€‚
 
-Í¬ÑùÔÚÕâÀïÑİÊ¾Ò»¸ö¼òµ¥µÄDemo
+åŒæ ·åœ¨è¿™é‡Œæ¼”ç¤ºä¸€ä¸ªç®€å•çš„Demo
 
 ~~~c++
 #include "ZWindow.h"
@@ -14,4 +14,4 @@ int main()
 }
 ~~~
 
-´ó²¿·ÖĞÅÏ¢ÈÔ¿É²Î¿¼[ZlibµÄÖ÷Ò³](https://github.com/shiinasama/zlib)
+å¤§éƒ¨åˆ†ä¿¡æ¯ä»å¯å‚è€ƒ[Zlibçš„ä¸»é¡µ](https://github.com/shiinasama/zlib)

@@ -1,5 +1,5 @@
 /**	@file	ZRect.cpp
-*	@brief	╬ьпнюЮй╣ож
+*	@brief	Г÷╘Е╫╒Г╠╩Е╝·Г▌╟
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

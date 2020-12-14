@@ -1,5 +1,5 @@
 /**	@file	ZString.cpp
-*	@brief	字符串类实现
+*	@brief	瀛楃涓茬被瀹炵幇
 *	@author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

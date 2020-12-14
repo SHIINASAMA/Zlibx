@@ -1,5 +1,5 @@
 /**	@file	ZRect.h
-*	@brief	¾ØĞÎÀà¶¨Òå
+*	@brief	çŸ©å½¢ç±»å®šä¹‰
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
@@ -10,53 +10,53 @@
 #include "ZSize.h"
 #include "main.h"
 
-/**	@brief	ZRect Àà¶¨Òå
+/**	@brief	ZRect ç±»å®šä¹‰
 */
 class DLLAPI ZRect
 {
 public:
-	/** @brief ×óÉÏ½Ç×ø±ê
+	/** @brief å·¦ä¸Šè§’åæ ‡
 	*/
 	ZPoint A;
-	/** @brief ÓÒÏÂ½Ç×ø±ê
+	/** @brief å³ä¸‹è§’åæ ‡
 	*/
 	ZPoint B;
 
-	/**@brief ´´½¨¿Õ ZRect ¶ÔÏó
+	/**@brief åˆ›å»ºç©º ZRect å¯¹è±¡
 	*/
 	ZRect();
 
-	/**@brief		³õÊ¼»¯ ZRect ¶ÔÏó
-	* @param Rect	Ô´¶ÔÏó
+	/**@brief		åˆå§‹åŒ– ZRect å¯¹è±¡
+	* @param Rect	æºå¯¹è±¡
 	*/
 	ZRect(RECT Rect);
 
-	/**@brief	³õÊ¼»¯ ZRect ¶ÔÏó
-	* @param A	×óÉÏ½ÇµÄµã
-	* @param B	ÓÒÏÂ½ÇµÄµã
+	/**@brief	åˆå§‹åŒ– ZRect å¯¹è±¡
+	* @param A	å·¦ä¸Šè§’çš„ç‚¹
+	* @param B	å³ä¸‹è§’çš„ç‚¹
 	*/
 	ZRect(ZPoint A, ZPoint B);
 
-	/**@brief	³õÊ¼»¯ ZRect ¶ÔÏó
-	* @param x1 ×óÉÏ½ÇµãX×ø±ê
-	* @param y1 ×óÉÏ½ÇµãY×ø±ê
-	* @param x2 ÓÒÏÂ½ÇµãY×ø±ê
-	* @param y2 ÓÒÏÂ½ÇµãY×ø±ê
+	/**@brief	åˆå§‹åŒ– ZRect å¯¹è±¡
+	* @param x1 å·¦ä¸Šè§’ç‚¹Xåæ ‡
+	* @param y1 å·¦ä¸Šè§’ç‚¹Yåæ ‡
+	* @param x2 å³ä¸‹è§’ç‚¹Yåæ ‡
+	* @param y2 å³ä¸‹è§’ç‚¹Yåæ ‡
 	*/
 	ZRect(int x1, int y1, int x2, int y2);
 
-	/**@brief	»ñÈ¡¾ØÕó´óĞ¡
-	* @retval	´óĞ¡
+	/**@brief	è·å–çŸ©é˜µå¤§å°
+	* @retval	å¤§å°
 	*/
 	ZSize GetSize();
 
-	/**@brief		ÉèÖÃ¾ØÕó´óĞ¡
-	* @param Size	Ä¿±ê´óĞ¡
+	/**@brief		è®¾ç½®çŸ©é˜µå¤§å°
+	* @param Size	ç›®æ ‡å¤§å°
 	*/
 	void SetSize(ZSize Size);
 
-	/**@brief	»ñÈ¡RECT½á¹¹
-	* @retval	½á¹¹
+	/**@brief	è·å–RECTç»“æ„
+	* @retval	ç»“æ„
 	*/
 	RECT GetRect();
 

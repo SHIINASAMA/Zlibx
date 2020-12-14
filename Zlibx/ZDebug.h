@@ -1,5 +1,5 @@
 /**@file	ZDebug.h
-* @brief	µ÷ÊÔÀà¶¨Òå
+* @brief	è°ƒè¯•ç±»å®šä¹‰
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-30
 */
@@ -9,13 +9,13 @@
 #include "ZString.h"
 #include "main.h"
 
-/**@brief ZDebug Àà¶¨Òå
+/**@brief ZDebug ç±»å®šä¹‰
 */
 class DLLAPI ZDebug
 {
 public:
-	/**@brief			¿ìËÙÏÔÊ¾´íÎóĞÅÏ¢
-	* @param nodeTag	µ¯´°±êÌâ
+	/**@brief			å¿«é€Ÿæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
+	* @param nodeTag	å¼¹çª—æ ‡é¢˜
 	*/
 	static void ShowLastError(ZString nodeTag);
 };

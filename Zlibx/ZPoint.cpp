@@ -1,5 +1,5 @@
 /**	@file	ZPoint.cpp
-*	@brief	二维点类实现
+*	@brief	浜岀淮鐐圭被瀹炵幇
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */
