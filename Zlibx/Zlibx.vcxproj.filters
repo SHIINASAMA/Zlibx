@@ -39,18 +39,6 @@
     <ClCompile Include="ZFont.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="ZWindow.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZControl.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZLabel.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZButton.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
     <ClCompile Include="ZTextBox.cpp">
       <Filter>control</Filter>
     </ClCompile>
@@ -91,21 +79,6 @@
     </ClInclude>
     <ClInclude Include="ZFont.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="ZControl.h">
-      <Filter>control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZWindow.h">
-      <Filter>control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZPanel.h">
-      <Filter>control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZLabel.h">
-      <Filter>control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZButton.h">
-      <Filter>control</Filter>
     </ClInclude>
     <ClInclude Include="ZTextBox.h">
       <Filter>control</Filter>
