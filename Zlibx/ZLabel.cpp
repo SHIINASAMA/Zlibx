@@ -8,13 +8,6 @@
 
 #include "ZLabel.h"
 
-ZLabel::ZLabel(ZString text)
-{
-	type = L"static";
-	this->text = text;
-	style = WS_CHILD | WS_VISIBLE;
-}
-
 ZLabel::ZLabel(ZString text, int x, int y, int w, int h)
 {
 	type = L"static";

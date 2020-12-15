@@ -19,13 +19,6 @@ public:
 	/**
 	 * 实例化一个静态文本控件对象
 	 *
-	 * \param text 显示文本
-	 */
-	ZLabel(ZString text);
-
-	/**
-	 * 实例化一个静态文本控件对象
-	 *
 	 * \param text	显示
 	 * \param x		x坐标
 	 * \param y		y坐标
