@@ -103,4 +103,32 @@ public:
 	 * \param text 目标文本
 	 */
 	void SetText(ZString text);
+
+	/**
+	 * 设置左上角点坐标
+	 *
+	 * \param point 坐标
+	 */
+	void SetPoint(ZPoint point);
+
+	/**
+	 * 获取左上角点坐标
+	 *
+	 * \return 坐标
+	 */
+	ZPoint GetPoint();
+
+	/**
+	 * 设置控件尺寸
+	 *
+	 * \param size 尺寸
+	 */
+	void SetSize(ZSize size);
+
+	/**
+	 * 获取控件尺寸
+	 *
+	 * \return 尺寸
+	 */
+	ZSize GetSize();
 };

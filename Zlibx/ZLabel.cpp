@@ -34,9 +34,9 @@ void ZLabel::Init(HWND hWnd)
 		rect.A.y,
 		rect.GetSize().w,
 		rect.GetSize().h,
-		hWnd,
+		phWnd,
 		(HMENU)id,
-		NULL,
+		(HINSTANCE)GetWindowLong(phWnd, -6),
 		NULL
 	);
 	SetDefFont();
@@ -46,5 +46,7 @@ void ZLabel::SetText(ZString text)
 {
 	RECT r = this->rect;
 	SetWindowText(hWnd, text);
-	::InvalidateRect(phWnd, &r, TRUE);
+	/*::InvalidateRect(phWnd, &r, TRUE);*/
+	ShowWindow(hWnd, SW_HIDE);
+	ShowWindow(hWnd, SW_SHOW);
 }

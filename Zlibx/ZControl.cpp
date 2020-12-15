@@ -41,3 +41,43 @@ void ZControl::SetText(ZString text)
 {
 	SetWindowTextW(hWnd, text);
 }
+
+void ZControl::SetPoint(ZPoint point)
+{
+	int w = rect.GetSize().w;
+	int h = rect.GetSize().h;
+	MoveWindow(hWnd,
+		point.x,
+		point.y,
+		w,
+		h,
+		TRUE
+	);
+
+	rect.A = point;
+	rect.SetSize(ZSize(w, h));
+}
+
+ZPoint ZControl::GetPoint()
+{
+	return rect.A;
+}
+
+void ZControl::SetSize(ZSize size)
+{
+	MoveWindow(
+		hWnd,
+		rect.A.x,
+		rect.A.y,
+		size.w,
+		size.h,
+		TRUE
+	);
+
+	rect.SetSize(size);
+}
+
+ZSize ZControl::GetSize()
+{
+	return rect.GetSize();
+}
