@@ -25,3 +25,19 @@ void ZControl::SetDefFont()
 	font.Create(L"ÐÂËÎÌå");
 	SetFont(font);
 }
+
+ZString ZControl::GetText()
+{
+	UINT len = GetWindowTextLengthW(hWnd);
+	WChar* str = (WChar*)malloc(sizeof(WChar) * (static_cast<unsigned long long>(len) + 1));
+	GetWindowTextW(hWnd, str, sizeof(WChar) * (static_cast<unsigned long long>(len) + 1));
+	//str[len] = L'\0';
+	ZString temp;
+	temp.Pause(str);
+	return temp;
+}
+
+void ZControl::SetText(ZString text)
+{
+	SetWindowTextW(hWnd, text);
+}

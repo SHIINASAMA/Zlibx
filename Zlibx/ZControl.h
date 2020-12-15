@@ -55,6 +55,11 @@ protected:
 	HWND hWnd;
 	HWND phWnd;
 
+	ZString type;
+	ZString text;
+	ZRect rect;
+	DWORD style;
+
 public:
 	UINT id;
 	std::vector<ControlFunc> funcs;
@@ -84,4 +89,18 @@ public:
 
 	/** \brief 设置默认字体位新宋体 */
 	void SetDefFont();
+
+	/**
+	 * 获取控件文本
+	 *
+	 * \return 控件文本
+	 */
+	ZString GetText();
+
+	/**
+	 * 设置控件文本
+	 *
+	 * \param text 目标文本
+	 */
+	void SetText(ZString text);
 };

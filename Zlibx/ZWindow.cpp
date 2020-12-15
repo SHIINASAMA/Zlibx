@@ -116,6 +116,13 @@ LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		iter->second.func(Param{ hWnd,uMsg,wParam,lParam });
 		break;
 	}
+	case WM_CTLCOLORSTATIC:
+	{
+		HDC dc = (HDC)wParam;
+		SetBkMode(dc, TRANSPARENT);
+		return (LRESULT)GetStockObject(NULL_BRUSH);
+		break;
+	}
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
