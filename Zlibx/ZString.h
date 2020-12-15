@@ -60,7 +60,6 @@ public:
 	/** @brief	ZString对象的字符串长度
 	*	@retval	字符串长度
 	*	\deprecated 存在内存风险，替代使用 ZString::Strlen
-	*	\lnk Strlen
 	*/
 	int Len();
 

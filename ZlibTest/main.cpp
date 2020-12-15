@@ -2,25 +2,30 @@
 #include "../Zlibx/ZWindow.h"
 #include "../Zlibx/ZLabel.h"
 #include "../Zlibx/ZButton.h"
-#include "../Zlibx/ZTextBox.h"
 
-//#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
-void ClickerBtn1(WPARAM p1, LPARAM p2)
+ZWindow* win;
+ZLabel* l1;
+ZButton* b1;
+
+LRESULT b1_clicked(Param param)
 {
-	printf("You clicked me\n");
+	l1->SetText(L"WDNMD");
+	return 0;
 }
 
 int main()
 {
-	ZWindow* win = new ZWindow(L"Hello", 300, 300, 600, 400);
+	win = new ZWindow(L"Hello", 50, 50, 300, 200, WindowType::Sizable);
 	win->Create();
 
-	ZButton* b1 = new ZButton(L"Hello", 5, 5, 60, 25, ClickerBtn1);
-	win->AddControl(b1);
+	l1 = new ZLabel(L"Hello", 5, 5, 100, 21);
+	win->AddControl(l1);
 
-	ZTextBox* t1 = new ZTextBox(5, 35, 600, 56);
-	win->AddControl(t1);
+	b1 = new ZButton(L"Click me", 5, 30, 90, 50);
+	b1->Bind(MessageType::Clicked, b1_clicked);
+	win->AddControl(b1);
 
 	win->Run();
 	return 0;
