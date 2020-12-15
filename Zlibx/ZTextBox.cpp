@@ -55,12 +55,13 @@ void ZTextBox::SetStyle(TextBoxType type, TextBoxTextStyle textStyle)
 
 void ZTextBox::SetEnable(BOOL enable)
 {
-	SendMessage((HWND)this->handle, EM_SETREADONLY, !enable, 0);
+	SendMessage(hWnd, EM_SETREADONLY, !enable, 0);
 }
 
-void ZTextBox::Init(HANDLE handle)
+void ZTextBox::Init(HWND hWnd)
 {
-	this->handle = CreateWindow(
+	phWnd = hWnd;
+	this->hWnd = CreateWindow(
 		type,
 		L"",
 		style,
@@ -68,10 +69,11 @@ void ZTextBox::Init(HANDLE handle)
 		rect.A.y,
 		rect.GetSize().w,
 		rect.GetSize().h,
-		(HWND)handle,
+		hWnd,
 		(HMENU)this->id,
-		(HINSTANCE)GetWindowLong((HWND)handle, -6),
+		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);
-	SetDefaultFont();
+
+	SetDefFont();
 }

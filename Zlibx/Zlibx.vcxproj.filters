@@ -22,12 +22,6 @@
     <ClCompile Include="ZString.cpp">
       <Filter>Source Files\Base</Filter>
     </ClCompile>
-    <ClCompile Include="ZWindow.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZControl.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
     <ClCompile Include="ZFile.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
@@ -37,10 +31,19 @@
     <ClCompile Include="ZThread.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="ZButton.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZControl.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
     <ClCompile Include="ZLabel.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
-    <ClCompile Include="ZButton.cpp">
+    <ClCompile Include="ZTextBox.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZWindow.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,12 +75,6 @@
     <ClInclude Include="ZString.h">
       <Filter>Header Files\Base</Filter>
     </ClInclude>
-    <ClInclude Include="ZWindow.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZControl.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
     <ClInclude Include="ZThread.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
@@ -87,10 +84,19 @@
     <ClInclude Include="ZDebug.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="ZButton.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZControl.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
     <ClInclude Include="ZLabel.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
-    <ClInclude Include="ZButton.h">
+    <ClInclude Include="ZTextBox.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZWindow.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
   </ItemGroup>

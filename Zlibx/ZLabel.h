@@ -10,7 +10,7 @@
 #include "ZControl.h"
 
  /**
-  * \breif ZLabel 类定义
+  * \brief ZLabel 类定义
   */
 class DLLAPI ZLabel :
 	public ZControl

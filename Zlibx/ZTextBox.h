@@ -79,7 +79,7 @@ public:
 	/**
 	 * 重载父控件加载函数
 	 *
-	 * \param handle 父控件句柄
+	 * \param hWnd 父控件句柄
 	 */
-	void Init(HANDLE handle);
+	void Init(HWND hWnd);
 };

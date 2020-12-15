@@ -1,3 +1,10 @@
+/**
+ * \file   ZButton.cpp
+ * \brief  按钮控件类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-15
+ */
 #include "ZButton.h"
 
 ZButton::ZButton(ZString text, int x, int y, int w, int h)
