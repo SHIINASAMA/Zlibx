@@ -69,9 +69,9 @@ void ZTextBox::Init(HWND hWnd)
 		rect.A.y,
 		rect.GetSize().w,
 		rect.GetSize().h,
-		hWnd,
-		(HMENU)this->id,
-		(HINSTANCE)GetWindowLong(hWnd, -6),
+		phWnd,
+		(HMENU)id,
+		(HINSTANCE)GetWindowLong(phWnd, -6),
 		NULL
 	);
 

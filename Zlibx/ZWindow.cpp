@@ -14,12 +14,6 @@ UINT ZWindow::conut = 0;
 
 std::map<UINT, ControlFunc> ZWindow::ClickedFuncs;
 
-ZWindow::ZWindow(ZString text, WindowType type)
-{
-	this->text = text;
-	SetWindowType(type);
-}
-
 ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowType type)
 {
 	this->text = text;
@@ -113,7 +107,10 @@ LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_COMMAND:
 	{
 		auto iter = ClickedFuncs.find(wParam);
-		iter->second.func(Param{ hWnd,uMsg,wParam,lParam });
+		if (iter != ClickedFuncs.end())
+		{
+			iter->second.func(Param{ hWnd,uMsg,wParam,lParam });
+		}
 		break;
 	}
 	case WM_CTLCOLORSTATIC:
