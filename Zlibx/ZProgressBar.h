@@ -24,7 +24,7 @@ enum class DLLAPI ProgressBarType
 	SmoothV
 };
 
-/** ZProgressBar 类定义 */
+/** \brief ZProgressBar 类定义 */
 class DLLAPI ZProgressBar : public ZControl
 {
 	UINT min;

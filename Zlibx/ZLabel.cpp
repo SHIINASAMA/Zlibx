@@ -39,7 +39,7 @@ void ZLabel::SetText(ZString text)
 {
 	RECT r = this->rect;
 	SetWindowText(hWnd, text);
-	/*::InvalidateRect(phWnd, &r, TRUE);*/
-	ShowWindow(hWnd, SW_HIDE);
-	ShowWindow(hWnd, SW_SHOW);
+	::InvalidateRect(phWnd, &r, TRUE);
+	/*ShowWindow(hWnd, SW_HIDE);
+	ShowWindow(hWnd, SW_SHOW);*/
 }
