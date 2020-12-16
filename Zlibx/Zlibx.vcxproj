@@ -160,6 +160,7 @@
     <ClInclude Include="ZFont.h" />
     <ClInclude Include="ZLabel.h" />
     <ClInclude Include="ZPoint.h" />
+    <ClInclude Include="ZProgressBar.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZResource.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="ZFont.cpp" />
     <ClCompile Include="ZLabel.cpp" />
     <ClCompile Include="ZPoint.cpp" />
+    <ClCompile Include="ZProgressBar.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
