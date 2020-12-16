@@ -62,15 +62,6 @@ public:
 	/**
 	 * 实例化一个窗体对象
 	 *
-	 * \param text 窗体标题
-	 * \param type 风格类型
-	 */
-	ZWindow(ZString text,
-		WindowType type = WindowType::Sizable);
-
-	/**
-	 * 实例化一个窗体对象
-	 *
 	 * \param text	窗体标题
 	 * \param x		x坐标
 	 * \param y		y坐标
@@ -94,7 +85,7 @@ public:
 	/** \brief 进入消息循环 */
 	void Run();
 
-	/** \brief 现实模式对话框 */
+	/** \brief 显示模式对话框 */
 	DialogResult RunDialog();
 
 	/**
