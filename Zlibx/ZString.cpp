@@ -86,7 +86,7 @@ void ZString::operator=(WChar str[])
 	this->str = str;
 }
 
-ZString::operator WString()
+ZString::operator const WString()
 {
 	return this->str;
 }

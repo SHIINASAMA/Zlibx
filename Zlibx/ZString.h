@@ -92,6 +92,6 @@ public:
 
 	void operator=(WString str);
 	void operator=(WChar str[]);
-	operator WString();
+	operator const WString();
 	WChar operator[](int index);
 };

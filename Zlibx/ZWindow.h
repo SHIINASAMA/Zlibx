@@ -33,16 +33,18 @@ enum class DLLAPI DialogResult {
 class DLLAPI ZWindow
 {
 protected:
-
-	static std::map<HWND, const ZWindow*> windowMap;
-
 	HWND hWnd;
 	DWORD style;
 	ZRect rect;
 	ZString text;
+	HINSTANCE hInstance;
 
 private:
 	void SetStyle(WindowStyle style);
+
+	static std::map<HWND, const ZWindow*> windowMap;
+
+	static const ZWindow* GetWindow(HWND hWnd);
 
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -50,9 +52,9 @@ private:
 public:
 	ZWindow(ZString text, int x, int y, int w, int h, WindowStyle style = WindowStyle::Sizable);
 
-	static const ZWindow* GetWindow(HWND hWnd);
-
 	void Create();
 
 	void Run();
+
+	void Add(ZControl* con);
 };

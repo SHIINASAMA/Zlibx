@@ -7,6 +7,7 @@
 
 class DLLAPI ZControl
 {
+protected:
 	HWND hWnd;
 	HWND phWnd;
 
@@ -15,7 +16,8 @@ class DLLAPI ZControl
 	ZRect rect;
 	DWORD style;
 
-	virtual void Init(HWND hWnd) = 0;
-
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+public:
+	virtual void Init(HWND hWnd) = 0;
 };

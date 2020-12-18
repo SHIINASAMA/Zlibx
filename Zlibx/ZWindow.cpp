@@ -70,17 +70,18 @@ const ZWindow* ZWindow::GetWindow(HWND hWnd)
 
 void ZWindow::Create()
 {
+	hInstance = ::GetModuleHandle(NULL);
 	WNDCLASSEX wcex;
 	wcex.cbSize = sizeof(WNDCLASSEX);
 	wcex.style = CS_HREDRAW | CS_VREDRAW;
 	wcex.cbClsExtra = 0;
 	wcex.cbWndExtra = 0;
-	wcex.hInstance = ::GetModuleHandle(NULL);
+	wcex.hInstance = hInstance;
 	wcex.hIcon = NULL;
 	wcex.hCursor = NULL;
 	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	wcex.lpszMenuName = NULL;
-	wcex.lpszClassName = L"Zlibx_Window";
+	wcex.lpszClassName = L"Zlibx_window";
 	wcex.hIconSm = NULL;
 	wcex.lpfnWndProc = WndProc;
 	RegisterClassEx(&wcex);
@@ -112,4 +113,9 @@ void ZWindow::Run()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
+}
+
+void ZWindow::Add(ZControl* con)
+{
+	con->Init(hWnd);
 }
