@@ -154,6 +154,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ZBitmap.h" />
     <ClInclude Include="ZColor.h" />
+    <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZFont.h" />
@@ -164,10 +165,12 @@
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZString.h" />
     <ClInclude Include="ZThread.h" />
+    <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZBitmap.cpp" />
     <ClCompile Include="ZColor.cpp" />
+    <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZFont.cpp" />
@@ -177,6 +180,7 @@
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZString.cpp" />
     <ClCompile Include="ZThread.cpp" />
+    <ClCompile Include="ZWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
