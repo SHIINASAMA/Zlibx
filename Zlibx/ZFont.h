@@ -19,6 +19,13 @@ protected:
 	HFONT font;
 
 public:
+	ZFont();
+
+	/**@brief			根据字体名称创建字体
+	* @param FontName	字体名称
+	*/
+	ZFont(ZString FontName);
+
 	/**@brief			根据字体名称创建字体
 	* @param FontName	字体名称
 	*/

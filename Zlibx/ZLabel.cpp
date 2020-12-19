@@ -26,6 +26,8 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		HDC hdc;
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hWnd, &ps);
+		SelectObject(hdc, temp->font);
+		SetTextColor(hdc, temp->textColol);
 		DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE);
 		EndPaint(hWnd, &ps);
 		break;
@@ -34,6 +36,11 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		return DefWindowProc(hWnd, uMsg, wParam, lParam);
 		break;
 	}
+}
+
+ZLabel::~ZLabel()
+{
+	labelMap.erase(hWnd);
 }
 
 ZLabel::ZLabel(ZString text, int x, int y, int w, int h)
@@ -84,5 +91,6 @@ void ZLabel::Init(HWND hWnd)
 		NULL
 	);
 
+	SetDefFont();
 	labelMap.insert(std::pair<HWND, const ZLabel*>(this->hWnd, this));
 }

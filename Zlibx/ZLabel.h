@@ -16,6 +16,8 @@ class ZLabel :
 
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+	~ZLabel();
+
 public:
 	ZLabel(ZString text, int x, int y, int w, int h);
 

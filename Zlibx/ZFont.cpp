@@ -6,6 +6,15 @@
 
 #include "ZFont.h"
 
+ZFont::ZFont()
+{
+}
+
+ZFont::ZFont(ZString FontName)
+{
+	Create(FontName);
+}
+
 void ZFont::Create(ZString FontName)
 {
 	this->font = CreateFont(15, 0, 0, 0, 0, 0, 0, 0,
