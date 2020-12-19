@@ -1,3 +1,11 @@
+/**
+ * \file   ZControl.cpp
+ * \brief  控件基类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-19
+ */
+
 #include "ZControl.h"
 
 LRESULT ZControl::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -11,14 +19,4 @@ ZControl::~ZControl()
 
 ZControl::ZControl()
 {
-}
-
-void ZControl::SetFont(ZFont font)
-{
-	this->font = font;
-}
-
-void ZControl::SetDefFont()
-{
-	SetFont(ZFont(L"新宋体"));
 }

@@ -1,3 +1,11 @@
+/**
+ * \file   ZLabel.cpp
+ * \brief  文本控件类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-19
+ */
+
 #include "ZLabel.h"
 
 std::map<HWND, const ZLabel*> ZLabel::labelMap;
@@ -93,4 +101,14 @@ void ZLabel::Init(HWND hWnd)
 
 	SetDefFont();
 	labelMap.insert(std::pair<HWND, const ZLabel*>(this->hWnd, this));
+}
+
+void ZLabel::SetFont(ZFont font)
+{
+	this->font = font;
+}
+
+void ZLabel::SetDefFont()
+{
+	SetFont(ZFont(L"新宋体"));
 }

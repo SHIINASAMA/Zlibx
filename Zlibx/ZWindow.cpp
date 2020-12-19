@@ -1,3 +1,11 @@
+/**
+ * \file   ZWindow.cpp
+ * \brief  窗体类实现
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-19
+ */
+
 #include "ZWindow.h"
 
 std::map<HWND, const ZWindow*> ZWindow::windowMap;
@@ -118,4 +126,9 @@ void ZWindow::Run()
 void ZWindow::Add(ZControl* con)
 {
 	con->Init(hWnd);
+}
+
+void ZWindow::Remove(ZControl* con)
+{
+	DestroyWindow(hWnd);
 }
