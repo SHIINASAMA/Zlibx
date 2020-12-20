@@ -61,4 +61,5 @@ public:
 	RECT GetRect();
 
 	operator RECT();
+	operator LPRECT();
 };

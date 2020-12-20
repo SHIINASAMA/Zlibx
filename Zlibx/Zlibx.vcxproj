@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="main.h" />
     <ClInclude Include="ZBitmap.h" />
+    <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZDebug.h" />
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZBitmap.cpp" />
+    <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />

@@ -25,11 +25,11 @@ const ZLabel* ZLabel::GetLabel(HWND hWnd)
 
 LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	ZLabel* temp = const_cast<ZLabel*>(GetLabel(hWnd));
 	switch (uMsg)
 	{
 	case WM_PAINT:
 	{
-		ZLabel* temp = const_cast<ZLabel*>(GetLabel(hWnd));
 		RECT rect = temp->rect;
 		HDC hdc;
 		PAINTSTRUCT ps;

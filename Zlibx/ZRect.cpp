@@ -59,3 +59,8 @@ ZRect::operator RECT()
 {
 	return GetRect();
 }
+
+ZRect::operator LPRECT()
+{
+	return new RECT{ A.x,A.y,B.x,B.y };
+}
