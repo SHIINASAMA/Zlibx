@@ -15,7 +15,10 @@
 #include "ZFont.h"
 #include "ZColor.h"
 
- /** \brief ZControl 类定义 */
+ /** \brief 回调函数 */
+typedef DLLAPI void(*CallBackFunc)(WPARAM, LPARAM);
+
+/** \brief ZControl 类定义 */
 class DLLAPI ZControl
 {
 protected:
