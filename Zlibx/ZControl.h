@@ -18,7 +18,7 @@
  /** \brief 回调函数 */
 typedef DLLAPI void(*CallBackFunc)(WPARAM, LPARAM);
 
-/** \brief ZControl 类定义 */
+/** \brief ZControl 类 */
 class DLLAPI ZControl
 {
 protected:

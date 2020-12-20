@@ -9,7 +9,7 @@
 #include <Windows.h>
 #include "main.h"
 
-/**	@brief	ZPoint 类定义
+/**	@brief	ZPoint 类
 */
 class DLLAPI ZPoint
 {

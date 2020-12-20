@@ -10,7 +10,7 @@
 #include <CommCtrl.h>
 #include "main.h"
 
-/**	@brief ZRange 类定义
+/**	@brief ZRange 类
 */
 class DLLAPI ZRange
 {

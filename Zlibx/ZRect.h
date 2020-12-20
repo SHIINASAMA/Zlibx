@@ -10,7 +10,7 @@
 #include "ZSize.h"
 #include "main.h"
 
-/**	@brief	ZRect 类定义
+/**	@brief	ZRect 类
 */
 class DLLAPI ZRect
 {
@@ -62,4 +62,5 @@ public:
 
 	operator RECT();
 	operator LPRECT();
+	operator Gdiplus::Rect();
 };

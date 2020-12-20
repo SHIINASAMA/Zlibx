@@ -53,9 +53,10 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		HDC hdc = (HDC)wParam;
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hWnd, &ps);
+
 		SetBkMode(hdc, 1);
 		SelectObject(hdc, temp->font);
-		SetTextColor(hdc, temp->textColor);
+		::SetTextColor(hdc, temp->textColor);
 
 		HPEN Pen = CreatePen(PS_SOLID, 1, RGB(110, 110, 110));
 		SelectObject(hdc, Pen);
@@ -103,6 +104,7 @@ void ZButton::SetDefFont()
 
 ZButton::~ZButton()
 {
+	GdiplusShutdown(gdiplusToken);
 	buttonMap.erase(hWnd);
 }
 
@@ -157,6 +159,8 @@ void ZButton::Init(HWND hWnd)
 
 	SetDefFont();
 	buttonMap.insert(std::pair<HWND, const ZButton*>(this->hWnd, this));
+
+	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 }
 
 void ZButton::Bind(CallBackFunc func)

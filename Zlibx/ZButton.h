@@ -5,9 +5,12 @@
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19
  */
+
 #pragma once
+
 #include "ZControl.h"
-#include <map>
+
+ /** \brief ZButton ¿‡ */
 class ZButton :
 	public ZControl
 {

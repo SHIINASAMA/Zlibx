@@ -38,7 +38,7 @@ enum class DLLAPI DialogResult {
 	No
 };
 
-/** \brief ZWindow 类定义 */
+/** \brief ZWindow 类 */
 class DLLAPI ZWindow
 {
 protected:

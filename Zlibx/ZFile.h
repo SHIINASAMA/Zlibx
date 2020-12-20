@@ -12,7 +12,7 @@
 #include <fstream>
 #include <istream>
 
-/**@brief ZFile 类定义
+/**@brief ZFile 类
 */
 class DLLAPI ZFile
 {

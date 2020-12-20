@@ -25,7 +25,7 @@
 */
 #define AChar char
 
-/**	@brief ZString 类定义
+/**	@brief ZString 类
 */
 class DLLAPI ZString
 {

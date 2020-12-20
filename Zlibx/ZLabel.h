@@ -12,7 +12,7 @@
 #include <map>
 
  /**
-  * \brief ZLabel 类定义
+  * \brief ZLabel 类
   */
 class ZLabel :
 	public ZControl

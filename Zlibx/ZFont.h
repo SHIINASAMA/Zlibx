@@ -9,7 +9,7 @@
 #include <Windows.h>
 #include "ZString.h"
 
-/** @brief ZFont 类定义
+/** @brief ZFont 类
 */
 class DLLAPI ZFont
 {

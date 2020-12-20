@@ -9,7 +9,7 @@
 #include "ZString.h"
 #include "main.h"
 
-/**@brief ZDebug 类定义
+/**@brief ZDebug 类
 */
 class DLLAPI ZDebug
 {

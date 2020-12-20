@@ -8,7 +8,7 @@
 
 #include "main.h"
 
-/**	@brief ZSize 类定义
+/**	@brief ZSize 类
 */
 class DLLAPI ZSize
 {
