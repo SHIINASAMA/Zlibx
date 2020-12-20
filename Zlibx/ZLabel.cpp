@@ -8,6 +8,9 @@
 
 #include "ZLabel.h"
 
+ZString ZLabel::type = L"Zlibx_label";
+BOOL ZLabel::isRegistered = FALSE;
+
 std::map<HWND, const ZLabel*> ZLabel::labelMap;
 
 const ZLabel* ZLabel::GetLabel(HWND hWnd)

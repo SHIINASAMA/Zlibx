@@ -9,6 +9,9 @@
 #include "ZButton.h"
 #include "ZDebug.h"
 
+ZString ZButton::type = L"Zlibx_button";
+BOOL ZButton::isRegistered = FALSE;
+
 std::map<HWND, const ZButton*> ZButton::buttonMap;
 
 const ZButton* ZButton::GetButton(HWND hWnd)
@@ -104,7 +107,6 @@ void ZButton::SetDefFont()
 
 ZButton::~ZButton()
 {
-	GdiplusShutdown(gdiplusToken);
 	buttonMap.erase(hWnd);
 }
 
@@ -159,8 +161,6 @@ void ZButton::Init(HWND hWnd)
 
 	SetDefFont();
 	buttonMap.insert(std::pair<HWND, const ZButton*>(this->hWnd, this));
-
-	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 }
 
 void ZButton::Bind(CallBackFunc func)

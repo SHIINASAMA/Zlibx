@@ -14,8 +14,8 @@
 class ZButton :
 	public ZControl
 {
-	ZString type = L"Zlibx_button";
-	BOOL isRegistered = FALSE;
+	static ZString type;
+	static BOOL isRegistered;
 
 	ZString text;
 	ZFont font;

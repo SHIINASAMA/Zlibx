@@ -9,7 +9,6 @@
 #pragma once
 
 #include "ZControl.h"
-#include <map>
 
  /**
   * \brief ZLabel ¿‡
@@ -17,8 +16,8 @@
 class ZLabel :
 	public ZControl
 {
-	ZString type = L"Zlibx_label";
-	BOOL isRegistered = FALSE;
+	static ZString type;
+	static BOOL isRegistered;
 	WNDCLASSEX wcex;
 
 	ZString text;
