@@ -1,5 +1,5 @@
 /**@file	ZDebug.cpp
-* @brief	调试类实现
+* @brief	调试类定义
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */

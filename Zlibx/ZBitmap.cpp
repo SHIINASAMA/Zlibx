@@ -1,6 +1,6 @@
 /**
  * \file   ZBitmap.cpp
- * \brief  位图类实现
+ * \brief  位图类定义
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-17

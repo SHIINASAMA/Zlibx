@@ -1,5 +1,5 @@
 /**	@file	ZRange.cpp
-*	@brief	区间类实现
+*	@brief	区间类定义
 *	@author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */

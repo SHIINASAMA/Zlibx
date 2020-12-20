@@ -1,6 +1,6 @@
 /**
  * \file   ZWindow.cpp
- * \brief  窗体类实现
+ * \brief  窗体类定义
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19
@@ -38,7 +38,7 @@ void ZWindow::SetStyle(WindowStyle style)
 	}
 }
 
-LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT ZWindow::oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
@@ -78,24 +78,36 @@ const ZWindow* ZWindow::GetWindow(HWND hWnd)
 
 void ZWindow::Create()
 {
-	hInstance = ::GetModuleHandle(NULL);
-	WNDCLASSEX wcex;
-	wcex.cbSize = sizeof(WNDCLASSEX);
-	wcex.style = CS_HREDRAW | CS_VREDRAW;
-	wcex.cbClsExtra = 0;
-	wcex.cbWndExtra = 0;
-	wcex.hInstance = hInstance;
-	wcex.hIcon = NULL;
-	wcex.hCursor = NULL;
-	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-	wcex.lpszMenuName = NULL;
-	wcex.lpszClassName = L"Zlibx_window";
-	wcex.hIconSm = NULL;
-	wcex.lpfnWndProc = WndProc;
-	RegisterClassEx(&wcex);
+	if (!isRegistered)
+	{
+		hInstance = ::GetModuleHandle(NULL);
+		WNDCLASSEX wcex;
+		wcex.cbSize = sizeof(WNDCLASSEX);
+		wcex.style = CS_HREDRAW | CS_VREDRAW;
+		wcex.cbClsExtra = 0;
+		wcex.cbWndExtra = 0;
+		wcex.hInstance = hInstance;
+		wcex.hIcon = NULL;
+		wcex.hCursor = NULL;
+		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+		wcex.lpszMenuName = NULL;
+		wcex.lpszClassName = type;
+		wcex.hIconSm = NULL;
+		wcex.lpfnWndProc = oldWndProc;
+
+		if (!RegisterClassEx(&wcex))
+		{
+			MessageBox(hWnd, L"控件注册失败", type, MB_OK | MB_ICONERROR);
+			return;
+		}
+		else
+		{
+			isRegistered = TRUE;
+		}
+	}
 
 	hWnd = CreateWindow(
-		wcex.lpszClassName,
+		type,
 		text,
 		style,
 		rect.A.x,
@@ -104,7 +116,7 @@ void ZWindow::Create()
 		rect.B.y,
 		NULL,
 		NULL,
-		wcex.hInstance,
+		hInstance,
 		NULL
 	);
 

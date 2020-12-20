@@ -1,3 +1,11 @@
+/**
+ * \file   ZButton.cpp
+ * \brief  按钮控件类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-20
+ */
+
 #include "ZButton.h"
 #include "ZDebug.h"
 
@@ -108,6 +116,7 @@ void ZButton::Init(HWND hWnd)
 {
 	if (!isRegistered)
 	{
+		WNDCLASSEX wcex{ 0 };
 		wcex.cbSize = sizeof(WNDCLASSEX);
 		wcex.lpfnWndProc = ConProc;
 		wcex.hInstance = (HINSTANCE)GetWindowLong(hWnd, GWLP_HINSTANCE);
@@ -158,4 +167,9 @@ void ZButton::Bind(CallBackFunc func)
 void ZButton::SetFont(ZFont font)
 {
 	this->font = font;
+}
+
+void ZButton::SetTextColor(ZColor color)
+{
+	this->textColor = color;
 }

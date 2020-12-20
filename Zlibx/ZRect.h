@@ -1,5 +1,5 @@
 /**	@file	ZRect.h
-*	@brief	矩形类定义
+*	@brief	矩形类声明
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

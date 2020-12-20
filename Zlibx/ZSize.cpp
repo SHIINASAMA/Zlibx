@@ -1,5 +1,5 @@
 /**	@file	ZSize.cpp
-*	@brief	大小类实现
+*	@brief	大小类定义
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

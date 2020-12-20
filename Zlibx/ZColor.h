@@ -1,5 +1,5 @@
 /**@file	ZColor.h
-* @brief	颜色类定义
+* @brief	颜色类声明
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */

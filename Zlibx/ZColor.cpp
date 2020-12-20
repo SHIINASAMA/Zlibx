@@ -1,5 +1,5 @@
 /**@file	ZColor.cpp
-* @brief	颜色类实现
+* @brief	颜色类定义
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-09
 */

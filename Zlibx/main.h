@@ -1,5 +1,5 @@
 /**	@file	main.h
-*	@brief	文档主页和通用定义
+*	@brief	文档主页和通用声明
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

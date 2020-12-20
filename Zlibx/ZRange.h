@@ -1,5 +1,5 @@
 /**	@file	ZRange.h
-*	@brief	区间类定义
+*	@brief	区间类声明
 *	@author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */

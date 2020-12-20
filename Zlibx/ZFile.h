@@ -1,5 +1,5 @@
 /**@file	ZFile.h
-* @brief	文件类定义
+* @brief	文件类声明
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-28
 */

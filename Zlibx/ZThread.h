@@ -1,5 +1,5 @@
 /**	@file	ZThread.h
-*	@brief	线程类定义
+*	@brief	线程类声明
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */

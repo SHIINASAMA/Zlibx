@@ -1,5 +1,5 @@
 /**@file	ZDebug.h
-* @brief	调试类定义
+* @brief	调试类声明
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-30
 */

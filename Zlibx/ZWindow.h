@@ -1,6 +1,6 @@
 /**
  * \file   ZWindow.h
- * \brief  窗体类定义
+ * \brief  窗体类声明
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19
@@ -54,13 +54,16 @@ protected:
 	HINSTANCE hInstance;
 
 private:
+	ZString type = L"Zlibx_window";
+	BOOL isRegistered = FALSE;
+
 	void SetStyle(WindowStyle style);
 
 	static std::map<HWND, const ZWindow*> windowMap;
 
 	static const ZWindow* GetWindow(HWND hWnd);
 
-	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+	static LRESULT CALLBACK oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	~ZWindow();
 public:

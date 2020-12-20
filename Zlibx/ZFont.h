@@ -1,5 +1,5 @@
 /**@file	ZFont.h
-* @brief	字体类定义
+* @brief	字体类声明
 * @author	kaoru(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-12-10
 */

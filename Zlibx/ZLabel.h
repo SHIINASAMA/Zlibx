@@ -1,6 +1,6 @@
 /**
  * \file   ZLabel.h
- * \brief  文本控件类定义
+ * \brief  文本控件类声明
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19

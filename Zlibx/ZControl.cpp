@@ -1,6 +1,6 @@
 /**
  * \file   ZControl.cpp
- * \brief  控件基类实现
+ * \brief  控件基类定义
  *
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19

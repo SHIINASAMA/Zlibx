@@ -1,5 +1,5 @@
 /**	@file	ZPoint.h
-*	@brief	二维点类定义
+*	@brief	二维点类声明
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-09
 */

@@ -1,5 +1,5 @@
 /**	@file	ZResource.h
-*	@brief	资源基类定义
+*	@brief	资源基类声明
 *	@author kaoru(SHIINA_KAORU@OUTLOOK.COM)
 *	@date	2020-12-10
 */
