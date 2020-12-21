@@ -20,6 +20,8 @@ void ZFont::Create(ZString FontName)
 	this->font = CreateFont(15, 0, 0, 0, 0, 0, 0, 0,
 		GB2312_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
 		DEFAULT_QUALITY, DEFAULT_PITCH, FontName);
+
+	this->fontName = FontName;
 }
 
 void ZFont::CreateEx(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCWSTR pszFaceName)
@@ -30,4 +32,10 @@ void ZFont::CreateEx(int cHeight, int cWidth, int cEscapement, int cOrientation,
 ZFont::operator HFONT()
 {
 	return this->font;
+}
+
+ZFont::operator Gdiplus::Font()
+{
+	FontFamily family(fontName);
+	return Gdiplus::Font(&family, 24, FontStyleRegular, UnitPixel);
 }

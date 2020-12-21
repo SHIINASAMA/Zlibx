@@ -37,6 +37,7 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		HDC hdc;
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hWnd, &ps);
+		Graphics g(hdc);
 		SelectObject(hdc, temp->font);
 		SetTextColor(hdc, temp->textColol);
 		DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE);

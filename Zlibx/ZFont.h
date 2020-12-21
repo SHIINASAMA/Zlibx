@@ -18,6 +18,8 @@ protected:
 	*/
 	HFONT font;
 
+	ZString fontName;
+
 public:
 	ZFont();
 
@@ -52,4 +54,5 @@ public:
 		DWORD iQuality, DWORD iPitchAndFamily, LPCWSTR pszFaceName);
 
 	operator HFONT();
+	operator Gdiplus::Font();
 };

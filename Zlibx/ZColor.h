@@ -25,6 +25,7 @@ public:
 	ZColor(BYTE R, BYTE G, BYTE B);
 
 	operator COLORREF();
+	operator Gdiplus::Color();
 	void operator=(COLORREF color);
 
 	/**@brief ªÒ»°∫Ï÷µ

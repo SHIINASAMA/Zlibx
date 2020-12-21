@@ -16,6 +16,11 @@ ZColor::operator COLORREF()
 	return this->color;
 }
 
+ZColor::operator Gdiplus::Color()
+{
+	return Color(GetRVar(), GetGVar(), GetBVar());
+}
+
 void ZColor::operator=(COLORREF color)
 {
 	this->color = color;

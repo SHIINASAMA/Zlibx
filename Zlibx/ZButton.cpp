@@ -35,10 +35,6 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_LBUTTONDOWN:
 	case WM_LBUTTONDBLCLK:
 	{
-		if (temp->func != NULL)
-		{
-			temp->func(wParam, lParam);
-		}
 		temp->isPress = TRUE;
 		printf("D\n");
 		InvalidateRect(hWnd, temp->rect, TRUE);
@@ -49,6 +45,10 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		temp->isPress = FALSE;
 		printf("U\n");
 		InvalidateRect(hWnd, temp->rect, TRUE);
+		if (temp->func != NULL)
+		{
+			temp->func(wParam, lParam);
+		}
 		break;
 	}
 	case WM_PAINT:
@@ -57,7 +57,41 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hWnd, &ps);
 
+		Graphics g(hdc);
+
+		SolidBrush bkBrush(Color(240, 240, 240));
+		g.FillRectangle(&bkBrush,
+			0,
+			0,
+			temp->rect.B.x - temp->rect.A.x - 1,
+			temp->rect.B.y - temp->rect.A.y - 1);
+
+		Pen edgePen(Color(110, 110, 110));
+		g.DrawRectangle(&edgePen,
+			0,
+			0,
+			temp->rect.B.x - temp->rect.A.x - 1,
+			temp->rect.B.y - temp->rect.A.y - 1
+		);
+
+		RECT rect = temp->rect;
+		rect.left = 0;
+		rect.top = 0;
 		SetBkMode(hdc, 1);
+		SelectObject(hdc, temp->font);
+		::SetTextColor(hdc, temp->textColor);
+		if (!temp->isPress)
+		{
+			OffsetRect(&rect, -1, -1);
+			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+		}
+		else
+		{
+			/*OffsetRect(&rect, 1, 1);*/
+			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+		}
+
+		/*SetBkMode(hdc, 1);
 		SelectObject(hdc, temp->font);
 		::SetTextColor(hdc, temp->textColor);
 
@@ -90,7 +124,7 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			RECT rect = temp->rect;
 			OffsetRect(&rect, -2, -2);
 			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
-		}
+		}*/
 		EndPaint(hWnd, &ps);
 		break;
 	}
