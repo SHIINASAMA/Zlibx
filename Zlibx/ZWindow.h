@@ -57,8 +57,9 @@ private:
 	static BOOL isRegistered;
 
 	//GDI+
-	GdiplusStartupInput gdiplusStartupInput;
-	ULONG_PTR           gdiplusToken;
+	static GdiplusStartupInput	gdiplusStartupInput;
+	static ULONG_PTR			gdiplusToken;
+	static UINT					count;
 
 	void SetStyle(WindowStyle style);
 
