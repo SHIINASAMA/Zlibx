@@ -9,6 +9,9 @@
 #include "ZButton.h"
 #include "ZDebug.h"
 
+ZString ZButton::type = L"Zlibx_button";
+BOOL ZButton::isRegistered = FALSE;
+
 std::map<HWND, const ZButton*> ZButton::buttonMap;
 
 const ZButton* ZButton::GetButton(HWND hWnd)
@@ -53,9 +56,10 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		HDC hdc = (HDC)wParam;
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hWnd, &ps);
+
 		SetBkMode(hdc, 1);
 		SelectObject(hdc, temp->font);
-		SetTextColor(hdc, temp->textColor);
+		::SetTextColor(hdc, temp->textColor);
 
 		HPEN Pen = CreatePen(PS_SOLID, 1, RGB(110, 110, 110));
 		SelectObject(hdc, Pen);

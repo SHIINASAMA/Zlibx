@@ -22,7 +22,7 @@
 */
 #define MAKEPARAM(X) ((LPVOID)X)
 
-/**@brief ZThread 类定义
+/**@brief ZThread 类
 */
 class DLLAPI ZThread
 {

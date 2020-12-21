@@ -5,14 +5,17 @@
  * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
  * \date   2020-12-19
  */
+
 #pragma once
+
 #include "ZControl.h"
-#include <map>
+
+ /** \brief ZButton ¿‡ */
 class ZButton :
 	public ZControl
 {
-	ZString type = L"Zlibx_button";
-	BOOL isRegistered = FALSE;
+	static ZString type;
+	static BOOL isRegistered;
 
 	ZString text;
 	ZFont font;

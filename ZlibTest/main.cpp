@@ -4,6 +4,9 @@
 
 void btn_clicked(WPARAM wParam, LPARAM lParam)
 {
+	auto win = new ZWindow(L"这是一个子窗体", 0, 0, 300, 200);
+	win->Create();
+	win->Run();
 }
 
 int main()

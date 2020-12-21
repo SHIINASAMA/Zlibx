@@ -9,7 +9,7 @@
 #include <Windows.h>
 #include "main.h"
 
-/**	@brief ZColor 类定义
+/**	@brief ZColor 类
 */
 class DLLAPI ZColor
 {

@@ -9,16 +9,15 @@
 #pragma once
 
 #include "ZControl.h"
-#include <map>
 
  /**
-  * \brief ZLabel 类定义
+  * \brief ZLabel 类
   */
 class ZLabel :
 	public ZControl
 {
-	ZString type = L"Zlibx_label";
-	BOOL isRegistered = FALSE;
+	static ZString type;
+	static BOOL isRegistered;
 	WNDCLASSEX wcex;
 
 	ZString text;

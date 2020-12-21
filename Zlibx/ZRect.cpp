@@ -64,3 +64,13 @@ ZRect::operator LPRECT()
 {
 	return new RECT{ A.x,A.y,B.x,B.y };
 }
+
+ZRect::operator Gdiplus::Rect()
+{
+	return Gdiplus::Rect(
+		A.x,
+		A.y,
+		B.x - A.x,
+		B.y - A.y
+	);
+}

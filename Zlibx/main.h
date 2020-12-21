@@ -4,6 +4,12 @@
 *	@date	2020-12-09
 */
 
+#include <map>
+#include <comdef.h>
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
+using namespace Gdiplus;
+
 #pragma once
 
 #define DLL

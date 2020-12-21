@@ -9,7 +9,7 @@
 #pragma once
 #include "ZResource.h"
 
- /** \brief ZBitmap 类定义 */
+ /** \brief ZBitmap 类 */
 class DLLAPI ZBitmap :
 	public ZResource
 {

@@ -10,7 +10,7 @@
 #include "ZString.h"
 #include "main.h"
 
-/** @brief ZResource 类定义
+/** @brief ZResource 类
 */
 class DLLAPI ZResource
 {

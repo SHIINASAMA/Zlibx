@@ -8,6 +8,13 @@
 
 #include "ZWindow.h"
 
+ZString ZWindow::type = L"Zlibx_window";
+BOOL ZWindow::isRegistered = FALSE;
+
+GdiplusStartupInput ZWindow::gdiplusStartupInput;
+ULONG_PTR ZWindow::gdiplusToken;
+UINT ZWindow::count = 0;
+
 std::map<HWND, const ZWindow*> ZWindow::windowMap;
 
 void ZWindow::SetStyle(WindowStyle style)
@@ -43,6 +50,7 @@ LRESULT ZWindow::oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	switch (uMsg)
 	{
 	case WM_DESTROY:
+		count--;
 		PostQuitMessage(0);
 		break;
 	default:
@@ -54,6 +62,10 @@ LRESULT ZWindow::oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 ZWindow::~ZWindow()
 {
 	windowMap.erase(hWnd);
+	if (count == 0)
+	{
+		GdiplusShutdown(gdiplusToken);
+	}
 }
 
 ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowStyle style)
@@ -121,6 +133,11 @@ void ZWindow::Create()
 	);
 
 	windowMap.insert(std::pair<HWND, const ZWindow*>(hWnd, this));
+
+	if (count++ == 0)
+	{
+		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+	}
 }
 
 void ZWindow::Run()

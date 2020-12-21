@@ -9,7 +9,6 @@
 #pragma once
 
 #include "ZControl.h"
-#include <map>
 
  /** \brief 窗体类型枚举 */
 enum class DLLAPI WindowStyle
@@ -38,7 +37,7 @@ enum class DLLAPI DialogResult {
 	No
 };
 
-/** \brief ZWindow 类定义 */
+/** \brief ZWindow 类 */
 class DLLAPI ZWindow
 {
 protected:
@@ -54,8 +53,13 @@ protected:
 	HINSTANCE hInstance;
 
 private:
-	ZString type = L"Zlibx_window";
-	BOOL isRegistered = FALSE;
+	static ZString type;
+	static BOOL isRegistered;
+
+	//GDI+
+	static GdiplusStartupInput	gdiplusStartupInput;
+	static ULONG_PTR			gdiplusToken;
+	static UINT					count;
 
 	void SetStyle(WindowStyle style);
 
