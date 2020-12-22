@@ -98,4 +98,10 @@ public:
 	 * \param con 目标控件
 	 */
 	void Remove(ZControl* con);
+
+	/**
+	 * \brief 设置窗体居中显示，支持多显示器
+	 *
+	 */
+	void ShowCenter();
 };

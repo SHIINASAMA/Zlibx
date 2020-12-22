@@ -144,3 +144,24 @@ void ZWindow::Remove(ZControl* con)
 {
 	DestroyWindow(hWnd);
 }
+
+void ZWindow::ShowCenter()
+{
+	MONITORINFOEX info;
+	info.cbSize = sizeof(MONITORINFOEX);
+	GetMonitorInfo(MonitorFromWindow(hWnd, MONITOR_DEFAULTTONEAREST), &info);
+	long pw = info.rcMonitor.right - info.rcMonitor.left;
+	long ph = info.rcMonitor.bottom - info.rcMonitor.top;
+	//printf("x1:%d\ty1:%d\tx2:%d\ty2:%d\n", info.rcWork.left, info.rcWork.top, info.rcWork.right, info.rcWork.bottom);
+
+	RECT rect;
+	GetWindowRect(hWnd, &rect);
+	long w = rect.right - rect.left;
+	long h = rect.bottom - rect.top;
+	//printf("w:%d\th:%d\n", w, h);
+
+	long x = info.rcMonitor.left + (pw - w) / 2;
+	long y = info.rcMonitor.top + (ph - h) / 2;
+
+	MoveWindow(hWnd, x, y, w, h, TRUE);
+}
