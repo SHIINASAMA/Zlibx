@@ -26,10 +26,28 @@ ZRect::ZRect(ZPoint A, ZPoint B)
 
 ZRect::ZRect(int x1, int y1, int x2, int y2)
 {
-	ZPoint A = ZPoint(x1, y1);
-	ZPoint B = ZPoint(x2, y2);
-	this->A = A;
-	this->B = B;
+	this->A = ZPoint(x1, y1);;
+	this->B = ZPoint(x2, y2);
+}
+
+void ZRect::SetWidth(int w)
+{
+	B.x = A.x + w;
+}
+
+int ZRect::GetWidth()
+{
+	return B.x - A.x;
+}
+
+void ZRect::SetHeight(int h)
+{
+	B.y = A.y + h;
+}
+
+int ZRect::GetHeight()
+{
+	return B.y - A.y;
 }
 
 ZSize ZRect::GetSize()
@@ -45,7 +63,17 @@ void ZRect::SetSize(ZSize Size)
 	B.y = A.y + Size.h;
 }
 
-RECT ZRect::GetRect()
+ZRect ZRect::ToClientRect()
+{
+	ZRect rect;
+	rect.A.x = 0;
+	rect.A.y = 0;
+	rect.B.x = GetWidth();
+	rect.B.y = GetHeight();
+	return rect;
+}
+
+ZRect::operator RECT()
 {
 	RECT rect;
 	rect.left = A.x;
@@ -53,11 +81,6 @@ RECT ZRect::GetRect()
 	rect.right = B.x;
 	rect.bottom = B.y;
 	return rect;
-}
-
-ZRect::operator RECT()
-{
-	return GetRect();
 }
 
 ZRect::operator LPRECT()

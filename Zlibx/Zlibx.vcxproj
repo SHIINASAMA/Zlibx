@@ -166,6 +166,7 @@
     <ClInclude Include="ZResource.h" />
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZString.h" />
+    <ClInclude Include="ZTextBox.h" />
     <ClInclude Include="ZThread.h" />
     <ClInclude Include="ZWindow.h" />
   </ItemGroup>
@@ -183,6 +184,7 @@
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZString.cpp" />
+    <ClCompile Include="ZTextBox.cpp" />
     <ClCompile Include="ZThread.cpp" />
     <ClCompile Include="ZWindow.cpp" />
   </ItemGroup>

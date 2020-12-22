@@ -32,21 +32,22 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	ZButton* temp = const_cast<ZButton*>(GetButton(hWnd));
 	if (temp != NULL)
 	{
+		RECT rect = temp->rect.ToClientRect();
 		switch (uMsg)
 		{
 		case WM_LBUTTONDOWN:
 		case WM_LBUTTONDBLCLK:
 		{
+			if (!temp->isEnable)break;
 			temp->isPress = TRUE;
-			printf("D\n");
-			InvalidateRect(hWnd, temp->rect, TRUE);
+			InvalidateRect(hWnd, &rect, TRUE);
 			break;
 		}
 		case WM_LBUTTONUP:
 		{
+			if (!temp->isEnable)break;
 			temp->isPress = FALSE;
-			printf("U\n");
-			InvalidateRect(hWnd, temp->rect, TRUE);
+			InvalidateRect(hWnd, &rect, TRUE);
 			if (temp->func != NULL)
 			{
 				temp->func(wParam, lParam);
@@ -76,20 +77,26 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 				temp->rect.B.y - temp->rect.A.y - 1
 			);
 
-			RECT rect = temp->rect;
-			rect.left = 0;
-			rect.top = 0;
 			SetBkMode(hdc, 1);
 			SelectObject(hdc, temp->font);
-			::SetTextColor(hdc, temp->textColor);
-			if (!temp->isPress)
+
+			if (temp->isEnable)
 			{
-				OffsetRect(&rect, -1, -1);
-				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+				::SetTextColor(hdc, temp->textColor);
+				if (!temp->isPress)
+				{
+					/*OffsetRect(&rect, -1, -1);*/
+					DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+				}
+				else
+				{
+					OffsetRect(&rect, 1, 1);
+					DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+				}
 			}
 			else
 			{
-				/*OffsetRect(&rect, 1, 1);*/
+				::SetTextColor(hdc, RGB(160, 160, 160));
 				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
 			}
 
@@ -164,7 +171,7 @@ void ZButton::Init(HWND hWnd)
 		WNDCLASSEX wcex{ 0 };
 		wcex.cbSize = sizeof(WNDCLASSEX);
 		wcex.lpfnWndProc = ConProc;
-		wcex.hInstance = (HINSTANCE)GetWindowLong(hWnd, GWLP_HINSTANCE);
+		wcex.hInstance = (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE);
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hIcon = NULL;
@@ -196,7 +203,7 @@ void ZButton::Init(HWND hWnd)
 		rect.GetSize().h,
 		phWnd,
 		NULL,
-		(HINSTANCE)GetWindowLong(phWnd, GWLP_HINSTANCE),
+		(HINSTANCE)GetWindowLongPtr(phWnd, GWLP_HINSTANCE),
 		NULL
 	);
 
@@ -217,4 +224,9 @@ void ZButton::SetFont(ZFont font)
 void ZButton::SetTextColor(ZColor color)
 {
 	this->textColor = color;
+}
+
+void ZButton::SetEnable(BOOL enable)
+{
+	this->isEnable = enable;
 }
