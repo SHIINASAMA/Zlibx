@@ -61,7 +61,6 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			hdc = BeginPaint(hWnd, &ps);
 
 			Graphics g(hdc);
-
 			SolidBrush bkBrush(Color(240, 240, 240));
 			g.FillRectangle(&bkBrush,
 				0,
@@ -79,7 +78,6 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 			SetBkMode(hdc, 1);
 			SelectObject(hdc, temp->font);
-
 			if (temp->isEnable)
 			{
 				::SetTextColor(hdc, temp->textColor);
@@ -99,7 +97,6 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 				::SetTextColor(hdc, RGB(160, 160, 160));
 				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
 			}
-
 			/*SetBkMode(hdc, 1);
 			SelectObject(hdc, temp->font);
 			::SetTextColor(hdc, temp->textColor);
@@ -142,10 +139,7 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			break;
 		}
 	}
-	else
-	{
-		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-	}
+	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
 void ZButton::SetDefFont()
