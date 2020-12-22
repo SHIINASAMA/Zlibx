@@ -29,24 +29,31 @@ const ZLabel* ZLabel::GetLabel(HWND hWnd)
 LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	ZLabel* temp = const_cast<ZLabel*>(GetLabel(hWnd));
-	switch (uMsg)
+	if (temp != NULL)
 	{
-	case WM_PAINT:
-	{
-		RECT rect = temp->rect;
-		HDC hdc;
-		PAINTSTRUCT ps;
-		hdc = BeginPaint(hWnd, &ps);
-		Graphics g(hdc);
-		SelectObject(hdc, temp->font);
-		SetTextColor(hdc, temp->textColol);
-		DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE);
-		EndPaint(hWnd, &ps);
-		break;
+		switch (uMsg)
+		{
+		case WM_PAINT:
+		{
+			RECT rect = temp->rect;
+			HDC hdc;
+			PAINTSTRUCT ps;
+			hdc = BeginPaint(hWnd, &ps);
+			Graphics g(hdc);
+			SelectObject(hdc, temp->font);
+			SetTextColor(hdc, temp->textColol);
+			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE);
+			EndPaint(hWnd, &ps);
+			break;
+		}
+		default:
+			return DefWindowProc(hWnd, uMsg, wParam, lParam);
+			break;
+		}
 	}
-	default:
+	else
+	{
 		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-		break;
 	}
 }
 
@@ -67,7 +74,7 @@ void ZLabel::Init(HWND hWnd)
 	{
 		wcex.cbSize = sizeof(WNDCLASSEX);
 		wcex.lpfnWndProc = ConProc;
-		wcex.hInstance = (HINSTANCE)GetWindowLong(hWnd, GWLP_HINSTANCE);
+		wcex.hInstance = (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE);
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hIcon = NULL;
@@ -99,7 +106,7 @@ void ZLabel::Init(HWND hWnd)
 		rect.GetSize().h,
 		phWnd,
 		NULL,
-		(HINSTANCE)GetWindowLong(phWnd, GWLP_HINSTANCE),
+		(HINSTANCE)GetWindowLongPtr(phWnd, GWLP_HINSTANCE),
 		NULL
 	);
 

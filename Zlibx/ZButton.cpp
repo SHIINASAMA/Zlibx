@@ -30,107 +30,114 @@ const ZButton* ZButton::GetButton(HWND hWnd)
 LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	ZButton* temp = const_cast<ZButton*>(GetButton(hWnd));
-	switch (uMsg)
+	if (temp != NULL)
 	{
-	case WM_LBUTTONDOWN:
-	case WM_LBUTTONDBLCLK:
-	{
-		temp->isPress = TRUE;
-		printf("D\n");
-		InvalidateRect(hWnd, temp->rect, TRUE);
-		break;
-	}
-	case WM_LBUTTONUP:
-	{
-		temp->isPress = FALSE;
-		printf("U\n");
-		InvalidateRect(hWnd, temp->rect, TRUE);
-		if (temp->func != NULL)
+		switch (uMsg)
 		{
-			temp->func(wParam, lParam);
+		case WM_LBUTTONDOWN:
+		case WM_LBUTTONDBLCLK:
+		{
+			temp->isPress = TRUE;
+			printf("D\n");
+			InvalidateRect(hWnd, temp->rect, TRUE);
+			break;
 		}
-		break;
-	}
-	case WM_PAINT:
-	{
-		HDC hdc = (HDC)wParam;
-		PAINTSTRUCT ps;
-		hdc = BeginPaint(hWnd, &ps);
-
-		Graphics g(hdc);
-
-		SolidBrush bkBrush(Color(240, 240, 240));
-		g.FillRectangle(&bkBrush,
-			0,
-			0,
-			temp->rect.B.x - temp->rect.A.x - 1,
-			temp->rect.B.y - temp->rect.A.y - 1);
-
-		Pen edgePen(Color(110, 110, 110));
-		g.DrawRectangle(&edgePen,
-			0,
-			0,
-			temp->rect.B.x - temp->rect.A.x - 1,
-			temp->rect.B.y - temp->rect.A.y - 1
-		);
-
-		RECT rect = temp->rect;
-		rect.left = 0;
-		rect.top = 0;
-		SetBkMode(hdc, 1);
-		SelectObject(hdc, temp->font);
-		::SetTextColor(hdc, temp->textColor);
-		if (!temp->isPress)
+		case WM_LBUTTONUP:
 		{
-			OffsetRect(&rect, -1, -1);
-			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			temp->isPress = FALSE;
+			printf("U\n");
+			InvalidateRect(hWnd, temp->rect, TRUE);
+			if (temp->func != NULL)
+			{
+				temp->func(wParam, lParam);
+			}
+			break;
 		}
-		else
+		case WM_PAINT:
 		{
-			/*OffsetRect(&rect, 1, 1);*/
-			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
-		}
+			HDC hdc = (HDC)wParam;
+			PAINTSTRUCT ps;
+			hdc = BeginPaint(hWnd, &ps);
 
-		/*SetBkMode(hdc, 1);
-		SelectObject(hdc, temp->font);
-		::SetTextColor(hdc, temp->textColor);
+			Graphics g(hdc);
 
-		HPEN Pen = CreatePen(PS_SOLID, 1, RGB(110, 110, 110));
-		SelectObject(hdc, Pen);
+			SolidBrush bkBrush(Color(240, 240, 240));
+			g.FillRectangle(&bkBrush,
+				0,
+				0,
+				temp->rect.B.x - temp->rect.A.x - 1,
+				temp->rect.B.y - temp->rect.A.y - 1);
 
-		Rectangle(hdc,
-			temp->rect.A.x,
-			temp->rect.A.y,
-			temp->rect.B.x - 5,
-			temp->rect.B.y - 5
-		);
+			Pen edgePen(Color(110, 110, 110));
+			g.DrawRectangle(&edgePen,
+				0,
+				0,
+				temp->rect.B.x - temp->rect.A.x - 1,
+				temp->rect.B.y - temp->rect.A.y - 1
+			);
 
-		RECT rect{ temp->rect.A.x + 1,
-			temp->rect.A.y + 1,
-			temp->rect.B.x - 6,
-			temp->rect.B.y - 6
-		};
-
-		FillRect(hdc, &rect, CreateSolidBrush(RGB(240, 240, 240)));
-
-		if (!temp->isPress)
-		{
 			RECT rect = temp->rect;
-			OffsetRect(&rect, -3, -3);
-			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			rect.left = 0;
+			rect.top = 0;
+			SetBkMode(hdc, 1);
+			SelectObject(hdc, temp->font);
+			::SetTextColor(hdc, temp->textColor);
+			if (!temp->isPress)
+			{
+				OffsetRect(&rect, -1, -1);
+				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			}
+			else
+			{
+				/*OffsetRect(&rect, 1, 1);*/
+				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			}
+
+			/*SetBkMode(hdc, 1);
+			SelectObject(hdc, temp->font);
+			::SetTextColor(hdc, temp->textColor);
+
+			HPEN Pen = CreatePen(PS_SOLID, 1, RGB(110, 110, 110));
+			SelectObject(hdc, Pen);
+
+			Rectangle(hdc,
+				temp->rect.A.x,
+				temp->rect.A.y,
+				temp->rect.B.x - 5,
+				temp->rect.B.y - 5
+			);
+
+			RECT rect{ temp->rect.A.x + 1,
+				temp->rect.A.y + 1,
+				temp->rect.B.x - 6,
+				temp->rect.B.y - 6
+			};
+
+			FillRect(hdc, &rect, CreateSolidBrush(RGB(240, 240, 240)));
+
+			if (!temp->isPress)
+			{
+				RECT rect = temp->rect;
+				OffsetRect(&rect, -3, -3);
+				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			}
+			else
+			{
+				RECT rect = temp->rect;
+				OffsetRect(&rect, -2, -2);
+				DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
+			}*/
+			EndPaint(hWnd, &ps);
+			break;
 		}
-		else
-		{
-			RECT rect = temp->rect;
-			OffsetRect(&rect, -2, -2);
-			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE | DT_VCENTER | DT_CENTER);
-		}*/
-		EndPaint(hWnd, &ps);
-		break;
+		default:
+			return DefWindowProc(hWnd, uMsg, wParam, lParam);
+			break;
+		}
 	}
-	default:
+	else
+	{
 		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-		break;
 	}
 }
 

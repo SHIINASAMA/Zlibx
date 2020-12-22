@@ -61,7 +61,7 @@ ZString ZFile::ReadLine(ZString path)
 		WChar ch;
 		do
 		{
-			fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+			fwscanf_s(file, L"%c", &ch, (UINT)sizeof(WChar));
 			len++;
 		} while (ch != L'\n');
 		if (len == 0)
@@ -72,7 +72,7 @@ ZString ZFile::ReadLine(ZString path)
 		{
 			fseek(file, 0, SEEK_SET);
 			WChar* str = new WChar[len];
-			fwscanf_s(file, L"%s", str, sizeof(str));
+			fwscanf_s(file, L"%s", str, (UINT)sizeof(str));
 			fclose(file);
 			ZString zstr = str;
 			return zstr;
@@ -90,7 +90,7 @@ WChar ZFile::Read(ZString path)
 	if (file)
 	{
 		WChar ch;
-		fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+		fwscanf_s(file, L"%c", &ch, (UINT)sizeof(WChar));
 		return ch;
 	}
 	else
@@ -145,7 +145,7 @@ BOOL ZFile::Write(WChar ch)
 
 BOOL ZFile::WriteLine(ZString str)
 {
-	int len = fwprintf_s(file, L"%s", str);
+	int len = fwprintf_s(file, L"%s", (WString)str);
 	if (len == -1)
 	{
 		return FALSE;
@@ -159,7 +159,7 @@ BOOL ZFile::WriteLine(ZString str)
 WChar ZFile::Read()
 {
 	WChar ch;
-	fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+	fwscanf_s(file, L"%c", &ch, (UINT)sizeof(WChar));
 	return ch;
 }
 
@@ -170,12 +170,12 @@ ZString ZFile::ReadLine()
 	WChar ch;
 	do
 	{
-		fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+		fwscanf_s(file, L"%c", &ch, (UINT)sizeof(WChar));
 		len++;
 	} while (ch != L'\n');
 
 	WChar* str = new WChar[len];
-	fwscanf_s(file, L"%s", str, sizeof(str));
+	fwscanf_s(file, L"%s", str, (UINT)sizeof(str));
 	ZString zstr = str;
 	return zstr;
 }
