@@ -51,10 +51,7 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			break;
 		}
 	}
-	else
-	{
-		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-	}
+	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
 ZLabel::~ZLabel()

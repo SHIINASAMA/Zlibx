@@ -33,9 +33,3 @@ ZFont::operator HFONT()
 {
 	return this->font;
 }
-
-ZFont::operator Gdiplus::Font()
-{
-	FontFamily family(fontName);
-	return Gdiplus::Font(&family, 24, FontStyleRegular, UnitPixel);
-}

@@ -54,5 +54,4 @@ public:
 		DWORD iQuality, DWORD iPitchAndFamily, LPCWSTR pszFaceName);
 
 	operator HFONT();
-	operator Gdiplus::Font();
 };

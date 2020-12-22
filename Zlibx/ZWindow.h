@@ -7,8 +7,6 @@
  */
 
 #pragma once
-#pragma warning( disable: 4715 )
-#pragma warning( disable: 4251 )
 
 #include "ZControl.h"
 

@@ -66,7 +66,7 @@ void ZTextBox::Init(HWND hWnd)
 		rect.B.y - rect.A.y,
 		phWnd,
 		NULL,
-		(HINSTANCE)GetWindowLong(phWnd, GWLP_HINSTANCE),
+		(HINSTANCE)GetWindowLongPtr(phWnd, GWLP_HINSTANCE),
 		NULL
 	);
 
