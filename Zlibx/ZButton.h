@@ -21,7 +21,7 @@ class ZButton :
 	ZFont font;
 	ZColor textColor{ 0,0,0 };
 	BOOL isPress = FALSE;
-
+	BOOL isEnable = TRUE;
 	CallBackFunc func;
 
 	static std::map<HWND, const ZButton*> buttonMap;
@@ -73,4 +73,11 @@ public:
 	 * \param color 目标颜色
 	 */
 	void SetTextColor(ZColor color);
+
+	/**
+	 * 设置按钮是否可用
+	 *
+	 * \param enable 目标状态
+	 */
+	void SetEnable(BOOL enable);
 };

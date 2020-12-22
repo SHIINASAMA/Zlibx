@@ -15,8 +15,6 @@ GdiplusStartupInput ZWindow::gdiplusStartupInput;
 ULONG_PTR ZWindow::gdiplusToken;
 UINT ZWindow::count = 0;
 
-std::map<HWND, const ZWindow*> ZWindow::windowMap;
-
 void ZWindow::SetStyle(WindowStyle style)
 {
 	switch (style)
@@ -45,7 +43,7 @@ void ZWindow::SetStyle(WindowStyle style)
 	}
 }
 
-LRESULT ZWindow::oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
@@ -61,7 +59,6 @@ LRESULT ZWindow::oldWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 ZWindow::~ZWindow()
 {
-	windowMap.erase(hWnd);
 	if (count == 0)
 	{
 		GdiplusShutdown(gdiplusToken);
@@ -73,19 +70,6 @@ ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowStyle style)
 	this->text = text;
 	this->rect = RECT{ x,y,x + w,y + h };
 	SetStyle(style);
-}
-
-const ZWindow* ZWindow::GetWindow(HWND hWnd)
-{
-	auto iter = windowMap.find(hWnd);
-	if (iter != windowMap.end() && iter->second != NULL)
-	{
-		return iter->second;
-	}
-	else
-	{
-		return nullptr;
-	}
 }
 
 void ZWindow::Create()
@@ -105,7 +89,7 @@ void ZWindow::Create()
 		wcex.lpszMenuName = NULL;
 		wcex.lpszClassName = type;
 		wcex.hIconSm = NULL;
-		wcex.lpfnWndProc = oldWndProc;
+		wcex.lpfnWndProc = WndProc;
 
 		if (!RegisterClassEx(&wcex))
 		{
@@ -131,8 +115,6 @@ void ZWindow::Create()
 		hInstance,
 		NULL
 	);
-
-	windowMap.insert(std::pair<HWND, const ZWindow*>(hWnd, this));
 
 	if (count++ == 0)
 	{

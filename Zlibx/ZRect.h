@@ -45,6 +45,34 @@ public:
 	*/
 	ZRect(int x1, int y1, int x2, int y2);
 
+	/**
+	 * 设置矩阵的宽
+	 *
+	 * \param w 目标宽度
+	 */
+	void SetWidth(int w);
+
+	/**
+	 * 获取矩阵的宽
+	 *
+	 * \return 矩阵宽度
+	 */
+	int GetWidth();
+
+	/**
+	 * 设置矩阵的高
+	 *
+	 * \param h 目标高度
+	 */
+	void SetHeight(int h);
+
+	/**
+	 * 获取矩阵的高
+	 *
+	 * \return 矩阵高度
+	 */
+	int GetHeight();
+
 	/**@brief	获取矩阵大小
 	* @retval	大小
 	*/
@@ -55,10 +83,12 @@ public:
 	*/
 	void SetSize(ZSize Size);
 
-	/**@brief	获取RECT结构
-	* @retval	结构
-	*/
-	RECT GetRect();
+	/**
+	 * 转换子控件的矩阵
+	 *
+	 * \return 结果矩阵
+	 */
+	ZRect ToClientRect();
 
 	operator RECT();
 	operator LPRECT();
