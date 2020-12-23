@@ -7,13 +7,14 @@
  */
 
 #pragma once
+#pragma warning(disable:4251)
 
 #include "ZControl.h"
 
  /**
   * \brief ZLabel ¿‡
   */
-class ZLabel :
+class DLLAPI ZLabel :
 	public ZControl
 {
 	static ZString type;

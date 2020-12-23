@@ -38,7 +38,7 @@ enum class DLLAPI TextBoxTextStyle {
 };
 
 /** \brief ZTextBox ¿‡ */
-class ZTextBox :
+class DLLAPI ZTextBox :
 	public ZControl
 {
 	ZString type = L"edit";
