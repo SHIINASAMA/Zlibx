@@ -162,6 +162,7 @@
     <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZFont.h" />
     <ClInclude Include="ZLabel.h" />
+    <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZFont.cpp" />
     <ClCompile Include="ZLabel.cpp" />
+    <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />

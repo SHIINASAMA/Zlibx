@@ -23,13 +23,6 @@ void ZBitmap::LoadFromFile(ZString Path)
 	);
 }
 
-BITMAP ZBitmap::GetBitmap()
-{
-	BITMAP bmp;
-	GetObject(hbmp, sizeof(bmp), &bmp);
-	return  bmp;
-}
-
 void ZBitmap::operator=(HBITMAP hBmp)
 {
 	this->hbmp = hBmp;
@@ -38,4 +31,11 @@ void ZBitmap::operator=(HBITMAP hBmp)
 ZBitmap::operator HBITMAP()
 {
 	return this->hbmp;
+}
+
+ZBitmap::operator BITMAP()
+{
+	BITMAP bmp;
+	GetObject(hbmp, sizeof(bmp), &bmp);
+	return  bmp;
 }
