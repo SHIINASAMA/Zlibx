@@ -60,4 +60,11 @@ public:
 	 * \param font 目标字体
 	 */
 	void SetFont(ZFont font);
+
+	/**
+	 * \brief 设置控件显示文本
+	 *
+	 * \param text 目标文本
+	 */
+	void SetText(ZString text);
 };

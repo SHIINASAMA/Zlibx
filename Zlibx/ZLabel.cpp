@@ -35,14 +35,13 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 		case WM_PAINT:
 		{
-			RECT rect = temp->rect;
 			HDC hdc;
 			PAINTSTRUCT ps;
 			hdc = BeginPaint(hWnd, &ps);
 			Graphics g(hdc);
 			SelectObject(hdc, temp->font);
 			SetTextColor(hdc, temp->textColol);
-			DrawText(hdc, temp->text, -1, &rect, DT_SINGLELINE);
+			DrawText(hdc, temp->text, -1, temp->rect.ToClientRect(), DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 			EndPaint(hWnd, &ps);
 			break;
 		}
@@ -119,4 +118,10 @@ void ZLabel::SetFont(ZFont font)
 void ZLabel::SetDefFont()
 {
 	SetFont(ZFont(L"ÐÂËÎÌå"));
+}
+
+void ZLabel::SetText(ZString text)
+{
+	this->text = text;
+	InvalidateRect(hWnd, rect.ToClientRect(), TRUE);
 }
