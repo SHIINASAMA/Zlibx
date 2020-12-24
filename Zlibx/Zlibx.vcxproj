@@ -80,13 +80,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\Out\Zlibx\Debug\</OutDir>
-    <IntDir>$(SolutionDir)\Out\Zlibx\Temp\Debug\</IntDir>
+    <OutDir>$(SolutionDir)\Out\Debug\</OutDir>
+    <IntDir>$(SolutionDir)\Out\Temp\Debug\Zlibx\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\Out\Zlibx\Release\</OutDir>
-    <IntDir>$(SolutionDir)\Out\Zlibx\Release\Temp\</IntDir>
+    <OutDir>$(SolutionDir)\Out\Release\</OutDir>
+    <IntDir>$(SolutionDir)\Out\Release\Temp\Zlibx\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

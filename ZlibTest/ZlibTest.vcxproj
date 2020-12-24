@@ -88,13 +88,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\Out\Test\Debug\</OutDir>
-    <IntDir>$(SolutionDir)\Out\Test\Temp\Debug\</IntDir>
+    <OutDir>$(SolutionDir)\Out\Debug\</OutDir>
+    <IntDir>$(SolutionDir)\Out\Temp\Debug\Test\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\Out\Test\Release\</OutDir>
-    <IntDir>$(SolutionDir)\Out\Test\Release\Temp\</IntDir>
+    <OutDir>$(SolutionDir)\Out\Release\</OutDir>
+    <IntDir>$(SolutionDir)\Out\Release\Temp\Test\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
