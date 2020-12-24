@@ -31,9 +31,6 @@
     <ClCompile Include="ZThread.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="ZBitmap.cpp">
-      <Filter>Source Files\Base</Filter>
-    </ClCompile>
     <ClCompile Include="ZWindow.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
@@ -48,6 +45,12 @@
     </ClCompile>
     <ClCompile Include="ZTextBox.cpp">
       <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZPictureBox.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZBitmap.cpp">
+      <Filter>Source Files\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,9 +90,6 @@
     <ClInclude Include="ZDebug.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="ZBitmap.h">
-      <Filter>Header Files\Base</Filter>
-    </ClInclude>
     <ClInclude Include="ZWindow.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
@@ -104,6 +104,12 @@
     </ClInclude>
     <ClInclude Include="ZTextBox.h">
       <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZPictureBox.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZBitmap.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -31,13 +31,7 @@ public:
 	 */
 	void LoadFromFile(ZString Path);
 
-	/**
-	 * 获取Win32位图对象
-	 *
-	 * \return 位图
-	 */
-	BITMAP GetBitmap();
-
 	void operator=(HBITMAP hBmp);
 	operator HBITMAP();
+	operator BITMAP();
 };
