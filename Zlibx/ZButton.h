@@ -88,4 +88,11 @@ public:
 	 * \param text 目标文本
 	 */
 	void SetText(ZString text);
+
+	/**
+	 * 设置按钮文本
+	 *
+	 * \retval 控件文本
+	 */
+	ZString GetText();
 };

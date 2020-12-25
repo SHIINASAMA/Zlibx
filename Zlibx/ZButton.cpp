@@ -134,6 +134,11 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			EndPaint(hWnd, &ps);
 			break;
 		}
+		case WM_DESTROY:
+		{
+			temp->~ZButton();
+			break;
+		}
 		default:
 			return DefWindowProc(hWnd, uMsg, wParam, lParam);
 			break;
@@ -229,4 +234,9 @@ void ZButton::SetText(ZString text)
 {
 	this->text = text;
 	InvalidateRect(hWnd, rect.ToClientRect(), TRUE);
+}
+
+ZString ZButton::GetText()
+{
+	return text;
 }
