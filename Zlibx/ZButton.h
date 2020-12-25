@@ -81,4 +81,11 @@ public:
 	 * \param enable 目标状态
 	 */
 	void SetEnable(BOOL enable);
+
+	/**
+	 * 设置按钮文本
+	 *
+	 * \param text 目标文本
+	 */
+	void SetText(ZString text);
 };

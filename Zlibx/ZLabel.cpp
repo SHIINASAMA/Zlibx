@@ -40,9 +40,14 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			hdc = BeginPaint(hWnd, &ps);
 			Graphics g(hdc);
 			SelectObject(hdc, temp->font);
-			SetTextColor(hdc, temp->textColol);
+			::SetTextColor(hdc, temp->textColor);
 			DrawText(hdc, temp->text, -1, temp->rect.ToClientRect(), DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 			EndPaint(hWnd, &ps);
+			break;
+		}
+		case WM_DESTROY:
+		{
+			temp->~ZLabel();
 			break;
 		}
 		default:
@@ -124,4 +129,20 @@ void ZLabel::SetText(ZString text)
 {
 	this->text = text;
 	InvalidateRect(hWnd, rect.ToClientRect(), TRUE);
+}
+
+ZString ZLabel::GetText()
+{
+	return text;
+}
+
+void ZLabel::SetTextColor(ZColor color)
+{
+	this->textColor = color;
+	InvalidateRect(hWnd, rect.ToClientRect(), TRUE);
+}
+
+ZColor ZLabel::GetTextColor()
+{
+	return textColor;
 }

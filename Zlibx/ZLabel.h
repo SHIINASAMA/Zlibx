@@ -23,7 +23,7 @@ class DLLAPI ZLabel :
 
 	ZString text;
 	ZFont font;
-	ZColor textColol{ 0,0,0 };
+	ZColor textColor{ 0,0,0 };
 
 	static std::map<HWND, const ZLabel*> labelMap;
 
@@ -67,4 +67,25 @@ public:
 	 * \param text 目标文本
 	 */
 	void SetText(ZString text);
+
+	/**
+	 * \brief 获取控件文本
+	 *
+	 * \retval 控件文本
+	 */
+	ZString GetText();
+
+	/**
+	 * 设置控件文本颜色
+	 *
+	 * \param color
+	 */
+	void SetTextColor(ZColor color);
+
+	/**
+	 * 获取控件文本颜色
+	 *
+	 * \return 控件文本颜色
+	 */
+	ZColor GetTextColor();
 };

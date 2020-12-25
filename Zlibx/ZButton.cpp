@@ -224,3 +224,9 @@ void ZButton::SetEnable(BOOL enable)
 {
 	this->isEnable = enable;
 }
+
+void ZButton::SetText(ZString text)
+{
+	this->text = text;
+	InvalidateRect(hWnd, rect.ToClientRect(), TRUE);
+}
