@@ -42,6 +42,13 @@ protected:
 	 */
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+	/**
+	 * 更新控件位置
+	 *
+	 * \param con 目标控件
+	 */
+	static void UpdateRect(ZControl* con);
+
 	/** \brief 控件默认析构函数 */
 	~ZControl();
 public:
@@ -54,4 +61,46 @@ public:
 	 * \param hWnd 窗口句柄
 	 */
 	virtual void Init(HWND hWnd) = 0;
+
+	/**
+	 * 设置控件位置
+	 *
+	 * \param point 原点坐标
+	 */
+	void SetPosition(ZPoint point);
+
+	/**
+	 * 获取控件位置
+	 *
+	 * \return 原点坐标
+	 */
+	ZPoint GetPosition();
+
+	/**
+	 * 设置控件宽度
+	 *
+	 * \param w 宽
+	 */
+	void SetWidth(UINT w);
+
+	/**
+	 * 获取控件高度
+	 *
+	 * \return
+	 */
+	UINT GetWidth();
+
+	/**
+	 * 设置控件高度
+	 *
+	 * \param h 高
+	 */
+	void SetHeight(UINT h);
+
+	/**
+	 * 获取控件高度
+	 *
+	 * \return 高
+	 */
+	UINT GetHeight();
 };

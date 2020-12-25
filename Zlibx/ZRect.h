@@ -90,6 +90,14 @@ public:
 	 */
 	ZRect ToClientRect();
 
+	/**
+	 * 设置矩阵偏移值
+	 *
+	 * \param x	横向偏移值
+	 * \param y 纵向偏移值
+	 */
+	void OffsetRect(int x, int y);
+
 	operator RECT();
 	operator LPRECT();
 	operator Gdiplus::Rect();

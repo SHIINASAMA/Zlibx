@@ -73,6 +73,15 @@ ZRect ZRect::ToClientRect()
 	return rect;
 }
 
+void ZRect::OffsetRect(int x, int y)
+{
+	A.x += x;
+	B.x += x;
+
+	A.y += y;
+	B.y += y;
+}
+
 ZRect::operator RECT()
 {
 	RECT rect;
