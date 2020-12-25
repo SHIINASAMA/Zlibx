@@ -28,63 +28,85 @@ LRESULT ZPictureBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	ZPictureBox* temp = const_cast<ZPictureBox*>(GetPictureBox(hWnd));
 	if (temp != NULL)
 	{
-		if (uMsg == WM_PAINT && temp->hasImage == TRUE)
+		switch (uMsg)
 		{
-			PAINTSTRUCT ps;
-			HDC hdc = BeginPaint(hWnd, &ps);
-			HDC hdcmem = CreateCompatibleDC(hdc);
-			BITMAP bmp = temp->bmp;
-			SelectObject(hdcmem, temp->bmp);
-			switch (temp->mode)
+		case WM_PAINT:
+		{
+			if (temp->hasImage == TRUE)
 			{
-			case DisplayMode::None:
-			{
-				LONG w = temp->rect.GetWidth(), h = temp->rect.GetHeight();
-				if (bmp.bmWidth < temp->rect.GetWidth())
-					w = bmp.bmWidth;
-				if (bmp.bmHeight < temp->rect.GetHeight())
-					h = bmp.bmHeight;
-				BitBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, SRCCOPY);
-				break;
-			}
-			case DisplayMode::Stretch:
-			{
-				SetStretchBltMode(hdc, HALFTONE);
-				StretchBlt(hdc, 0, 0, temp->rect.GetWidth(), temp->rect.GetHeight(), hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
-				break;
-			}
-			case DisplayMode::Zoom:
-			{
-				SetStretchBltMode(hdc, HALFTONE);
-
-				int w = temp->rect.GetWidth();
-				int h = temp->rect.GetHeight();
-
-				double con = (double)w / h;
-				double pic = (double)bmp.bmWidth / (double)bmp.bmHeight;
-
-				if (con >= 1)
+				PAINTSTRUCT ps;
+				HDC hdc = BeginPaint(hWnd, &ps);
+				HDC hdcmem = CreateCompatibleDC(hdc);
+				BITMAP bmp = temp->bmp;
+				SelectObject(hdcmem, temp->bmp);
+				switch (temp->mode)
 				{
-					LONG x = pic * h;
-					x = (w - x) / 2;
-					StretchBlt(hdc, x, 0, w - 2 * x, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
-				}
-				else
+				case DisplayMode::None:
 				{
-					LONG y = w / pic;
-					y = (h - y) / 2;
-					StretchBlt(hdc, 0, y, w, h - 2 * y, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+					LONG w = temp->rect.GetWidth(), h = temp->rect.GetHeight();
+					if (bmp.bmWidth < temp->rect.GetWidth())
+						w = bmp.bmWidth;
+					if (bmp.bmHeight < temp->rect.GetHeight())
+						h = bmp.bmHeight;
+					BitBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, SRCCOPY);
+					break;
 				}
-				break;
+				case DisplayMode::Stretch:
+				{
+					SetStretchBltMode(hdc, HALFTONE);
+					StretchBlt(hdc, 0, 0, temp->rect.GetWidth(), temp->rect.GetHeight(), hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+					break;
+				}
+				case DisplayMode::Zoom:
+				{
+					SetStretchBltMode(hdc, HALFTONE);
+
+					int w = temp->rect.GetWidth();
+					int h = temp->rect.GetHeight();
+
+					double con = (double)w / h;
+					double pic = (double)bmp.bmWidth / (double)bmp.bmHeight;
+
+					if (con >= 1)
+					{
+						LONG x = pic * h;
+						x = (w - x) / 2;
+						StretchBlt(hdc, x, 0, w - 2 * x, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+					}
+					else
+					{
+						LONG y = w / pic;
+						y = (h - y) / 2;
+						StretchBlt(hdc, 0, y, w, h - 2 * y, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+					}
+					DeleteDC(hdcmem);
+					EndPaint(hWnd, &ps);
+					break;
+				}
+				default:
+					return DefWindowProc(hWnd, uMsg, wParam, lParam);
+					break;
+				}
 			}
-			default:
-				break;
-			}
-			DeleteDC(hdcmem);
-			EndPaint(hWnd, &ps);
+		case WM_SIZE:
+		{
+			UpdateRect(temp);
+			break;
+		}
+		case WM_DESTROY:
+		{
+			temp->~ZPictureBox();
+			break;
+		}
+		}
 		}
 	}
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+ZPictureBox::~ZPictureBox()
+{
+	pictureBoxList.erase(hWnd);
 }
 
 ZPictureBox::ZPictureBox(int x, int y, int w, int h, DisplayMode mode)

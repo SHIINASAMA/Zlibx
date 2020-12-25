@@ -38,6 +38,7 @@ class DLLAPI ZPictureBox : public ZControl
 
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+	~ZPictureBox();
 public:
 	/**
 	 * 初始化一个图片控件对象
