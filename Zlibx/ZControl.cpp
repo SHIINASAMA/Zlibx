@@ -27,7 +27,7 @@ void ZControl::UpdateRect(ZControl* con)
 	temp.OffsetRect(p.x, p.y);
 	con->rect = temp;
 
-	printf_s("%4d|%4d|%4d|%4d\n\n", temp.A.x, temp.A.y, temp.B.x, temp.B.y);
+	//printf_s("%4d|%4d|%4d|%4d\n\n", temp.A.x, temp.A.y, temp.B.x, temp.B.y);
 }
 
 ZControl::~ZControl()

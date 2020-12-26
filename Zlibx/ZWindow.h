@@ -64,9 +64,15 @@ private:
 
 	void SetStyle(WindowStyle style);
 
+	static std::map<HWND, const ZWindow*> windowList;
+
+	static const ZWindow* GetWindow(HWND hWnd);
+
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	~ZWindow();
+
+	static void UpdateRect(ZWindow* win);
 public:
 	/**
 	 * 初始化一个窗体对象
@@ -106,5 +112,45 @@ public:
 	 */
 	void ShowCenter();
 
-	HWND GetHandle();
+	/**
+	 * 设置控件位置
+	 *
+	 * \param point 原点坐标
+	 */
+	void SetPosition(ZPoint point);
+
+	/**
+	 * 获取控件位置
+	 *
+	 * \return 原点坐标
+	 */
+	ZPoint GetPosition();
+
+	/**
+	 * 设置控件宽度
+	 *
+	 * \param w 宽
+	 */
+	void SetWidth(UINT w);
+
+	/**
+	 * 获取控件高度
+	 *
+	 * \return
+	 */
+	UINT GetWidth();
+
+	/**
+	 * 设置控件高度
+	 *
+	 * \param h 高
+	 */
+	void SetHeight(UINT h);
+
+	/**
+	 * 获取控件高度
+	 *
+	 * \return 高
+	 */
+	UINT GetHeight();
 };

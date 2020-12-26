@@ -15,6 +15,21 @@ GdiplusStartupInput ZWindow::gdiplusStartupInput;
 ULONG_PTR ZWindow::gdiplusToken;
 UINT ZWindow::count = 0;
 
+std::map<HWND, const ZWindow*> ZWindow::windowList;
+
+const ZWindow* ZWindow::GetWindow(HWND hWnd)
+{
+	auto itor = windowList.find(hWnd);
+	if (itor != windowList.end() && itor->second != NULL)
+	{
+		return itor->second;
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
 void ZWindow::SetStyle(WindowStyle style)
 {
 	switch (style)
@@ -45,15 +60,20 @@ void ZWindow::SetStyle(WindowStyle style)
 
 LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	switch (uMsg)
+	ZWindow* temp = const_cast<ZWindow*>(GetWindow(hWnd));
+	if (temp != NULL)
 	{
-	case WM_DESTROY:
-		count--;
-		PostQuitMessage(0);
-		break;
-	default:
-		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-		break;
+		switch (uMsg)
+		{
+		case WM_DESTROY:
+			count--;
+			temp->~ZWindow();
+			PostQuitMessage(0);
+			break;
+		default:
+			return DefWindowProc(hWnd, uMsg, wParam, lParam);
+			break;
+		}
 	}
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
@@ -64,6 +84,14 @@ ZWindow::~ZWindow()
 	{
 		GdiplusShutdown(gdiplusToken);
 	}
+	windowList.erase(hWnd);
+}
+
+void ZWindow::UpdateRect(ZWindow* win)
+{
+	RECT rect;
+	GetWindowRect(win->hWnd, &rect);
+	win->rect = rect;
 }
 
 ZWindow::ZWindow(ZString text, int x, int y, int w, int h, WindowStyle style)
@@ -109,13 +137,15 @@ void ZWindow::Create()
 		style,
 		rect.A.x,
 		rect.A.y,
-		rect.B.x,
-		rect.B.y,
+		rect.GetWidth(),
+		rect.GetHeight(),
 		NULL,
 		NULL,
 		hInstance,
 		NULL
 	);
+
+	windowList.insert(std::pair<HWND, const ZWindow*>(this->hWnd, this));
 
 	if (count++ == 0)
 	{
@@ -166,7 +196,63 @@ void ZWindow::ShowCenter()
 	MoveWindow(hWnd, x, y, w, h, TRUE);
 }
 
-HWND ZWindow::GetHandle()
+void ZWindow::SetPosition(ZPoint point)
 {
-	return this->hWnd;
+	UpdateRect(this);
+	auto rect = this->rect.ToClientRect();
+	rect.OffsetRect(point.x, point.y);
+	MoveWindow(
+		hWnd,
+		rect.A.x,
+		rect.A.y,
+		rect.GetWidth(),
+		rect.GetHeight(),
+		TRUE
+	);
+}
+
+ZPoint ZWindow::GetPosition()
+{
+	UpdateRect(this);
+	return rect.A;
+}
+
+void ZWindow::SetWidth(UINT w)
+{
+	UpdateRect(this);
+	ZRect rect = this->rect.ToClientRect();
+	MoveWindow(
+		hWnd,
+		this->rect.A.x,
+		this->rect.A.y,
+		rect.A.x + w,
+		rect.B.y,
+		TRUE
+	);
+}
+
+UINT ZWindow::GetWidth()
+{
+	UpdateRect(this);
+	return rect.GetWidth();
+}
+
+void ZWindow::SetHeight(UINT h)
+{
+	UpdateRect(this);
+	ZRect rect = this->rect.ToClientRect();
+	MoveWindow(
+		hWnd,
+		this->rect.A.x,
+		this->rect.A.y,
+		rect.B.x,
+		rect.A.y + h,
+		TRUE
+	);
+}
+
+UINT ZWindow::GetHeight()
+{
+	UpdateRect(this);
+	return rect.GetHeight();
 }
