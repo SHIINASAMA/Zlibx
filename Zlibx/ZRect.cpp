@@ -26,7 +26,7 @@ ZRect::ZRect(ZPoint A, ZPoint B)
 
 ZRect::ZRect(int x1, int y1, int x2, int y2)
 {
-	this->A = ZPoint(x1, y1);;
+	this->A = ZPoint(x1, y1);
 	this->B = ZPoint(x2, y2);
 }
 

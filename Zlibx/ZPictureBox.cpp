@@ -8,6 +8,7 @@
 
 #include "ZPictureBox.h"
 
+ZString ZPictureBox::type = L"Zlibx_pictureBox";
 std::map<HWND, const ZPictureBox*> ZPictureBox::pictureBoxList;
 
 const ZPictureBox* ZPictureBox::GetPictureBox(HWND hWnd)
@@ -88,6 +89,9 @@ LRESULT ZPictureBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					break;
 				}
 			}
+			break;
+		}
+		case WM_MOVE:
 		case WM_SIZE:
 		{
 			UpdateRect(temp);
@@ -97,7 +101,6 @@ LRESULT ZPictureBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 			temp->~ZPictureBox();
 			break;
-		}
 		}
 		}
 	}

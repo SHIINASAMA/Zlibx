@@ -62,14 +62,16 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 			Graphics g(hdc);
 			SolidBrush bkBrush(Color(240, 240, 240));
-			g.FillRectangle(&bkBrush,
+			g.FillRectangle(
+				&bkBrush,
 				0,
 				0,
 				temp->rect.B.x - temp->rect.A.x - 1,
 				temp->rect.B.y - temp->rect.A.y - 1);
 
 			Pen edgePen(Color(110, 110, 110));
-			g.DrawRectangle(&edgePen,
+			g.DrawRectangle(
+				&edgePen,
 				0,
 				0,
 				temp->rect.B.x - temp->rect.A.x - 1,
@@ -134,6 +136,7 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			EndPaint(hWnd, &ps);
 			break;
 		}
+		case WM_MOVE:
 		case WM_SIZE:
 		{
 			UpdateRect(temp);

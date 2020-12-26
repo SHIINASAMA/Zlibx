@@ -45,6 +45,7 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			EndPaint(hWnd, &ps);
 			break;
 		}
+		case WM_MOVE:
 		case WM_SIZE:
 		{
 			UpdateRect(temp);

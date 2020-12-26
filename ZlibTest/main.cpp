@@ -5,32 +5,29 @@
 #include "../Zlibx/ZPictureBox.h"
 
 ZWindow* win;
-ZPictureBox* pb1;
+ZTextBox* tb1;
+ZButton* b1;
 
 void btn_clicked(WPARAM wParam, LPARAM lParam)
 {
-	pb1->SetPosition(ZPoint{ 100,100 });
+	b1->SetPosition(ZPoint{ 100, 100 });
 }
 
 int main()
 {
-	win = new ZWindow(L"Hello", NULL, NULL, 400, 300);
+	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
-	win->ShowCenter();
+	//win->ShowCenter();
 
-	ZButton* b1 = new ZButton(L"Hello", 5, 105, 100, 50);
+	/*tb1 = new ZTextBox(5, 5, 100, 21);
+	win->Add(tb1);*/
+
+	b1 = new ZButton(L"Hello", 5, 105, 100, 50);
 	b1->Bind(btn_clicked);
 	//b1->SetEnable(FALSE);
 	win->Add(b1);
-
-	/*ZLabel* l1 = new ZLabel(L"Hello", 5, 105, 100, 50);
-	win->Add(l1);*/
-
-	pb1 = new ZPictureBox(5, 5, 100, 100, DisplayMode::Zoom);
-	win->Add(pb1);
-	ZBitmap bmp;
-	bmp.LoadFromFile(L"C:\\Users\\kaoru\\Desktop\\女子高生.bmp");
-	pb1->SetImage(bmp);
+	b1->SetHeight(25);
+	b1->SetWidth(50);
 
 	win->Run();
 }

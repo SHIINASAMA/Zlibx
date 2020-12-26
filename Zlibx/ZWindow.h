@@ -105,4 +105,6 @@ public:
 	 *
 	 */
 	void ShowCenter();
+
+	HWND GetHandle();
 };

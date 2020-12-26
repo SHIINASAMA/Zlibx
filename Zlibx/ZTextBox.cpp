@@ -7,6 +7,14 @@
  */
 
 #include "ZTextBox.h"
+#include "ZDebug.h"
+
+ZString ZTextBox::type = L"Zlibx_textBox";
+BOOL ZTextBox::isRegistered = FALSE;
+
+std::map<HWND, const ZTextBox*> ZTextBox::textBoxList;
+
+WNDPROC ZTextBox::oldProc;
 
 void ZTextBox::SetStyle(TextBoxStyle style, TextBoxTextStyle textStyle)
 {
@@ -55,6 +63,26 @@ ZTextBox::ZTextBox(int x, int y, int w, int h, TextBoxStyle style, TextBoxTextSt
 
 void ZTextBox::Init(HWND hWnd)
 {
+	auto hInstance = (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE);
+	if (!isRegistered)
+	{
+		WNDCLASSEX wcex = { 0 };
+		GetClassInfoEx(hInstance, L"edit", &wcex);
+		wcex.cbSize = sizeof(WNDCLASSEX);
+		wcex.lpszClassName = type;
+		oldProc = wcex.lpfnWndProc;
+		wcex.lpfnWndProc = ConProc;
+		if (!RegisterClassEx(&wcex))
+		{
+			MessageBox(phWnd, L"¿Ø¼þ×¢²áÊ§°Ü", type, MB_OK | MB_ICONERROR);
+			return;
+		}
+		else
+		{
+			isRegistered = TRUE;
+		}
+	}
+
 	phWnd = hWnd;
 	this->hWnd = CreateWindow(
 		type,
@@ -71,6 +99,7 @@ void ZTextBox::Init(HWND hWnd)
 	);
 
 	SetDefFont();
+	textBoxList.insert(std::pair<HWND, const ZTextBox*>(this->hWnd, this));
 }
 
 void ZTextBox::SetFont(ZFont font)
@@ -78,9 +107,53 @@ void ZTextBox::SetFont(ZFont font)
 	SendMessage(hWnd, WM_SETFONT, (WPARAM)(HFONT)font, 0);
 }
 
+const ZTextBox* ZTextBox::GetTextBox(HWND hWnd)
+{
+	auto iter = textBoxList.find(hWnd);
+	if (iter != textBoxList.end() && iter->second != NULL)
+	{
+		return iter->second;
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
 void ZTextBox::SetDefFont()
 {
 	SetFont(ZFont(L"ÐÂËÎÌå"));
+}
+
+LRESULT ZTextBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	ZTextBox* temp = const_cast<ZTextBox*>(GetTextBox(hWnd));
+	if (temp != NULL)
+	{
+		switch (uMsg)
+		{
+		case WM_MOVE:
+		case WM_SIZE:
+		{
+			UpdateRect(temp);
+			break;
+		}
+		case WM_DESTROY:
+		{
+			temp->~ZTextBox();
+			break;
+		}
+		default:
+			return oldProc(hWnd, uMsg, wParam, lParam);
+			break;
+		}
+	}
+	return oldProc(hWnd, uMsg, wParam, lParam);
+}
+
+ZTextBox::~ZTextBox()
+{
+	textBoxList.erase(hWnd);
 }
 
 void ZTextBox::SetEnable(BOOL enable)

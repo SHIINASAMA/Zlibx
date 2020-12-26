@@ -20,7 +20,7 @@ void ZWindow::SetStyle(WindowStyle style)
 	switch (style)
 	{
 	case WindowStyle::None:
-		this->style = WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | WS_EX_LEFT | WS_EX_LTRREADING | WS_EX_RIGHTSCROLLBAR | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW;
+		this->style = WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | WS_EX_LEFT | WS_EX_LTRREADING | WS_EX_RIGHTSCROLLBAR | WS_EX_CONTROLPARENT;
 		break;
 	case WindowStyle::FixedSingle:
 		this->style = WS_CAPTION | WS_VISIBLE | WS_CLIPSIBLINGS | WS_SYSMENU | WS_OVERLAPPED | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_EX_LEFT | WS_EX_LTRREADING | WS_EX_RIGHTSCROLLBAR | WS_EX_WINDOWEDGE | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW;
@@ -164,4 +164,9 @@ void ZWindow::ShowCenter()
 	long y = info.rcMonitor.top + (ph - h) / 2;
 
 	MoveWindow(hWnd, x, y, w, h, TRUE);
+}
+
+HWND ZWindow::GetHandle()
+{
+	return this->hWnd;
 }

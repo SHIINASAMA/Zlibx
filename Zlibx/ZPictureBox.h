@@ -12,7 +12,7 @@
 #include "ZBitmap.h"
 
  /** \brief 图片的显示方式枚举 */
-enum class DisplayMode
+enum class DLLAPI DisplayMode
 {
 	/** \brief 不做任何处理 */
 	None,
@@ -25,7 +25,7 @@ enum class DisplayMode
 /** \brief ZPictureBox 类 */
 class DLLAPI ZPictureBox : public ZControl
 {
-	ZString type = L"Zlibx_pictureBox";
+	static ZString type;
 	BOOL isRegistered = FALSE;
 
 	DisplayMode mode = DisplayMode::Stretch;

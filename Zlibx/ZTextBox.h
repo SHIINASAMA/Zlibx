@@ -41,13 +41,23 @@ enum class DLLAPI TextBoxTextStyle {
 class DLLAPI ZTextBox :
 	public ZControl
 {
-	ZString type = L"edit";
-	DWORD style;
+	static ZString type;
+	static BOOL isRegistered;
 
+	DWORD style;
 	void SetStyle(TextBoxStyle style, TextBoxTextStyle textStyle);
+
+	static std::map<HWND, const ZTextBox*> textBoxList;
+
+	static const ZTextBox* GetTextBox(HWND hWnd);
+
+	static WNDPROC oldProc;
+
+	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	void SetDefFont();
 
+	~ZTextBox();
 public:
 	/**
 	 * 初始化一个文本编辑对象

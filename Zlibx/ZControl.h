@@ -15,7 +15,16 @@
 #include "ZFont.h"
 #include "ZColor.h"
 
- /** \brief 回调函数 */
+ /**
+  * \brief 获取控件坐标
+  * \brief 注意，这不是一个Win Sdk的API，目的是对应SetWindowPos使用
+  *
+  * \param hWnd	目标句柄
+  * \param point 返回结果
+  */
+void GetWindowPos(HWND hWnd, POINT* point);
+
+/** \brief 回调函数 */
 typedef DLLAPI void(*CallBackFunc)(WPARAM, LPARAM);
 
 /** \brief ZControl 类 */
@@ -27,7 +36,7 @@ protected:
 	/** \brief 父窗口句柄 */
 	HWND phWnd;
 	/** \brief 控件类型（类名） */
-	ZString type;
+	static ZString type;
 	/** \brief 控件区域 */
 	ZRect rect;
 
