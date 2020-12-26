@@ -41,7 +41,7 @@ class DLLAPI ZPictureBox : public ZControl
 	~ZPictureBox();
 public:
 	/**
-	 * 初始化一个图片控件对象
+	 * \brief 初始化一个图片控件对象
 	 *
 	 * \param x		x坐标
 	 * \param y		y坐标
@@ -52,14 +52,14 @@ public:
 	ZPictureBox(int x, int y, int w, int h, DisplayMode mode = DisplayMode::Stretch);
 
 	/**
-	 * 该函数由窗口调用
+	 * \brief 该函数由窗口调用
 	 *
 	 * \param hWnd 窗口句柄
 	 */
 	void Init(HWND hWnd);
 
 	/**
-	 * 设置图像
+	 * \brief 设置图像
 	 *
 	 * \param bmp 目标图像
 	 */

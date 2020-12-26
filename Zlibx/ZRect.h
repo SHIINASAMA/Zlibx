@@ -46,28 +46,28 @@ public:
 	ZRect(int x1, int y1, int x2, int y2);
 
 	/**
-	 * 设置矩阵的宽
+	 * \brief 设置矩阵的宽
 	 *
 	 * \param w 目标宽度
 	 */
 	void SetWidth(int w);
 
 	/**
-	 * 获取矩阵的宽
+	 * \brief 获取矩阵的宽
 	 *
 	 * \return 矩阵宽度
 	 */
 	int GetWidth();
 
 	/**
-	 * 设置矩阵的高
+	 * \brief 设置矩阵的高
 	 *
 	 * \param h 目标高度
 	 */
 	void SetHeight(int h);
 
 	/**
-	 * 获取矩阵的高
+	 * \brief 获取矩阵的高
 	 *
 	 * \return 矩阵高度
 	 */
@@ -84,14 +84,14 @@ public:
 	void SetSize(ZSize Size);
 
 	/**
-	 * 转换子控件的矩阵
+	 * \brief 转换子控件的矩阵
 	 *
 	 * \return 结果矩阵
 	 */
 	ZRect ToClientRect();
 
 	/**
-	 * 设置矩阵偏移值
+	 * \brief 设置矩阵偏移值
 	 *
 	 * \param x	横向偏移值
 	 * \param y 纵向偏移值

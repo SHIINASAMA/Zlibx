@@ -160,3 +160,19 @@ void ZTextBox::SetEnable(BOOL enable)
 {
 	SendMessage(hWnd, EM_SETREADONLY, !enable, 0);
 }
+
+void ZTextBox::SetText(ZString text)
+{
+	SetWindowText(hWnd, text);
+}
+
+ZString ZTextBox::GetText()
+{
+	UINT len = GetWindowTextLengthW(hWnd);
+	WChar* str = new WChar[len + 1];
+	GetWindowTextW(this->hWnd, str, len + 1);
+	//str[len] = L'\0';
+	ZString temp;
+	temp.Pause(str);
+	return temp;
+}

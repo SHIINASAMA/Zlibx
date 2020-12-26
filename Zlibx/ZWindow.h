@@ -113,44 +113,58 @@ public:
 	void ShowCenter();
 
 	/**
-	 * 设置控件位置
+	 * \brief 设置控件位置
 	 *
 	 * \param point 原点坐标
 	 */
 	void SetPosition(ZPoint point);
 
 	/**
-	 * 获取控件位置
+	 * \brief 获取控件位置
 	 *
 	 * \return 原点坐标
 	 */
 	ZPoint GetPosition();
 
 	/**
-	 * 设置控件宽度
+	 * \brief 设置控件宽度
 	 *
 	 * \param w 宽
 	 */
 	void SetWidth(UINT w);
 
 	/**
-	 * 获取控件高度
+	 * \brief 获取控件宽度
 	 *
 	 * \return
 	 */
 	UINT GetWidth();
 
 	/**
-	 * 设置控件高度
+	 * \brief 设置控件高度
 	 *
 	 * \param h 高
 	 */
 	void SetHeight(UINT h);
 
 	/**
-	 * 获取控件高度
+	 * \brief 获取控件高度
 	 *
 	 * \return 高
 	 */
 	UINT GetHeight();
+
+	/**
+	 * \brief 设置控件文本
+	 *
+	 * \param text 文本
+	 */
+	void SetText(ZString text);
+
+	/**
+	 * \brief 获取控件文本
+	 *
+	 * \return 文本
+	 */
+	ZString GetText();
 };

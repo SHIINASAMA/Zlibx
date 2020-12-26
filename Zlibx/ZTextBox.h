@@ -60,7 +60,7 @@ class DLLAPI ZTextBox :
 	~ZTextBox();
 public:
 	/**
-	 * 初始化一个文本编辑对象
+	 * \brief 初始化一个文本编辑对象
 	 *
 	 * \param x			x坐标
 	 * \param y			y坐标
@@ -72,23 +72,35 @@ public:
 	ZTextBox(int x, int y, int w, int h, TextBoxStyle style = TextBoxStyle::Normal, TextBoxTextStyle textStyle = TextBoxTextStyle::Left);
 
 	/**
-	 * 该函数由窗口调用
+	 * \brief 该函数由窗口调用
 	 *
 	 * \param hWnd 窗口句柄
 	 */
 	void Init(HWND hWnd);
 
 	/**
-	 * 设置字体
+	 * \brief 设置字体
 	 *
 	 * \param font 目标字体
 	 */
 	void SetFont(ZFont font);
 
 	/**
-	 * 设置文本框是否可用
+	 * \brief 设置文本框是否可用
 	 *
 	 * \param enable 目标状态
 	 */
 	void SetEnable(BOOL enable);
+
+	/**
+	 * \brief 设置控件文本
+	 */
+	void SetText(ZString text);
+
+	/**
+	 * \brief 获取控件文本
+	  *
+	 * \return 控件文本
+	 */
+	ZString GetText();
 };

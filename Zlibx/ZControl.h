@@ -52,7 +52,7 @@ protected:
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	/**
-	 * 更新控件位置
+	 * \brief 更新控件位置
 	 *
 	 * \param con 目标控件
 	 */
@@ -65,49 +65,49 @@ public:
 	ZControl();
 
 	/**
-	 * 该函数由窗口调用
+	 * \brief 该函数由窗口调用
 	 *
 	 * \param hWnd 窗口句柄
 	 */
 	virtual void Init(HWND hWnd) = 0;
 
 	/**
-	 * 设置控件位置
+	 * \brief 设置控件位置
 	 *
 	 * \param point 原点坐标
 	 */
 	void SetPosition(ZPoint point);
 
 	/**
-	 * 获取控件位置
+	 * \brief 获取控件位置
 	 *
 	 * \return 原点坐标
 	 */
 	ZPoint GetPosition();
 
 	/**
-	 * 设置控件宽度
+	 * \brief 设置控件宽度
 	 *
 	 * \param w 宽
 	 */
 	void SetWidth(UINT w);
 
 	/**
-	 * 获取控件高度
+	 * \brief 获取控件高度
 	 *
 	 * \return
 	 */
 	UINT GetWidth();
 
 	/**
-	 * 设置控件高度
+	 * \brief 设置控件高度
 	 *
 	 * \param h 高
 	 */
 	void SetHeight(UINT h);
 
 	/**
-	 * 获取控件高度
+	 * \brief 获取控件高度
 	 *
 	 * \return 高
 	 */

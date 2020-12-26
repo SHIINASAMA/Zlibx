@@ -37,7 +37,7 @@ class DLLAPI ZLabel :
 
 public:
 	/**
-	 * 初始化一个文本控件对象
+	 * \brief 初始化一个文本控件对象
 	 *
 	 * \param text	文本内容
 	 * \param x		x坐标
@@ -48,14 +48,14 @@ public:
 	ZLabel(ZString text, int x, int y, int w, int h);
 
 	/**
-	 * 该函数由窗口调用
+	 * \brief 该函数由窗口调用
 	 *
 	 * \param hWnd 窗口句柄
 	 */
 	void Init(HWND hWnd);
 
 	/**
-	 * 设置字体
+	 * \brief 设置字体
 	 *
 	 * \param font 目标字体
 	 */
@@ -76,14 +76,14 @@ public:
 	ZString GetText();
 
 	/**
-	 * 设置控件文本颜色
+	 * \brief 设置控件文本颜色
 	 *
 	 * \param color
 	 */
 	void SetTextColor(ZColor color);
 
 	/**
-	 * 获取控件文本颜色
+	 * \brief 获取控件文本颜色
 	 *
 	 * \return 控件文本颜色
 	 */

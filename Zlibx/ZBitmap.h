@@ -18,7 +18,7 @@ private:
 
 public:
 	/**
-	 * 从资源文件中加载位图
+	 * \brief 从资源文件中加载位图
 	 *
 	 * \param ID 位图资源ID
 	 */

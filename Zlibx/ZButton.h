@@ -37,7 +37,7 @@ class DLLAPI ZButton :
 
 public:
 	/**
-	 * 初始化一个按钮对象
+	 * \brief 初始化一个按钮对象
 	 *
 	 * \param text	按钮文本
 	 * \param x		x坐标
@@ -48,49 +48,49 @@ public:
 	ZButton(ZString text, int x, int y, int w, int h);
 
 	/**
-	 * 该函数由窗口调用
+	 * \brief 该函数由窗口调用
 	 *
 	 * \param hWnd 窗口句柄
 	 */
 	void Init(HWND hWnd);
 
 	/**
-	 * 绑定回调函数
+	 * \brief 绑定回调函数
 	 *
 	 * \param func 目标函数
 	 */
 	void Bind(CallBackFunc func);
 
 	/**
-	 * 设置字体
+	 * \brief 设置字体
 	 *
 	 * \param font 目标字体
 	 */
 	void SetFont(ZFont font);
 
 	/**
-	 * 设置字体颜色
+	 * \brief 设置字体颜色
 	 *
 	 * \param color 目标颜色
 	 */
 	void SetTextColor(ZColor color);
 
 	/**
-	 * 设置按钮是否可用
+	 * \brief 设置按钮是否可用
 	 *
 	 * \param enable 目标状态
 	 */
 	void SetEnable(BOOL enable);
 
 	/**
-	 * 设置按钮文本
+	 * \brief 设置按钮文本
 	 *
 	 * \param text 目标文本
 	 */
 	void SetText(ZString text);
 
 	/**
-	 * 设置按钮文本
+	 * \brief 设置按钮文本
 	 *
 	 * \retval 控件文本
 	 */
