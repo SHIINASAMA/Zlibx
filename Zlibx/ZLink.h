@@ -1,8 +1,17 @@
+/**
+ * \file   ZLink.h
+ * \brief  链接控件类声明
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-27
+ */
+
 #pragma once
-#pragma warning(disable:4351)
+#pragma warning(disable:4251)
 
 #include "ZControl.h"
 
+ /** \brief ZLink 类 */
 class DLLAPI ZLink :
 	public ZControl
 {

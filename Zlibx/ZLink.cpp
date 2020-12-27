@@ -1,4 +1,12 @@
-﻿#include "ZLink.h"
+﻿/**
+ * \file   ZLink.cpp
+ * \brief  链接控件类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-27
+ */
+
+#include "ZLink.h"
 #include "ZDebug.h"
 
 ZString ZLink::type = L"Zlibx_link";
