@@ -7,6 +7,7 @@
  */
 
 #pragma once
+#pragma warning(disable:4251)
 
 #include "ZControl.h"
 #include "ZBitmap.h"
@@ -41,7 +42,7 @@ class DLLAPI ZPictureBox : public ZControl
 	~ZPictureBox();
 public:
 	/**
-	 * 初始化一个图片控件对象
+	 * \brief 初始化一个图片控件对象
 	 *
 	 * \param x		x坐标
 	 * \param y		y坐标
