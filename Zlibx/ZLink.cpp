@@ -42,7 +42,7 @@ LRESULT ZLink::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			Graphics g(hdc);
 			SelectObject(hdc, temp->font);
 			::SetTextColor(hdc, temp->textColor);
-			DrawText(hdc, temp->text, -1, temp->rect.ToClientRect(), DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+			DrawText(hdc, temp->text, -1, temp->rect.ToClientRect(), DT_SINGLELINE);
 			EndPaint(hWnd, &ps);
 			break;
 		}

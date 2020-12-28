@@ -11,8 +11,6 @@ ZButton* b1;
 
 void btn_clicked(WPARAM wParam, LPARAM lParam)
 {
-	win->SetHeight(600);
-	win->SetWidth(600);
 }
 
 int main()
