@@ -4,9 +4,10 @@
 #include "../Zlibx/ZTextBox.h"
 #include "../Zlibx/ZPictureBox.h"
 #include "../Zlibx/ZLink.h"
+#include "../Zlibx/ZComboBox.h"
 
 ZWindow* win;
-ZLink* lk1;
+ZComboBox* cb1;
 ZButton* b1;
 
 void btn_clicked(WPARAM wParam, LPARAM lParam)
@@ -18,8 +19,8 @@ int main()
 	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
 
-	lk1 = new ZLink(L"°Ù¶È", L"https://www.baidu.com", 5, 5, 100, 21);
-	win->Add(lk1);
+	cb1 = new ZComboBox(5, 5, 100, 100, ComboBoxStyle::DropDownList);
+	win->Add(cb1);
 
 	b1 = new ZButton(L"Hello", 5, 105, 100, 50);
 	b1->Bind(btn_clicked);

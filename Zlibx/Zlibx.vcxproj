@@ -157,6 +157,7 @@
     <ClInclude Include="ZBitmap.h" />
     <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
+    <ClInclude Include="ZComboBox.h" />
     <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZFile.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="ZBitmap.cpp" />
     <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
+    <ClCompile Include="ZComboBox.cpp" />
     <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZFile.cpp" />
