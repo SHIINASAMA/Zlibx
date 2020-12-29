@@ -1,3 +1,11 @@
+/**
+ * \file   ZComboBox.cpp
+ * \brief  下拉框控件类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-29
+ */
+
 #include "ZComboBox.h"
 
 ZString ZComboBox::type = L"Zlibx_comboBox";
@@ -26,7 +34,7 @@ void ZComboBox::SetDefFont()
 
 void ZComboBox::SetStyle(ComboBoxStyle style)
 {
-	this->style = WS_VISIBLE | WS_CHILD | CBS_HASSTRINGS | CBS_AUTOHSCROLL;
+	this->style = WS_VISIBLE | WS_CHILD | CBS_HASSTRINGS | CBS_AUTOHSCROLL | WS_VSCROLL;
 	switch (style)
 	{
 	case ComboBoxStyle::DropDown:
@@ -89,4 +97,56 @@ void ZComboBox::Init(HWND hWnd)
 void ZComboBox::SetFont(ZFont font)
 {
 	SendMessage(hWnd, WM_SETFONT, (WPARAM)(HFONT)font, 0);
+}
+
+void ZComboBox::AddItem(ZString text)
+{
+	SendMessage(hWnd, CB_ADDSTRING, 0, (LPARAM)text.ToWString());
+}
+
+void ZComboBox::RemoveAt(UINT pos)
+{
+	SendMessage(hWnd, CB_DELETESTRING, pos, 0);
+}
+
+int ZComboBox::Find(ZString text)
+{
+	return SendMessage(hWnd, CB_FINDSTRING, 0, (LPARAM)text.ToWString());
+}
+
+void ZComboBox::Insert(UINT pos, ZString text)
+{
+	SendMessage(hWnd, CB_INSERTSTRING, pos, (LPARAM)text.ToWString());
+}
+
+ZString ZComboBox::GetText(UINT pos)
+{
+	UINT len = SendMessage(hWnd, CB_GETLBTEXTLEN, 0, pos);
+	if (len)
+	{
+		WChar* str = (WChar*)malloc(sizeof(WChar) * len);
+		SendMessage(hWnd, CB_GETLBTEXT, (WPARAM)str, static_cast<unsigned __int64>(len));
+		return str;
+	}
+	return ZString();
+}
+
+void ZComboBox::SetSelectedIndex(UINT index)
+{
+	SendMessage(hWnd, CB_SETCURSEL, index, 0);
+}
+
+UINT ZComboBox::GetSelectedIndex()
+{
+	return SendMessage(hWnd, CB_GETCURSEL, 0, 0);
+}
+
+void ZComboBox::RemoveAll()
+{
+	SendMessage(hWnd, CB_RESETCONTENT, 0, 0);
+}
+
+UINT ZComboBox::Count()
+{
+	return SendMessage(hWnd, CB_GETCOUNT, 0, 0);
 }

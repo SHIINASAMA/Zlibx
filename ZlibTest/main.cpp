@@ -12,6 +12,7 @@ ZButton* b1;
 
 void btn_clicked(WPARAM wParam, LPARAM lParam)
 {
+	cb1->AddItem(L"Hello");
 }
 
 int main()
@@ -21,6 +22,7 @@ int main()
 
 	cb1 = new ZComboBox(5, 5, 100, 100, ComboBoxStyle::DropDownList);
 	win->Add(cb1);
+	//cb1->AddItem(L"Hello");
 
 	b1 = new ZButton(L"Hello", 5, 105, 100, 50);
 	b1->Bind(btn_clicked);
