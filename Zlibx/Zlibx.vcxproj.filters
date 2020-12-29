@@ -55,6 +55,9 @@
     <ClCompile Include="ZLink.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
+    <ClCompile Include="ZIcon.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -116,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="ZLink.h">
       <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZIcon.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
