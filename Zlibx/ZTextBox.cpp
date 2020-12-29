@@ -169,7 +169,7 @@ void ZTextBox::SetText(ZString text)
 ZString ZTextBox::GetText()
 {
 	UINT len = GetWindowTextLengthW(hWnd);
-	WChar* str = new WChar[len + 1];
+	WChar* str = new WChar[static_cast<unsigned __int64>(len) + 1];
 	GetWindowTextW(this->hWnd, str, len + 1);
 	//str[len] = L'\0';
 	ZString temp;
