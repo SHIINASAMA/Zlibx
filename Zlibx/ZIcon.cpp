@@ -1,3 +1,11 @@
+/**
+ * \file   ZIcon.cpp
+ * \brief  图标类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-29
+ */
+
 #include "ZIcon.h"
 
 ZIcon::ZIcon()

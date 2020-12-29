@@ -32,9 +32,9 @@ class DLLAPI ZControl
 {
 protected:
 	/** \brief 控件句柄 */
-	HWND hWnd;
+	HWND hWnd{ 0 };
 	/** \brief 父窗口句柄 */
-	HWND phWnd;
+	HWND phWnd{ 0 };
 	/** \brief 控件类型（类名） */
 	static ZString type;
 	/** \brief 控件区域 */
@@ -47,7 +47,7 @@ protected:
 	 * \param uMsg		消息类型
 	 * \param wParam	参数1
 	 * \param lParam	参数2
-	 * \return
+	 * \return			结果
 	 */
 	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -95,7 +95,7 @@ public:
 	/**
 	 * \brief 获取控件高度
 	 *
-	 * \return
+	 * \return 高
 	 */
 	UINT GetWidth();
 
