@@ -14,7 +14,7 @@ class DLLAPI ZBitmap :
 	public ZResource
 {
 private:
-	HBITMAP hbmp;
+	HBITMAP hbmp{ 0 };
 
 public:
 	/**

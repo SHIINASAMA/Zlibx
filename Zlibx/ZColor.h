@@ -14,7 +14,7 @@
 class DLLAPI ZColor
 {
 private:
-	COLORREF color;
+	COLORREF color{ 0 };
 
 public:
 	/**@brief 根据RGB值初始化一个ZColor对象

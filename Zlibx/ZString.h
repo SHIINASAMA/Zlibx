@@ -30,7 +30,7 @@
 class DLLAPI ZString
 {
 private:
-	WString str;
+	WString str{ 0 };
 
 public:
 	/** @brief 注意，这会创建一个空的ZString对象

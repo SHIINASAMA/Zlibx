@@ -31,7 +31,8 @@ enum class DLLAPI WindowStyle
 };
 
 /** \brief 窗体返回值类型 */
-enum class DLLAPI DialogResult {
+enum class DLLAPI DialogResult
+{
 	/** \brief 是 */
 	Ok,
 	/** \brief 否 */
@@ -43,15 +44,15 @@ class DLLAPI ZWindow
 {
 protected:
 	/** \brief 窗体句柄 */
-	HWND hWnd;
+	HWND hWnd{ 0 };
 	/** \brief 窗体风格 */
-	DWORD style;
+	DWORD style{ 0 };
 	/** \brief 窗体区域 */
 	ZRect rect;
 	/** \brief 窗体文本 */
 	ZString text;
 	/** \brief 窗体实例句柄 */
-	HINSTANCE hInstance;
+	HINSTANCE hInstance{ 0 };
 
 private:
 	static ZString type;
@@ -75,7 +76,7 @@ private:
 	static void UpdateRect(ZWindow* win);
 public:
 	/**
-	 * 初始化一个窗体对象
+	 * \brief 初始化一个窗体对象
 	 *
 	 * \param text	窗体标题
 	 * \param x		x坐标
@@ -136,7 +137,7 @@ public:
 	/**
 	 * \brief 获取控件宽度
 	 *
-	 * \return
+	 * \return 宽
 	 */
 	UINT GetWidth();
 

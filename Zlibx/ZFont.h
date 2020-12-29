@@ -16,7 +16,7 @@ class DLLAPI ZFont
 protected:
 	/** @brief ×ÖÌå¾ä±ú
 	*/
-	HFONT font;
+	HFONT font{ 0 };
 
 	ZString fontName;
 
