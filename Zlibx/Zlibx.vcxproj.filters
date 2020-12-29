@@ -55,8 +55,8 @@
     <ClCompile Include="ZLink.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
-    <ClCompile Include="ZIcon.cpp">
-      <Filter>Source Files\Base</Filter>
+    <ClCompile Include="ZComboBox.cpp">
+      <Filter>Source Files\Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
