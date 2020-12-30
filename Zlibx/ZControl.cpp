@@ -99,6 +99,16 @@ UINT ZControl::GetHeight()
 	return rect.GetHeight();
 }
 
+void ZControl::SetVisible(BOOL enable)
+{
+	enable ? ShowWindow(hWnd, SW_SHOW) : ShowWindow(hWnd, SW_HIDE);
+}
+
+void ZControl::SetEnable(BOOL enable)
+{
+	EnableWindow(hWnd, enable);
+}
+
 void GetWindowPos(HWND hWnd, POINT* point)
 {
 	HWND hWndParent = GetParent(hWnd);

@@ -112,4 +112,18 @@ public:
 	 * \return 高
 	 */
 	UINT GetHeight();
+
+	/**
+	 * \brief 设置控件是否可见
+	 *
+	 * \param enable 指示值
+	 */
+	void SetVisible(BOOL enable);
+
+	/**
+	 * \brief 设置控件是否可用
+	 *
+	 * \param enable 指示值
+	 */
+	void SetEnable(BOOL enable);
 };
