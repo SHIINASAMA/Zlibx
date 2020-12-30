@@ -165,6 +165,7 @@
     <ClInclude Include="ZIcon.h" />
     <ClInclude Include="ZLabel.h" />
     <ClInclude Include="ZLink.h" />
+    <ClInclude Include="ZListBox.h" />
     <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRange.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="ZIcon.cpp" />
     <ClCompile Include="ZLabel.cpp" />
     <ClCompile Include="ZLink.cpp" />
+    <ClCompile Include="ZListBox.cpp" />
     <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRange.cpp" />
