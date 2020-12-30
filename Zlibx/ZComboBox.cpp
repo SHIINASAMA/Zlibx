@@ -111,7 +111,7 @@ void ZComboBox::RemoveAt(UINT pos)
 
 int ZComboBox::Find(ZString text)
 {
-	return SendMessage(hWnd, CB_FINDSTRING, 0, (LPARAM)text.ToWString());
+	return (int)SendMessage(hWnd, CB_FINDSTRING, 0, (LPARAM)text.ToWString());
 }
 
 void ZComboBox::Insert(UINT pos, ZString text)
@@ -121,8 +121,8 @@ void ZComboBox::Insert(UINT pos, ZString text)
 
 ZString ZComboBox::GetText(UINT pos)
 {
-	UINT len = SendMessage(hWnd, CB_GETLBTEXTLEN, 0, pos);
-	if (len)
+	int len = (int)SendMessage(hWnd, CB_GETLBTEXTLEN, 0, pos);
+	if (len > 0)
 	{
 		WChar* str = (WChar*)malloc(sizeof(WChar) * len);
 		SendMessage(hWnd, CB_GETLBTEXT, (WPARAM)str, static_cast<unsigned __int64>(len));
@@ -138,7 +138,7 @@ void ZComboBox::SetSelectedIndex(UINT index)
 
 UINT ZComboBox::GetSelectedIndex()
 {
-	return SendMessage(hWnd, CB_GETCURSEL, 0, 0);
+	return (UINT)SendMessage(hWnd, CB_GETCURSEL, 0, 0);
 }
 
 void ZComboBox::RemoveAll()
@@ -148,5 +148,5 @@ void ZComboBox::RemoveAll()
 
 UINT ZComboBox::Count()
 {
-	return SendMessage(hWnd, CB_GETCOUNT, 0, 0);
+	return (UINT)SendMessage(hWnd, CB_GETCOUNT, 0, 0);
 }
