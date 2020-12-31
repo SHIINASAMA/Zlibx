@@ -5,28 +5,19 @@
 #include "../Zlibx/ZPictureBox.h"
 #include "../Zlibx/ZLink.h"
 #include "../Zlibx/ZComboBox.h"
+#include "../Zlibx/ZListBox.h"
 
 ZWindow* win;
-ZComboBox* cb1;
 ZButton* b1;
-
-void btn_clicked(WPARAM wParam, LPARAM lParam)
-{
-	cb1->AddItem(L"Hello");
-}
 
 int main()
 {
 	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
 
-	cb1 = new ZComboBox(5, 5, 100, 100, ComboBoxStyle::DropDownList);
-	win->Add(cb1);
-	//cb1->AddItem(L"Hello");
-
-	b1 = new ZButton(L"Hello", 5, 105, 100, 50);
-	b1->Bind(btn_clicked);
-	win->Add(b1);
+	ZListBox* lb1 = new ZListBox(5, 5, 200, 200);
+	win->Add(lb1);
+	lb1->AddItem(L"Hello");
 
 	win->Run();
 }
