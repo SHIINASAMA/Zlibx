@@ -11,7 +11,13 @@
 
 #include "ZControl.h"
 
- /** \brief ZButton 类 */
+ /**
+  * \brief ZButton 类
+  *
+  * \brief 一个简单的按钮控件类
+  *
+  * \image html ZButton.png
+  */
 class DLLAPI ZButton :
 	public ZControl
 {
@@ -55,7 +61,7 @@ public:
 	void Init(HWND hWnd);
 
 	/**
-	 * \brief 绑定回调函数
+	 * \brief 绑定点击回调函数
 	 *
 	 * \param func 目标函数
 	 */

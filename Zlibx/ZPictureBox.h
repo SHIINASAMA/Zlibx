@@ -24,7 +24,13 @@ enum class DLLAPI DisplayMode
 	Zoom
 };
 
-/** \brief ZPictureBox 类 */
+/**
+ * \brief ZPictureBox 类
+ *
+ * \brief 一个图像显示控件类
+ *
+ * \image html ZPictureBox.png
+ */
 class DLLAPI ZPictureBox : public ZControl
 {
 	static ZString type;

@@ -13,6 +13,10 @@
 
  /**
   * \brief ZLabel 类
+  *
+  * \brief 一个标签控件类
+  *
+  * \image html ZLabel.png
   */
 class DLLAPI ZLabel :
 	public ZControl

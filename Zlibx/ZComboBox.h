@@ -32,6 +32,10 @@ enum class DLLAPI ComboBoxStyle
 
 /**
  * \brief ZComboBox 类
+ *
+ * \brief 一个下拉栏控件类
+ *
+ * \image html ZComboBox.png
  */
 class DLLAPI ZComboBox :
 	public ZControl

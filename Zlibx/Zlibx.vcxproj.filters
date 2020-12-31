@@ -61,6 +61,9 @@
     <ClCompile Include="ZIcon.cpp">
       <Filter>Source Files\Base</Filter>
     </ClCompile>
+    <ClCompile Include="ZListBox.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -127,6 +130,9 @@
       <Filter>Header Files\Base</Filter>
     </ClInclude>
     <ClInclude Include="ZComboBox.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ZListBox.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
   </ItemGroup>

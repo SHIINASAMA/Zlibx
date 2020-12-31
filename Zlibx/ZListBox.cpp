@@ -1,3 +1,11 @@
+/**
+ * \file   ZListBox.cpp
+ * \brief  列表控件类定义
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-31
+ */
+
 #include "ZListBox.h"
 
 ZString ZListBox::type = L"Zlibx_listBox";

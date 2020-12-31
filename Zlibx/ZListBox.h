@@ -1,6 +1,22 @@
+/**
+ * \file   ZListBox.h
+ * \brief  列表控件类声明
+ *
+ * \author kaoru(SHIINA_KAORU@OUTLOOK.COM)
+ * \date   2020-12-31
+ */
+
 #pragma once
-#pragma warning(disable: 4215)
+#pragma warning(disable: 4251)
 #include "ZControl.h"
+
+ /**
+  * \brief ZListBox 类
+  *
+  * \brief 一个列表控件类
+  *
+  * \image html ZListBox.png
+  */
 class DLLAPI ZListBox :
 	public ZControl
 {

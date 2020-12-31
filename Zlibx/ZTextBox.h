@@ -39,7 +39,13 @@ enum class DLLAPI TextBoxTextStyle {
 	Left
 };
 
-/** \brief ZTextBox 类 */
+/**
+ * \brief ZTextBox 类
+ *
+ * \brief 一个文本框控件类
+ *
+ * \image html ZTextBox.png
+ */
 class DLLAPI ZTextBox :
 	public ZControl
 {

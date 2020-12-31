@@ -11,7 +11,13 @@
 
 #include "ZControl.h"
 
- /** \brief ZLink 类 */
+ /**
+  * \brief ZLink 类
+  *
+  * \brief 一个文本链接控件类
+  *
+  * \image html ZLink.png
+  */
 class DLLAPI ZLink :
 	public ZControl
 {
@@ -64,7 +70,7 @@ public:
 	/**
 	 * \brief 获取控件文本
 	 *
-	 * \return 空间文本
+	 * \return 控件文本
 	 */
 	ZString GetText();
 

@@ -39,7 +39,13 @@ enum class DLLAPI DialogResult
 	No
 };
 
-/** \brief ZWindow 类 */
+/**
+ * \brief ZWindow 类
+ *
+ * \brief 窗体类
+ *
+ * \image html SimpleDemo.png
+ */
 class DLLAPI ZWindow
 {
 protected:

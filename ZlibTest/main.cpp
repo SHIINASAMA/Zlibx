@@ -8,16 +8,14 @@
 #include "../Zlibx/ZListBox.h"
 
 ZWindow* win;
-ZButton* b1;
 
 int main()
 {
 	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
 
-	ZListBox* lb1 = new ZListBox(5, 5, 200, 200);
-	win->Add(lb1);
-	lb1->AddItem(L"Hello");
+	auto a = new ZTextBox(100, 100, 50, 21);
+	win->Add(a);
 
 	win->Run();
 }
