@@ -78,7 +78,7 @@ LRESULT ZButton::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 				temp->rect.B.y - temp->rect.A.y - 1
 			);
 
-			SetBkMode(hdc, 1);
+			SetBkMode(hdc, TRANSPARENT);
 			SelectObject(hdc, temp->font);
 			if (temp->isEnable)
 			{
