@@ -7,6 +7,7 @@
  */
 
 #pragma once
+#pragma warning(disable:4215)
 #include "ZControl.h"
 #include "ZRange.h"
 

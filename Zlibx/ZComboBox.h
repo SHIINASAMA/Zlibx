@@ -55,6 +55,8 @@ class DLLAPI ZComboBox :
 
 	DWORD style;
 	void SetStyle(ComboBoxStyle style);
+
+	~ZComboBox();
 public:
 	/**
 	 * \brief 初始化一个下拉框控件

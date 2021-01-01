@@ -23,7 +23,6 @@ class DLLAPI ZLabel :
 {
 	static ZString type;
 	static BOOL isRegistered;
-	WNDCLASSEX wcex;
 
 	ZString text;
 	ZFont font;

@@ -7,6 +7,16 @@
  */
 #include "ZBitmap.h"
 
+ZBitmap::ZBitmap(WORD ID)
+{
+	Load(ID);
+}
+
+ZBitmap::ZBitmap(ZString Path)
+{
+	LoadFromFile(Path);
+}
+
 void ZBitmap::Load(WORD ID)
 {
 	this->hbmp = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(ID));

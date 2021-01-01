@@ -34,6 +34,17 @@ LRESULT ZListBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		switch (uMsg)
 		{
+		case WM_COMMAND:
+		{
+			if (HIWORD(wParam) == LBN_SELCHANGE)
+			{
+				if (temp->selectedItemChange != NULL)
+				{
+					temp->selectedItemChange(wParam, lParam);
+				}
+			}
+			break;
+		}
 		case WM_MOVE:
 		case WM_SIZE:
 		{
@@ -169,4 +180,9 @@ void ZListBox::RemoveAll()
 UINT ZListBox::Count()
 {
 	return (UINT)SendMessage(hWnd, LB_GETCOUNT, 0, 0);
+}
+
+void ZListBox::Bind(CallBackFunc func)
+{
+	this->selectedItemChange = func;
 }

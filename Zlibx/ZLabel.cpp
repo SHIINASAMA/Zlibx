@@ -81,6 +81,7 @@ void ZLabel::Init(HWND hWnd)
 {
 	if (!isRegistered)
 	{
+		WNDCLASSEX wcex;
 		wcex.cbSize = sizeof(WNDCLASSEX);
 		wcex.lpfnWndProc = ConProc;
 		wcex.hInstance = (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE);

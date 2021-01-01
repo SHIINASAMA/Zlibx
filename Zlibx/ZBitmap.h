@@ -22,6 +22,20 @@ public:
 	 *
 	 * \param ID 位图资源ID
 	 */
+	ZBitmap(WORD ID);
+
+	/**
+	 * \brief 从外部文件中加载位图
+	 *
+	 * \param Path 位图路径
+	 */
+	ZBitmap(ZString Path);
+
+	/**
+	 * \brief 从资源文件中加载位图
+	 *
+	 * \param ID 位图资源ID
+	 */
 	void Load(WORD ID);
 
 	/**

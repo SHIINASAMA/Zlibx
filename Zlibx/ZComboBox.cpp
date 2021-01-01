@@ -86,6 +86,11 @@ void ZComboBox::SetStyle(ComboBoxStyle style)
 	}
 }
 
+ZComboBox::~ZComboBox()
+{
+	comboBoxList.erase(hWnd);
+}
+
 ZComboBox::ZComboBox(int x, int y, int w, int h, ComboBoxStyle style)
 {
 	this->rect = RECT{ x, y, x + w, y + h };
