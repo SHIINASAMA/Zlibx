@@ -18,6 +18,11 @@ private:
 
 public:
 	/**
+	 * \brief 创建空对象
+	 */
+	ZBitmap();
+
+	/**
 	 * \brief 从资源文件中加载位图
 	 *
 	 * \param ID 位图资源ID

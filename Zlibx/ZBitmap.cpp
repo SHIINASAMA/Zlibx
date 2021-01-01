@@ -7,6 +7,10 @@
  */
 #include "ZBitmap.h"
 
+ZBitmap::ZBitmap()
+{
+}
+
 ZBitmap::ZBitmap(WORD ID)
 {
 	Load(ID);

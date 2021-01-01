@@ -71,7 +71,8 @@ public:
 	 * \brief 查找项
 	 *
 	 * \param text 项文本
-	 * \return
+	 * \return 查找成功则返回项的索引值
+	 * \return 否则返回-1
 	 */
 	int Find(ZString text);
 
@@ -103,7 +104,7 @@ public:
 	/**
 	 * \brief		获取当前索引值
 	 *
-	 * \return		当前缩影值
+	 * \return		当前索引值
 	 */
 	UINT GetSelectedIndex();
 

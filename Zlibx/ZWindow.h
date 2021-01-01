@@ -47,7 +47,7 @@ enum class DLLAPI DialogResult
  *
  * \image html SimpleDemo.png
  */
-class DLLAPI ZWindow
+class DLLAPI ZWindow : public ZControl
 {
 protected:
 	/** \brief 窗体句柄 */
@@ -61,6 +61,14 @@ protected:
 	/** \brief 窗体实例句柄 */
 	HINSTANCE hInstance{ 0 };
 
+	/**
+	 * \brief 供父窗体调用
+	 *
+	 * \param hWnd 父窗体句柄
+	 *
+	 */
+	void Init(HWND hWnd);
+	//todo:待完善
 private:
 	static ZString type;
 	static BOOL isRegistered;

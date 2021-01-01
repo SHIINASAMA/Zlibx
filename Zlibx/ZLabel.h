@@ -81,7 +81,7 @@ public:
 	/**
 	 * \brief 设置控件文本颜色
 	 *
-	 * \param color
+	 * \param color 目标颜色
 	 */
 	void SetTextColor(ZColor color);
 

@@ -20,13 +20,66 @@ std::map<HWND, const ZWindow*> ZWindow::windowList;
 const ZWindow* ZWindow::GetWindow(HWND hWnd)
 {
 	auto itor = windowList.find(hWnd);
-	if (itor != windowList.end() && itor->second != NULL)
+	if (itor != windowList.end())
 	{
 		return itor->second;
 	}
 	else
 	{
 		return nullptr;
+	}
+}
+
+void ZWindow::Init(HWND hWnd)
+{
+	if (!isRegistered)
+	{
+		hInstance = (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE);
+		WNDCLASSEX wcex;
+		wcex.cbSize = sizeof(WNDCLASSEX);
+		wcex.style = CS_HREDRAW | CS_VREDRAW;
+		wcex.cbClsExtra = 0;
+		wcex.cbWndExtra = 0;
+		wcex.hInstance = hInstance;
+		wcex.hIcon = NULL;
+		wcex.hCursor = NULL;
+		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+		wcex.lpszMenuName = NULL;
+		wcex.lpszClassName = type;
+		wcex.hIconSm = NULL;
+		wcex.lpfnWndProc = WndProc;
+
+		if (!RegisterClassEx(&wcex))
+		{
+			MessageBox(hWnd, L"¿Ø¼þ×¢²áÊ§°Ü", type, MB_OK | MB_ICONERROR);
+			return;
+		}
+		else
+		{
+			isRegistered = TRUE;
+		}
+	}
+
+	phWnd = hWnd;
+	this->hWnd = CreateWindow(
+		type,
+		text,
+		style,
+		rect.A.x,
+		rect.A.y,
+		rect.GetWidth(),
+		rect.GetHeight(),
+		phWnd,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	windowList.insert(std::pair<HWND, const ZWindow*>(this->hWnd, this));
+
+	if (count++ == 0)
+	{
+		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 	}
 }
 
