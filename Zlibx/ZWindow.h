@@ -10,6 +10,7 @@
 #pragma warning(disable:4251)
 
 #include "ZControl.h"
+#include "ZIcon.h"
 
  /** \brief 窗体类型枚举 */
 enum class DLLAPI WindowStyle
@@ -174,4 +175,11 @@ public:
 	 * \return 文本
 	 */
 	ZString GetText();
+
+	/**
+	 * \brief 设置窗体图标
+	 *
+	 * \param icon 目标图标
+	 */
+	void SetIcon(ZIcon icon);
 };
