@@ -16,7 +16,7 @@ std::map<HWND, const ZLabel*> ZLabel::labelMap;
 const ZLabel* ZLabel::GetLabel(HWND hWnd)
 {
 	auto iter = labelMap.find(hWnd);
-	if (iter != labelMap.end() && iter->second != NULL)
+	if (iter != labelMap.end())
 	{
 		return iter->second;
 	}
@@ -38,9 +38,11 @@ LRESULT ZLabel::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			HDC hdc;
 			PAINTSTRUCT ps;
 			hdc = BeginPaint(hWnd, &ps);
-			Graphics g(hdc);
 			SelectObject(hdc, temp->font);
 			::SetTextColor(hdc, temp->textColor);
+			SetBkMode(hdc, 1);
+			temp->SetVisible(FALSE);
+			temp->SetVisible(TRUE);
 			DrawText(hdc, temp->text, -1, temp->rect.ToClientRect(), DT_SINGLELINE);
 			EndPaint(hWnd, &ps);
 			break;

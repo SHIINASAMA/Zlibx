@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -174,6 +174,7 @@
     <ClInclude Include="ZListBox.h" />
     <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
+    <ClInclude Include="ZProgressBar.h" />
     <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZResource.h" />
@@ -198,6 +199,7 @@
     <ClCompile Include="ZListBox.cpp" />
     <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
+    <ClCompile Include="ZProgressBar.cpp" />
     <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
