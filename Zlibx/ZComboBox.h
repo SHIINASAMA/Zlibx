@@ -46,6 +46,10 @@ class DLLAPI ZComboBox :
 	static std::map<HWND, ZComboBox*> comboBoxList;
 	static ZComboBox* GetComboBox(HWND hWnd);
 
+	static WNDPROC oldProc;
+	static LRESULT CALLBACK ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+	CallBackFunc selectedItemChange;
+
 	ZFont font;
 	void SetDefFont();
 
@@ -143,4 +147,11 @@ public:
 	 * \return 项总数
 	 */
 	UINT Count();
+
+	/**
+	 * \brief 绑定选中项更改回调函数
+	 *
+	 * \param func 目标函数
+	 */
+	void Bind(CallBackFunc func);
 };

@@ -9,11 +9,12 @@
 #include "../Zlibx/ZProgressBar.h"
 
 ZWindow* win;
-ZProgressBar* a;
+ZComboBox* box;
 
-void clicked(WPARAM w, LPARAM l)
+void change(WPARAM w, LPARAM l)
 {
-	a->MakeStep();
+	int index = box->GetSelectedIndex();
+	printf("选中了%d项\n", index);
 }
 
 int main()
@@ -21,12 +22,12 @@ int main()
 	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
 
-	a = new ZProgressBar(100, 100, 200, 21);
-	win->Add(a);
-
-	auto b = new ZButton(L"Step", 5, 5, 200, 21);
-	win->Add(b);
-	b->Bind(clicked);
+	box = new ZComboBox(5, 5, 200, 150);
+	win->Add(box);
+	box->AddItem(L"A");
+	box->AddItem(L"B");
+	box->AddItem(L"C");
+	box->Bind(change);
 
 	win->Run();
 }

@@ -13,6 +13,8 @@ BOOL ZComboBox::isRegistered = FALSE;
 
 std::map<HWND, ZComboBox*> ZComboBox::comboBoxList;
 
+WNDPROC ZComboBox::oldProc;
+
 ZComboBox* ZComboBox::GetComboBox(HWND hWnd)
 {
 	auto itor = comboBoxList.find(hWnd);
@@ -24,6 +26,41 @@ ZComboBox* ZComboBox::GetComboBox(HWND hWnd)
 	{
 		return nullptr;
 	}
+}
+
+LRESULT ZComboBox::ConProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	auto temp = GetComboBox(hWnd);
+	if (temp != NULL)
+	{
+		switch (uMsg)
+		{
+		case WM_COMMAND:
+		{
+			if (HIWORD(wParam) == CBN_SELCHANGE)
+			{
+				if (temp->selectedItemChange != NULL)
+				{
+					temp->selectedItemChange(wParam, lParam);
+				}
+			}
+		}
+		case WM_MOVE:
+		case WM_SIZE:
+		{
+			UpdateRect(temp);
+			break;
+		}
+		case WM_DESTROY:
+		{
+			temp->~ZComboBox();
+			break;
+		}
+		default:
+			break;
+		}
+	}
+	return CallWindowProc(oldProc, hWnd, uMsg, wParam, lParam);
 }
 
 void ZComboBox::SetDefFont()
@@ -63,6 +100,8 @@ void ZComboBox::Init(HWND hWnd)
 		WNDCLASSEX wcex = { 0 };
 		GetClassInfoEx(hInstance, L"combobox", &wcex);
 		wcex.cbSize = sizeof(WNDCLASSEX);
+		oldProc = wcex.lpfnWndProc;
+		wcex.lpfnWndProc = ConProc;
 		wcex.lpszClassName = type;
 		if (!RegisterClassEx(&wcex))
 		{
@@ -149,4 +188,9 @@ void ZComboBox::RemoveAll()
 UINT ZComboBox::Count()
 {
 	return (UINT)SendMessage(hWnd, CB_GETCOUNT, 0, 0);
+}
+
+void ZComboBox::Bind(CallBackFunc func)
+{
+	this->selectedItemChange = func;
 }
