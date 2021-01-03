@@ -126,4 +126,11 @@ public:
 	 * \param enable 指示值
 	 */
 	void SetEnable(BOOL enable);
+
+	/**
+	 * \brief 获取控件句柄
+	 *
+	 * \retval 控件句柄
+	 */
+	HWND GetHandle();
 };

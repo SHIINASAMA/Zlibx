@@ -50,8 +50,6 @@ enum class DLLAPI DialogResult
 class DLLAPI ZWindow : public ZControl
 {
 protected:
-	/** \brief 窗体句柄 */
-	HWND hWnd{ 0 };
 	/** \brief 窗体风格 */
 	DWORD style{ 0 };
 	/** \brief 窗体区域 */
@@ -81,10 +79,13 @@ private:
 	void SetStyle(WindowStyle style);
 
 	static std::map<HWND, const ZWindow*> windowList;
-
 	static const ZWindow* GetWindow(HWND hWnd);
-
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+	//窗体返回值
+	DialogResult dialogResult = DialogResult::No;
+	//指示窗口是否是模式对话框
+	BOOL isModal = FALSE;
 
 	~ZWindow();
 
@@ -107,6 +108,14 @@ public:
 
 	/** \brief 运行窗体 */
 	void Run();
+
+	/**
+	 * \brief 创建一个模式对话框
+	 *
+	 * \param hWnd	父窗口句柄
+	 * \return		窗体返回值
+	 */
+	DialogResult RunDialog(HWND hWnd);
 
 	/**
 	 * \brief 向窗体添加控件.

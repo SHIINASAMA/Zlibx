@@ -76,6 +76,8 @@ void ZWindow::Init(HWND hWnd)
 	);
 
 	windowList.insert(std::pair<HWND, const ZWindow*>(this->hWnd, this));
+	isModal = TRUE;
+	EnableWindow(phWnd, FALSE);
 
 	if (count++ == 0)
 	{
@@ -120,6 +122,10 @@ LRESULT ZWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 		case WM_DESTROY:
 			count--;
+			if (temp->isModal)
+			{
+				EnableWindow(temp->phWnd, TRUE);
+			}
 			temp->~ZWindow();
 			PostQuitMessage(0);
 			break;
@@ -216,6 +222,13 @@ void ZWindow::Run()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
+}
+
+DialogResult ZWindow::RunDialog(HWND hWnd)
+{
+	Init(hWnd);
+	Run();
+	return this->dialogResult;
 }
 
 void ZWindow::Add(ZControl* con)

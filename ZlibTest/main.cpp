@@ -8,13 +8,14 @@
 #include "../Zlibx/ZListBox.h"
 #include "../Zlibx/ZProgressBar.h"
 
-ZWindow* win;
-ZComboBox* box;
+ZWindow* win, * cwin;
+ZButton* btn;
 
-void change(WPARAM w, LPARAM l)
+void clicked(WPARAM w, LPARAM l)
 {
-	int index = box->GetSelectedIndex();
-	printf("选中了%d项\n", index);
+	cwin = new ZWindow(L"Client", 50, 50, 200, 160);
+	auto result = cwin->RunDialog(win->GetHandle());
+	auto hWnd = cwin->GetHandle();
 }
 
 int main()
@@ -22,12 +23,9 @@ int main()
 	win = new ZWindow(L"Hello", 250, 200, 400, 300);
 	win->Create();
 
-	box = new ZComboBox(5, 5, 200, 150);
-	win->Add(box);
-	box->AddItem(L"A");
-	box->AddItem(L"B");
-	box->AddItem(L"C");
-	box->Bind(change);
+	btn = new ZButton(L"点我", 5, 5, 200, 30);
+	win->Add(btn);
+	btn->Bind(clicked);
 
 	win->Run();
 }

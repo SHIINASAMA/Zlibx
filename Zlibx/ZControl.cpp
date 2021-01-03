@@ -109,6 +109,11 @@ void ZControl::SetEnable(BOOL enable)
 	EnableWindow(hWnd, enable);
 }
 
+HWND ZControl::GetHandle()
+{
+	return hWnd;
+}
+
 void GetWindowPos(HWND hWnd, POINT* point)
 {
 	HWND hWndParent = GetParent(hWnd);
